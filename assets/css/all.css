@@ -1,5 +1,379 @@
-.zl body {
-  margin: 0; }
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
-.zl div {
-  margin: 2px; }
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+i {
+  color: #44484B;
+}
+
+@media screen and (max-width: 390px) {
+  #mainFooter {
+    min-height: 283px;
+    background: #44484B;
+    position: relative;
+    top: 58vh;
+  }
+  #contactArea {
+    text-align: center;
+    color: #fff;
+    font: norma, 600, 16px/22px, Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 24px 33px;
+  }
+  #contactArea span {
+    font-size: 16px;
+    font-weight: 800;
+    color: #359830;
+  }
+  #contactArea #addressFooter {
+    margin-top: 32px;
+  }
+  #contactArea #addressFooter {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5em;
+  }
+  #footerIcons {
+    text-align: center;
+  }
+  #footerIcons a i {
+    font-family: "Font Awesome 6 Brands";
+    font-size: 24px;
+    color: #fff;
+    margin-left: 32px;
+  }
+}
+@media screen and (max-width: 390px) {
+  header {
+    width: 100%;
+    height: 70px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 6px 20px;
+    align-items: center;
+    position: relative;
+  }
+  .container section a {
+    margin-left: 24px;
+    color: #44484B;
+  }
+  .secondSession .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 10px 20px;
+  }
+  .secondSession .container section a {
+    margin-left: 24px;
+    color: #44484B;
+  }
+  .secondSession nav .container {
+    justify-content: space-between;
+  }
+  #searchIcon, #menuMobileIcon {
+    font-size: 24px;
+  }
+  #secondSection {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    width: 82vw;
+    position: absolute;
+    left: 5vw;
+    right: 19vw;
+    top: 14vh;
+    margin: 0px auto;
+    height: 4vh;
+    border-radius: 4px;
+    padding: 0px 10px;
+    border: 1px solid #DBDBDB;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    transition: all 0.3s ease 0s;
+  }
+  #searchTopMenu::placeholder {
+    padding-left: 10px;
+  }
+  #searchTopMenu:focus {
+    outline: none;
+  }
+  #searchTopMenu:before {
+    content: "2";
+    display: block;
+    position: absolute;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    z-index: 99999;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  i.fa-sharp.fa-solid.fa-circle-xmark {
+    position: absolute;
+    top: 15vh;
+    left: 80vw;
+  }
+  .toggleForm {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    width: 0px;
+    height: 3.5vh;
+    position: absolute;
+    top: 14.3vh;
+    left: 79.2vw;
+    z-index: 9999;
+    opacity: 0;
+  }
+  form#myForm {
+    display: none;
+  }
+  /* Estilos para ocultar o formulário quando o checkbox estiver marcado */
+  .toggleForm:checked + label ~ #myForm {
+    display: none;
+  }
+  .toggleForm:checked {
+    display: none;
+  }
+  #input#toggleSearch {
+    width: 28px;
+    position: absolute;
+    z-index: 999;
+    top: 1vh;
+    left: 61vw;
+    opacity: 0;
+  }
+  .cardMenuOpen {
+    position: absolute;
+    background: #F5F5F5;
+    width: 100vw;
+    min-height: 745px;
+    border-top: 2px solid #359830;
+    padding: 16px 29px;
+  }
+  input#toggleSearch {
+    position: absolute;
+    z-index: 333;
+    top: 1vh;
+    left: 15vh;
+    opacity: 1;
+  }
+  input#toggleSearch, #myForm {
+    display: block;
+  }
+  input#toggleSearch:checked + label ~ #myForm {
+    display: block;
+  }
+  input#toggleSearch {
+    position: absolute;
+    z-index: 333;
+    top: 0.5vh;
+    left: calc(100% - 28vw);
+    right: 8vw;
+    opacity: 0;
+    width: 43px;
+  }
+  #stickContainer {
+    position: sticky;
+    top: 0px;
+  }
+  .containerFlex {
+    margin-top: 100vh;
+  }
+  #mainFooter {
+    min-height: 283px;
+    background: #44484B;
+    position: relative;
+    top: 58vh;
+  }
+  #contactArea {
+    text-align: center;
+    color: #fff;
+    font: norma, 600, 16px/22px, Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 24px 33px;
+  }
+  #contactArea span {
+    font-size: 16px;
+    font-weight: 800;
+    color: #359830;
+  }
+  #contactArea #addressFooter {
+    margin-top: 32px;
+  }
+  #contactArea #addressFooter {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5em;
+  }
+  #footerIcons {
+    text-align: center;
+  }
+  #footerIcons a i {
+    font-family: "Font Awesome 6 Brands";
+    font-size: 24px;
+    color: #fff;
+    margin-left: 32px;
+  }
+  .stick {
+    position: sticky;
+    top: 0px;
+  }
+  .floatingMenu {
+    display: none;
+    position: absolute;
+    height: 105vh;
+    top: 0px;
+    z-index: 10000;
+    background: #F2F2F2;
+    width: 100vw;
+    border-top: 2px solid #359830;
+    padding: 16px 0px;
+  }
+  #secondFloatUl, #menuList {
+    margin: 0px 20px 20px;
+    padding: 20px 30px;
+    width: 87vw;
+    border-bottom: 1px solid #359830;
+  }
+  #menuList ul li {
+    margin-bottom: 29px;
+    color: #44484B;
+  }
+  #secondFloatUl, #menuList ul li a {
+    color: #44484B;
+    font-size: norma, 600, 16px/22px, Open Sans;
+    font-weight: 600;
+  }
+  .menulink span {
+    color: #359830;
+  }
+  #secondFloatUl {
+    padding: 0px 23px;
+    border-block: none;
+  }
+  #secondFloatUl li {
+    margin: 29px 0px;
+  }
+  #secondFloatUl li a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #44484B;
+  }
+  #secondFloatUl li a span {
+    color: #359830;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  input#dropDownMenu {
+    position: absolute;
+    top: 5.3vh;
+    left: 87vw;
+    opacity: 0;
+    z-index: 9999;
+    width: 10vw;
+  }
+  #dropDownMenu:checked + label > show {
+    display: block !important;
+  }
+  input#dropDownMenu:checked + label ~ .floatingMenu {
+    display: block;
+  }
+  #closerDropDown {
+    position: absolute;
+    top: 5.3vh;
+    left: 51vw;
+    opacity: 0;
+    z-index: 9990;
+  }
+  #closerDropDown:checked + label + input ~ .floatingMenu {
+    display: block;
+  }
+  #closerDropMenu {
+    position: absolute;
+    display: block;
+    width: 10vw;
+    top: 5.3vh;
+    left: 87vw;
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+  }
+  input#dropDownMenu:checked + label ~ #closerDropMenu {
+    display: block;
+  }
+  #closerDropMenu:checked + label ~ .floatingMenu {
+    display: none !important;
+  }
+  #dropDownMenu:checked #dropDownMenu {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=all.css.map */
