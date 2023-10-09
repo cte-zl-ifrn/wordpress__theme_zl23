@@ -51,6 +51,9 @@ hr {
   margin: 0;
   padding: 0;
   line-height: 0;
+  color: #44484B;
+  border-color: "green";
+  border-style: solid;
 }
 
 i {
@@ -59,7 +62,7 @@ i {
 
 @media screen and (max-width: 390px) {
   #mainFooter {
-    min-height: 283px;
+    min-height: 220px;
     background: #44484B;
     position: relative;
     top: 58vh;
@@ -105,7 +108,7 @@ i {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 6px 20px;
+    margin: 10px 20px;
     align-items: center;
     position: relative;
   }
@@ -244,42 +247,8 @@ i {
   .containerFlex {
     margin-top: 100vh;
   }
-  #mainFooter {
-    min-height: 283px;
-    background: #44484B;
-    position: relative;
-    top: 58vh;
-  }
-  #contactArea {
-    text-align: center;
-    color: #fff;
-    font: norma, 600, 16px/22px, Open Sans;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 24px 33px;
-  }
-  #contactArea span {
-    font-size: 16px;
-    font-weight: 800;
-    color: #359830;
-  }
-  #contactArea #addressFooter {
-    margin-top: 32px;
-  }
-  #contactArea #addressFooter {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    line-height: 1.5em;
-  }
-  #footerIcons {
-    text-align: center;
-  }
-  #footerIcons a i {
-    font-family: "Font Awesome 6 Brands";
-    font-size: 24px;
-    color: #fff;
-    margin-left: 32px;
+  i.fa-solid.fa-xmark {
+    font-size: 29px;
   }
   .stick {
     position: sticky;
@@ -288,17 +257,17 @@ i {
   .floatingMenu {
     display: none;
     position: absolute;
-    height: 105vh;
+    height: auto;
     top: 0px;
     z-index: 10000;
     background: #F2F2F2;
     width: 100vw;
     border-top: 2px solid #359830;
-    padding: 16px 0px;
+    padding: 0px 0px;
   }
   #secondFloatUl, #menuList {
     margin: 0px 20px 20px;
-    padding: 20px 30px;
+    padding: 0px 30px;
     width: 87vw;
     border-bottom: 1px solid #359830;
   }
@@ -310,6 +279,23 @@ i {
     color: #44484B;
     font-size: norma, 600, 16px/22px, Open Sans;
     font-weight: 600;
+  }
+  ul#servSub, #ajudaSub, #noticiasSub, #pesquisaSub, ul#extSub {
+    margin-top: 32px;
+  }
+  p.backBtn:after {
+    content: "";
+    width: 323px;
+    /* border: 0.1px solid #5fbf76; */
+    display: block;
+    /* transform: rotate(0deg) !important; */
+    position: absolute;
+    top: 15.8vh;
+    width: 88vw;
+    left: 6vw;
+    height: 1px;
+    background: green;
+    /* padding-bottom: 0px !important; */
   }
   .menulink span {
     color: #359830;
@@ -373,6 +359,68 @@ i {
   }
   #dropDownMenu:checked #dropDownMenu {
     display: none;
+  }
+  .Institucional {
+    position: absolute;
+    width: 31vw;
+    top: 18vh;
+    left: -31vw;
+    z-index: 33333;
+    opacity: 0;
+  }
+  .Institucional:checked + label + .closeInstitucional + label .menuUl {
+    display: none;
+  }
+  input.Institucional:checked + label + .closeInstitucional + label + #menuList > .menuUl {
+    display: none;
+  }
+  #institucionalSubMenu {
+    display: block;
+    margin-top: 32px;
+  }
+  input.Institucional:checked + label + .closeInstitucional + label + .ensino + label + .closeEnsino + label + #menuList > #institucionalSubMenu {
+    display: block;
+    margin-top: 32px;
+  }
+  #ensinoSubMenu {
+    display: block;
+    margin-top: 32px;
+  }
+  .closeInstitucional {
+    width: 20vw;
+    position: absolute;
+    z-index: 6666;
+    top: 11vh;
+    left: -32vw;
+    opacity: 1;
+    display: none;
+  }
+  input.Institucional:checked + label + .closeInstitucional {
+    display: block;
+  }
+  input.ensino {
+    width: 25vw;
+    z-index: 3333;
+    position: absolute;
+    top: 30vh;
+    left: -32vw;
+  }
+  .displayNone {
+    display: none !important;
+  }
+  p.backBtn {
+    margin-bottom: 12px;
+  }
+  #horizontalRule {
+    position: absolute;
+    width: 89vw;
+    left: 5vw;
+  }
+  .instListItens {
+    margin-right: 20px;
+  }
+  #menuList ul li {
+    margin-top: 30px !important;
   }
 }
 
