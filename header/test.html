@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar/Ocultar com Checkbox</title>
     <style>
-       
-       #toggleForm:checked + label + .div  .container{
-           display: none;
-       }
-         
+        body {
+            transition: background-color 0.3s ease; /* Adicionando uma transição suave */
+        }
+
+        #toggleForm:checked ~ body {
+            background: red;
+        }
     </style>
 </head>
 <body>
-    <input type="radio" id="toggleForm">
+    <input type="checkbox" id="toggleForm">
     <label for="toggleForm"></label>
-   <div class="div">
-    <div class="container">
-        <form id="myForm">
-            <!-- Conteúdo do formulário aqui -->
-            <input type="text" placeholder="Digite algo aqui">
-            <button type="submit">Enviar</button>
-        </form>
+    <div class="div">
+        <div class="container">
+            <form id="myForm">
+                <!-- Conteúdo do formulário aqui -->
+                <input type="text" placeholder="Digite algo aqui">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </div>
-   </div>
-   
 </body>
 </html>
