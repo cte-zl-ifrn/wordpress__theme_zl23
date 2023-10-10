@@ -248,7 +248,7 @@ i {
     margin-top: 100vh;
   }
   i.fa-solid.fa-xmark {
-    font-size: 29px;
+    font-size: 33px;
   }
   .stick {
     position: sticky;
@@ -330,6 +330,12 @@ i {
   }
   input#dropDownMenu:checked + label ~ .floatingMenu {
     display: block;
+  }
+  #dropDownMenu:checked body {
+    background: red;
+  }
+  #menuList ul li:last-child {
+    margin-bottom: 0px !important;
   }
   #closerDropDown {
     position: absolute;
@@ -421,6 +427,42 @@ i {
   }
   #menuList ul li {
     margin-top: 30px !important;
+  }
+  i.fa-solid.fa-universal-access {
+    font-size: 30px;
+    position: absolute;
+    left: 32vw;
+    top: 1vh;
+  }
+  [vw] [vw-access-button] img {
+    max-height: 50px;
+    transition: all 0.5s ease;
+    border-radius: 79px;
+    opacity: 1 !important;
+    visibility: hidden !important;
+    z-index: 333;
+  }
+  [vw] [vw-access-button] .access-button {
+    width: 33px;
+    height: 33px;
+    z-index: 1;
+    visibility: initial !important;
+  }
+  [vw] [vw-access-button] {
+    flex-direction: row-reverse;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    right: 38vw;
+    bottom: 46.5vh;
+    left: auto;
+  }
+  div[vw] {
+    z-index: 333 !important;
   }
 }
 
