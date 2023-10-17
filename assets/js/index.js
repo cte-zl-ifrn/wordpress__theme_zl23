@@ -3,11 +3,13 @@ const institucionalSubMenu = document.querySelector('#institucionalSubMenu');
 const menuItem = document.querySelectorAll('.menuItem');
 const closerDropMenu = document.querySelector('#closerDropMenu');
 const submenuUl = document.querySelectorAll('.submenuUl');
-const backMenuIcon = document.querySelector('.backMenuIcon');
+const backMenuIcon = document.querySelectorAll('.backMenuIcon');
 const ensinoSubMenu = document.querySelector('#ensinoSubMenu');
 const ensinolink = document.querySelector('#ensinolink');
 
-function clearMenu(){
+console.log(backMenuIcon)
+
+function hideMenu(){
     menuItem.forEach((item) => {
         item.classList.remove('displayNone')
     })
@@ -33,16 +35,29 @@ function subMenuEnsino(){
    
 }
 
-function bachToMainMenu(){
-    clearMenu();
+function bachToMainMenu() {
+    
+    submenuUl.forEach((item) => {
+        item.classList.add('displayNone');
+    });
+
+   
+    menuItem.forEach((item) => {
+        item.classList.remove('displayNone');
+    });
+}
+
+function pesquisaLink(){
+    menuItem.forEach((item) => {
+        item.classList.add('displayNone')
+    })
+    pesquisaSubMenu.classList.remove('displayNone');
 }
 
 
 
-
-
 closerDropMenu.addEventListener('click', (e) => {
-   clearMenu();
+    hideMenu();
 })
 
 institucionalLink.addEventListener('click', (e) => {
@@ -54,8 +69,11 @@ ensinolink.addEventListener('click', (e) => {
     subMenuEnsino()
 })
 
-backMenuIcon.addEventListener('click', (e) => {
-    bachToMainMenu();
+
+backMenuIcon.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        bachToMainMenu()
+    })
 })
 
 
