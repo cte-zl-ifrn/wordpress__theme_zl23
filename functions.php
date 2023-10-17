@@ -15,7 +15,79 @@ function importar_arquivos() {
 
 function theme_setup() {
     add_theme_support('post-thumbnails');
+    register_nav_menus(
+        [
+            'mainMenu' => 'Principal',
+            'govMenu' => 'Governo federal',
+            'slideMenu' => 'Slide',
+            'shotcutMenu' => 'Atalho',
+            'featuredMenu' => 'Destaque',
+        ]
+    );
 }
 
 add_action('wp_enqueue_scripts', 'importar_arquivos');
 add_action('after_setup_theme', 'theme_setup');
+
+function showSlideMenu() {
+	$locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ "slideMenu" ] );
+
+    if ( !$menu || is_wp_error( $menu ) ) {
+		return false;
+	}
+
+    $menu_items = wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+
+    echo '<section id="slideMenu" class="carousel" aria-label="Gallery">';
+
+        echo '<ol class="carousel__viewport">';
+        foreach ( (array) $menu_items as $menu_item ) {
+            echo "<li id='carousel__slide1'
+                        tabindex='0'
+                        class='carousel__slide'>
+                        <img src='$menu_item->post_content'>
+                    <span>$menu_item->attr_title</span>
+                    <div class='carousel__snapper'>
+                        <a href='#carousel__slide4'
+                        class='carousel__prev'>Go to last slide</a>
+                        <a href='#carousel__slide2'
+                        class='carousel__next'>Go to next slide</a>
+                    </div>
+                    </li>
+                    ";
+        }
+        echo "</ol>";
+
+        echo '<aside class="carousel__navigation">';
+            echo '<ol class="carousel__navigation-list">';
+                foreach ( (array) $menu_items as $menu_item ) {
+                    echo '<li class="carousel__navigation-item">
+                    <a href="#carousel__slide1"
+                    class="carousel__navigation-button">Go to slide 1</a>
+                </li>';
+                }
+            echo "</ol>";
+        echo "</aside>";
+
+    echo "</section>"; 
+}
+
+
+function showFeaturedMenu() {
+	$locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ "featuredMenu" ] );
+
+    if ( !$menu || is_wp_error( $menu ) ) {
+		return false;
+	}
+
+    $menu_items = wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+
+    echo '<div id="featuredMenu">';
+	foreach ( (array) $menu_items as $menu_item ) {
+        echo "<a href='$menu_item->post_content' target='$menu_item->target'><div><img src='$menu_item->post_content' title='$menu_item->attr_title' alt='$menu_item->attr_title' />$menu_item->post_title</div></a>";
+	}
+    echo "</div>";
+    //echo "<pre>";var_dump($menu_items);die();
+}

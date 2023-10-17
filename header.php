@@ -38,223 +38,207 @@
     <header>
     <div class="section">
         
-        <input type="radio" id="dropDownMenu" name="i">
-        <label for="dropDownMenu"></label>
-        <input type="radio" id="closerDropMenu" name="i">
-        <label for="closerDropMenu"></label>
-        <div class="floatingMenu">
+    <input type="radio" id="dropDownMenu" name="i">
+         <label for="dropDownMenu"></label>
+         <input type="radio" id="closerDropMenu" name="i">
+         <label for="closerDropMenu"></label>
+         <div class="floatingMenu">
             <div class="container">
                 <div class="firstColun">
                     <a href="https://www.gov.br/pt-br">
                         <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png"
                             alt="gov.br">
                     </a>
-                </div>
+                 </div>
                 <div class="secondColun">
                     <section>
-                        
-                        <i class="fa-solid fa-xmark"></i>
+                          <i class="fa-solid fa-xmark"></i>
                     </section>
                 </div>
             </div>
             
             <!--Sub menu institucional-->
         
-            <div  id="menuList">
-                <ul class="displayNone" id="institucionalSubMenu">
-                  <p class="backBtn"><span><</span> voltar</p>
-                   
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/sobre-o-campus/">Sobre o Campus</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/estrutura-administrativa/">Estrutura administrativa</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/transparencia-e-prestacao-de-contas/">Transparência e prestação de contas</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/acesso-a-informacao/">Acesso à informação</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/modelos-de-documentos/">Documentos institucionais</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/portarias/">Atos administrativos</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/legislacao-2/">Legislação</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/programas-de-fomento/">Programas de formento</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/tecnologia-da-informacao/">Serviços de informática</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="https://ead.ifrn.edu.br/portal/institucional/sala-de-imprensa/">Sala de imprensa</a>
-                    </li>
-                </ul>
+         <div id="mainMenu">
+                
+            <ul class="menuUl">
+                <nav class="menuUl">
+                    <ul class="menuList">
+                        <li class="menuItem" >
+                            <a href="/portal/" class="menuItem" >Início</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menuItem" id="institucionalLink">Institucional
+                                <span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                <span>
+                            </a>
+                            <ul class="displayNone submenuUl" id="institucionalSubMenu">
+                                <li>
+                                    <i class="fa-solid fa-chevron-left backMenuIcon" ></i>
+                                    voltar
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/sobre-o-campus/">Sobre o Campus</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/transparencia-e-prestacao-de-contas/">Transparência
+                                        e Prestação de Contas</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/estrutura-administrativa/">Estrutura
+                                        Administrativa</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/telefones/">Lista de Telefones e
+                                        E-mails</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/categoria/editais/">Processos Seletivos</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/tecnologia-da-informacao/">Serviços de
+                                        Informática</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/programas-de-fomento/">Programas de
+                                        Fomento</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/modelos-de-documentos/">Modelos de
+                                        Documentos</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/portarias/">Atos Administrativos</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/legislacao-2/">Legislação</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/acesso-a-informacao/">Acesso à
+                                        Informação</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/institucional/sala-de-imprensa/">Sala de Imprensa</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="https://ead.ifrn.edu.br/portal/cursos/" class="menuItem">Cursos</a>
+                        </li>
+                        <li >
+                             <a href="#" class="menuItem" id="ensinolink">Ensino
+                                <span > 
+                                   <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                             </a>
+                            <ul class="displayNone submenuUl" id="ensinoSubMenu">
+                                <li>
+                                    <i class="fa-solid fa-chevron-left backMenuIcon" ></i>
+                                    voltar
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/ava">Ambiente Virtual de Aprendizagem</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/ensino/polos-de-apoio/">Polos Presenciais</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/direitos-do-aluno/">Serviços ao Aluno</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/ensino/midiateca/">Midiateca</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/ensino/calendarios/">Calendários</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/ensino/formas-de-ingresso/">Formas de Ingresso</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/ensino/napne/">NAPNE</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://ead.ifrn.edu.br/portal/cultura-conheca-o-nucleo-de-estudos-afro-brasileiros-e-indigenas-do-campus-natal-zona-leste/">NEABI</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/tutoriais/tutorial-para-entrega-de-diplomas/">Diplomas e
+                                        Certificados</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="#" class="menuItem">Pesquisa
+                                <span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                            <ul class="displayNone submenuUl">
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/pesquisa/linha-de-pesquisa/">Grupos de Pesquisa</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/pesquisa/projetos/">Projetos de Pesquisa</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                                <a href="#" class="menuItem">Extensão
+                                    <span>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    <span>
+                                </a>
+                            <ul class="displayNone submenuUl">
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/extensao/cursos/">Cursos de Extensão</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/extensao/projetos/">Projetos de Extensão</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="https://ead.ifrn.edu.br/portal/ifrn-ead-ava/" class="menuItem">Moodle</a>
+                        </li>
+                        <li >
+                             <a href="#" class="menuItem">Notícias
+                                <span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                            <ul class="displayNone submenuUl">
+                                <li class="menuItem" >
+                                    <a href="https://ead.ifrn.edu.br/portal/noticias/reportagens/">Reportagens</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/noticias/notas-informativas/">Notas informativas</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/web-stories/">Web Stories</a>
+                                </li>
+                                <li>
+                                    <a href="https://ead.ifrn.edu.br/portal/educacao-em-pauta/">Educação em Pauta</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="#" class="menuItem">Ajuda
+                                <span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-                <!-- Sub menu de ensino -->
+               
+            </ul>
+                
+                
 
-                <ul class="displayNone" id="ensinoSubMenu">
-                    <p class="backBtn"><span><</span> voltar</p>
-                    
-                      <li class="instListItens">
-                          <a href="#">Processos Seletivos</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Diplomas e certificados</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Polos presenciais</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Calendários</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Biblioteca</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Serviços ao aluno</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Assistência Estudantil</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Laboratórios</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Rede de bibliotecas</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Midiateca</a>
-                      </li>
-                      <li class="instListItens">
-                        <a href="">NAPNE</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="">NEABI</a>
-                    </li>
-                  </ul>
-
-                  <!--submenu pesquisa -->
-
-                  <ul class="displayNone" id="pesquisaSub">
-                    <p class="backBtn"><span><</span> voltar</p>
-                    
-                      <li class="instListItens">
-                          <a href="#">Grupos de Pesquisa</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Projetos de Pesquisa</a>
-                      </li>
-                  </ul>
-
-                  <!--extenção sub-->
-
-
-                  <ul class="displayNone" id="extSub">
-                    <p class="backBtn"><span><</span> voltar</p>
-                     
-                      <li class="instListItens">
-                          <a href="#">Curso de Extensão</a>
-                      </li>
-                      <li class="instListItens">
-                          <a href="">Projetos de Extensão</a>
-                      </li>
-                  </ul>
-                  
-                  <!--noticias sub-->
-
-                  <ul class="displayNone" id="noticiasSub">
-                    <p class="backBtn"><span><</span> voltar</p>
-                     
-                      <li class="instListItens">
-                          <a href="">Reportagens</a>
-                      </li>
-                      <li class="instListItens">
-                        <a href="">Notas Informativas</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="">Eventos</a>
-                    </li>
-                      <li class="instListItens">
-                          <a href="#">Web Stories</a>
-                      </li>
-                    <li class="instListItens">
-                        <a href="">Educação em Pauta</a>
-                    </li>
-                  </ul>
-
-                 <!--ajuda submenu-->
-                 <ul class="displayNone" id="ajudaSub">
-                    <p class="backBtn"><span><</span> voltar</p>
-                    
-                      <li class="instListItens">
-                          <a href="">Central de ajuda</a>
-                      </li>
-                      <li class="instListItens">
-                        <a href="">Contatos</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="">Ouvidoria</a>
-                    </li>
-                  </ul>
-
-                  <!-- serviços sub-->
-                  <ul class="displayNone" id="servSub">
-                    <p class="backBtn"><span><</span> voltar</p>
-                     
-                      <li class="instListItens">
-                          <a href="">SUAP</a>
-                      </li>
-                      <li class="instListItens">
-                        <a href="">Office 365</a>
-                    </li>
-                    <li class="instListItens">
-                        <a href="">Webmail</a>
-                    </li>
-                  </ul>
-
-                  <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'headerMenuLocation'
-                    ));
-                  ?>
-
-                <ul class="menuUl">
-                    <li class="menuItem">
-                        <a href="https://ead.ifrn.edu.br/portal/" class="menulink">Inicio</a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink" id="institucional">Institucional <span>></span> </a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="https://ead.ifrn.edu.br/portal/cursos/" class="menulink">Cursos</a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="#" class="menulink" id="ensinoLink">Ensino <span>></span></a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink" id="pesquisaLink">Pesquisa <span>></span></a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink" id="extLink">Extensão <span>></span></a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink">Moodle</a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink" id="noticiasLink">Notícias <span>></span></a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="" class="menulink" id="ajudaLink">Ajuda <span>></span></a>
-                    </li>
-                </ul>
-
-            </div>
+                
+        </div>
             <ul id="secondFloatUl">
                 <li>
                     <a href="">PORTAL IFRN <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span> </a>
@@ -266,13 +250,17 @@
                     <a href="">GOV.BR <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
                 </li>
                 <li>
-                    <a href="#" id="servLink">SERVIÇOS <span>></span> </a>
+                   <a href="#" id="servLink">SERVIÇOS 
+                     <span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                     </span> 
+                   </a>
                 </li>
             </ul>
-        </div>
+         </div>
 
-     </div>
-        <div class="stick" style="position: sticky; top: 0;">
+       </div>
+       <div class="stick" style="position: sticky; top: 0;">
             <div id="stickContainer" class="container">
                 <div class="firstColun">
                     <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png" alt="gov.br">
@@ -299,7 +287,8 @@
                     </section>
                 </div>
             </div>
-        </div>
+     
+       </div>
 
 
 
