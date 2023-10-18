@@ -397,9 +397,6 @@ i {
     top: 30vh;
     left: -32vw;
   }
-  .displayNone {
-    display: none !important;
-  }
   p.backBtn {
     margin-bottom: 12px;
   }

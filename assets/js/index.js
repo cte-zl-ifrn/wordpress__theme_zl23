@@ -6,8 +6,10 @@ const submenuUl = document.querySelectorAll('.submenuUl');
 const backMenuIcon = document.querySelectorAll('.backMenuIcon');
 const ensinoSubMenu = document.querySelector('#ensinoSubMenu');
 const ensinolink = document.querySelector('#ensinolink');
+const pesquisaLink = document.querySelector('#pesquisaLink');
+const pesquisaSubMenu = document.querySelector('#pesquisaSubMenu');
 
-console.log(backMenuIcon)
+
 
 function hideMenu(){
     menuItem.forEach((item) => {
@@ -47,12 +49,18 @@ function bachToMainMenu() {
     });
 }
 
-function pesquisaLink(){
+function pesquisaSubMenuFunction(){
     menuItem.forEach((item) => {
         item.classList.add('displayNone')
     })
     pesquisaSubMenu.classList.remove('displayNone');
+   
 }
+
+pesquisaLink.addEventListener('click', (e) => {
+    pesquisaSubMenuFunction()
+})
+
 
 
 
