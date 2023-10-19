@@ -2,6 +2,17 @@
 
 <?php showSlideMenu(); ?>
 
+<!-- Atalhos -->
+<div>
+<?php foreach ((array) getshotcutMenu()as $menu_item ): ?>  
+    <a href='<?php echo $menu_item->url ?>'>
+      <div>
+        <?php echo $menu_item->post_title ?>
+      </div>
+    </a>;
+<?php endforeach ?>
+</div>
+
 <!-- Notícias -->
 <?php
 $count = 0;
@@ -26,7 +37,14 @@ while(have_posts()) {
 <?php }} ?>
 
 <h2>Destaques</h2>
-<?php
-showFeaturedMenu();
-?>
+<div id="featuredMenu">
+<?php foreach ((array) getFeaturedMenu() as $menu_item ): ?>  
+    <a href='<?php echo $menu_item->post_content ?>' target='<?php echo $menu_item->target ?>'>
+      <div>
+        <img src='<?php echo $menu_item->post_content ?>' title='<?php echo $menu_item->attr_title ?>' alt='<?php echo $menu_item->attr_title ?>' /><?php echo $menu_item->post_title ?>
+      </div>
+    </a>;
+<?php endforeach ?>
+</div>
+
 <?php get_footer(); ?>

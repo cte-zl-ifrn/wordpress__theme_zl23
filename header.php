@@ -57,9 +57,46 @@
                 </div>
             </div>
             
-            <!--Sub menu institucional-->
-        
+        <!--Menu Main-->
          <div id="mainMenu">
+         <nav class="menuUl">           
+            <ul class="menuList">
+            <?php 
+            $count = 0;
+            $sub_menu = false;
+            $menuItems = getMainMenu();
+
+            foreach($menuItems as $menu_item):
+                if ( !$menu_item->menu_item_parent ):
+
+                $parent_id = $menu_item->ID; 
+                ?>
+                <li>
+                    <a href="<?php echo $menu_item->url; ?>" class="menuItem">
+                        <?php echo $menu_item->post_title ?>
+                    </a>
+                <?php endif; ?>
+
+                <?php if ( $parent_id == $menu_item->menu_item_parent ): ?>
+                    <?php if ( !$submenu ): $submenu = true; ?>
+                    <span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    <ul class="displayNone submenuUl">
+                    <?php endif; ?>
+                    <li class="item">
+                        <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
+                    </li>
+                    <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                    </ul>
+                    <?php $submenu = false; endif; ?>
+                <?php endif; ?>
+            <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+            </li>
+            <?php $submenu = false; endif; ?>
+                <?php $count++; endforeach; ?>
+            </ul>
+        </nav>
                 
             <ul class="menuUl">
                 <nav class="menuUl">
@@ -235,11 +272,22 @@
                
             </ul>
                 
-                
-
+        <!-- Menu Gov -->
+        <nav>
+            <ul id="secondFloatUl">
+            <?php foreach ((array) getGovMenu() as $menu_item ): ?>  
+            <li>
+                <a href='<?php echo $menu_item->url ?>' target='_blank'>
+                    <?php echo $menu_item->post_title ?>
+                    <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+            </li>
+            <?php endforeach ?>
+            </ul>
+        </nav>
                 
         </div>
-            <ul id="secondFloatUl">
+            <ul>
                 <li>
                     <a href="">PORTAL IFRN <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span> </a>
                 </li>

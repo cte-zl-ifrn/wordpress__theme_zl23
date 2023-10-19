@@ -29,6 +29,31 @@ function theme_setup() {
 add_action('wp_enqueue_scripts', 'importar_arquivos');
 add_action('after_setup_theme', 'theme_setup');
 
+function getMainMenu() {
+	$locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ "mainMenu" ] );
+
+    if ( !$menu || is_wp_error( $menu ) ) {
+		return false;
+	}
+
+    return wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+    
+    //echo "<pre>";var_dump($menu_items);die();
+
+}
+
+function getGovMenu() {
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ "govMenu" ] );
+
+    if ( !$menu || is_wp_error( $menu ) ) {
+		return false;
+	}
+
+    return wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+}
+
 function showSlideMenu() {
 	$locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ "slideMenu" ] );
@@ -73,8 +98,21 @@ function showSlideMenu() {
     echo "</section>"; 
 }
 
+function getShotcutMenu() {
+	$locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ "shotcutMenu" ] );
 
-function showFeaturedMenu() {
+    if ( !$menu || is_wp_error( $menu ) ) {
+		return false;
+	}
+
+    return wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+    
+    //echo "<pre>";var_dump($menu_items);die();
+}
+
+
+function getFeaturedMenu() {
 	$locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ "featuredMenu" ] );
 
@@ -82,12 +120,7 @@ function showFeaturedMenu() {
 		return false;
 	}
 
-    $menu_items = wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
-
-    echo '<div id="featuredMenu">';
-	foreach ( (array) $menu_items as $menu_item ) {
-        echo "<a href='$menu_item->post_content' target='$menu_item->target'><div><img src='$menu_item->post_content' title='$menu_item->attr_title' alt='$menu_item->attr_title' />$menu_item->post_title</div></a>";
-	}
-    echo "</div>";
+    return wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+    
     //echo "<pre>";var_dump($menu_items);die();
 }
