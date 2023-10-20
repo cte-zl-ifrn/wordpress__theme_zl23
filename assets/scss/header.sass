@@ -395,6 +395,10 @@
     color: $secondary-color
     margin-bottom: 0px !important
 
+
+  .menuUl > div
+    display: none
+
   .menuList:before
     content: ''
     display: block
@@ -404,7 +408,16 @@
     height: 2px
     z-index: 99999
     font-weight: 900
-    top: 20px  
+    top: 20px
+
+  .menuwithsubmenu.opened a
+    display: none
+
+  .menuwithsubmenu.opened ul
+    display: block
+    
+  
+
 
   
 

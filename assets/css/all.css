@@ -466,6 +466,9 @@ i {
     color: #44484B;
     margin-bottom: 0px !important; }
 
+  .menuUl > div {
+    display: none; }
+
   .menuList:before {
     content: "";
     display: block;
@@ -475,7 +478,13 @@ i {
     height: 2px;
     z-index: 99999;
     font-weight: 900;
-    top: 20px; } }
+    top: 20px; }
+
+  .menuwithsubmenu.opened a {
+    display: none; }
+
+  .menuwithsubmenu.opened ul {
+    display: block; } }
 @media screen and (max-width: 390px) {
   @keyframes tonext {
     75% {
