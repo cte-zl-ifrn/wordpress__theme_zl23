@@ -55,7 +55,7 @@
   
 
   #searchTopMenu:focus
-   outline: none
+    outline: none
  
  
   #searchTopMenu:before
@@ -122,8 +122,8 @@
     left: 15vh
     opacity: 1
     
-  input#toggleSearch , #myForm
-   display: block 
+  input#toggleSearch ,#myForm
+    display: block 
 
   input#toggleSearch:checked + label ~ #myForm 
     display: block    
@@ -196,8 +196,8 @@
     color: $tertiary-color
   
   #secondFloatUl
-   padding: 0px 23px
-   border-block: none
+    padding: 0px 23px
+    border-block: none
   
   #secondFloatUl li
     margin: 29px 0px
@@ -305,8 +305,7 @@
     top: 30vh
     left: -32vw
   
-  .displayNone
-    display: none !important
+
   
   p.backBtn
     margin-bottom: 12px
@@ -377,4 +376,40 @@
   i.fa-solid.fa-arrow-up-right-from-square
     color: black
   
- 
+  ul.menuList
+    padding: 20px 0px 0px 0px
+    display: block
+    margin-left: 42px
+  
+  ul.menuList li 
+    margin-bottom: 24px
+    color: $secondary-color
+   
+  ul.menuList 
+      li:last-child
+        margin-bottom: 0px !important
+
+  ul.menuList li a 
+    font-size: 16px
+    font-weight: 600
+    color: $secondary-color
+    margin-bottom: 0px !important
+
+  .menuList:before
+    content: ''
+    display: block
+    position: absolute
+    color: #000
+    width: 210px
+    height: 2px
+    z-index: 99999
+    font-weight: 900
+    top: 20px  
+
+  
+
+   
+
+  
+   
+
