@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <?php wp_head(); ?>
 </head>
 
@@ -57,255 +58,84 @@
                 </div>
             </div>
             
-        <!--Menu Main-->
-         <div id="mainMenu">
-         <nav class="menuUl">           
-            <ul class="menuList">
-            <?php 
-            $count = 0;
-            $sub_menu = false;
-            $menuItems = getMainMenu();
+    <!--Menu Main-->
+    <nav class="menuUl">
+        <div class="voltar">
+            <i class="fa-solid fa-chevron-left backMenuIcon"></i>voltar
+        </div>       
+        <ul class="menuList">
+        <?php 
+        $count = 0;
+        $sub_menu = false;
+        $menuItems = getMainMenu();
 
-            foreach($menuItems as $menu_item):
-                if ( !$menu_item->menu_item_parent ):
-
-                $parent_id = $menu_item->ID; 
-                ?>
-                <li>
-                    <a href="<?php echo $menu_item->url; ?>" class="menuItem">
-                        <?php echo $menu_item->post_title ?>
-                    </a>
-                <?php endif; ?>
-
-                <?php if ( $parent_id == $menu_item->menu_item_parent ): ?>
-                    <?php if ( !$submenu ): $submenu = true; ?>
-                    <span>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                    <ul class="displayNone submenuUl">
-                    <?php endif; ?>
-                    <li class="item">
-                        <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
-                    </li>
-                    <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
-                    </ul>
-                    <?php $submenu = false; endif; ?>
-                <?php endif; ?>
-            <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
-            </li>
-            <?php $submenu = false; endif; ?>
-                <?php $count++; endforeach; ?>
-            </ul>
-        </nav>
-                
-            <ul class="menuUl">
-                <nav class="menuUl">
-                    <ul class="menuList">
-                        <li class="menuItem" >
-                            <a href="/portal/" class="menuItem" >Início</a>
-                        </li>
-                        <li>
-                            <a href="#" class="menuItem" id="institucionalLink">Institucional
-                                <span>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                <span>
-                            </a>
-                            <ul class="displayNone submenuUl" id="institucionalSubMenu">
-                                <li>
-                                    <i class="fa-solid fa-chevron-left backMenuIcon" ></i>
-                                    voltar
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/sobre-o-campus/">Sobre o Campus</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/transparencia-e-prestacao-de-contas/">Transparência
-                                        e Prestação de Contas</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/estrutura-administrativa/">Estrutura
-                                        Administrativa</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/telefones/">Lista de Telefones e
-                                        E-mails</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/categoria/editais/">Processos Seletivos</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/tecnologia-da-informacao/">Serviços de
-                                        Informática</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/programas-de-fomento/">Programas de
-                                        Fomento</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/modelos-de-documentos/">Modelos de
-                                        Documentos</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/portarias/">Atos Administrativos</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/legislacao-2/">Legislação</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/acesso-a-informacao/">Acesso à
-                                        Informação</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/institucional/sala-de-imprensa/">Sala de Imprensa</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li >
-                            <a href="https://ead.ifrn.edu.br/portal/cursos/" class="menuItem">Cursos</a>
-                        </li>
-                        <li >
-                             <a href="#" class="menuItem" id="ensinolink">Ensino
-                                <span > 
-                                   <i class="fa-solid fa-chevron-right"></i>
-                                </span>
-                             </a>
-                            <ul class="displayNone submenuUl" id="ensinoSubMenu">
-                                <li>
-                                    <i class="fa-solid fa-chevron-left backMenuIcon" ></i>
-                                    voltar
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/ava">Ambiente Virtual de Aprendizagem</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/ensino/polos-de-apoio/">Polos Presenciais</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/direitos-do-aluno/">Serviços ao Aluno</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/ensino/midiateca/">Midiateca</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/ensino/calendarios/">Calendários</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/ensino/formas-de-ingresso/">Formas de Ingresso</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/ensino/napne/">NAPNE</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://ead.ifrn.edu.br/portal/cultura-conheca-o-nucleo-de-estudos-afro-brasileiros-e-indigenas-do-campus-natal-zona-leste/">NEABI</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/tutoriais/tutorial-para-entrega-de-diplomas/">Diplomas e
-                                        Certificados</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li >
-                            <a href="#" class="menuItem">Pesquisa
-                                <span>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </span>
-                            </a>
-                            <ul class="displayNone submenuUl">
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/pesquisa/linha-de-pesquisa/">Grupos de Pesquisa</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/pesquisa/projetos/">Projetos de Pesquisa</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li >
-                                <a href="#" class="menuItem">Extensão
-                                    <span>
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    <span>
-                                </a>
-                            <ul class="displayNone submenuUl">
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/extensao/cursos/">Cursos de Extensão</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/extensao/projetos/">Projetos de Extensão</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li >
-                            <a href="https://ead.ifrn.edu.br/portal/ifrn-ead-ava/" class="menuItem">Moodle</a>
-                        </li>
-                        <li >
-                             <a href="#" class="menuItem">Notícias
-                                <span>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </span>
-                            </a>
-                            <ul class="displayNone submenuUl">
-                                <li class="menuItem" >
-                                    <a href="https://ead.ifrn.edu.br/portal/noticias/reportagens/">Reportagens</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/noticias/notas-informativas/">Notas informativas</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/web-stories/">Web Stories</a>
-                                </li>
-                                <li>
-                                    <a href="https://ead.ifrn.edu.br/portal/educacao-em-pauta/">Educação em Pauta</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li >
-                            <a href="#" class="menuItem">Ajuda
-                                <span>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-               
-            </ul>
-                
-        <!-- Menu Gov -->
-        <nav>
-            <ul id="secondFloatUl">
-            <?php foreach ((array) getGovMenu() as $menu_item ): ?>  
-            <li>
-                <a href='<?php echo $menu_item->url ?>' target='_blank'>
+        foreach($menuItems as $menu_item):
+            if ( !$menu_item->menu_item_parent ):
+            $parent_id = $menu_item->ID; ?>
+            <li class='<?php if($menuItems[$count + 1]->menu_item_parent == $parent_id) : echo 'menuwithsubmenu'; endif?>'>
+                <a href="<?php echo $menu_item->url; ?>" class="menuLink">
                     <?php echo $menu_item->post_title ?>
-                    <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                 </a>
-            </li>
-            <?php endforeach ?>
-            </ul>
-        </nav>
-                
-        </div>
-            <ul>
-                <li>
-                    <a href="">PORTAL IFRN <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span> </a>
+            <?php endif; ?>
+
+            <?php if ( $parent_id == $menu_item->menu_item_parent ):
+                if ( !$submenu ): $submenu = true; ?>
+                <span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+                <ul class="displayNone">
+                <?php endif; ?>
+                <li class="item">
+                    <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
                 </li>
-                <li>
-                    <a href="">E-MEC <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+                <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                </ul>
+                <?php $submenu = false; 
+                endif;
+            endif; ?>
+        <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+        </li>
+        <?php $submenu = false; endif; ?>
+            <?php $count++; endforeach; ?>
+        </ul>
+        
+        <!-- Menu Gov --> 
+        <ul id="menuList">
+        <?php 
+        $count = 0;
+        $sub_menu = false;
+        $menuItems = getGovMenu();
+
+        foreach($menuItems as $menu_item):
+            if ( !$menu_item->menu_item_parent ):
+            $parent_id = $menu_item->ID; ?>
+            <li class='<?php if($menuItems[$count + 1]->menu_item_parent == $parent_id) : echo 'menuwithsubmenu'; endif?>'>
+                <a href="<?php echo $menu_item->url; ?>" class="menuLink">
+                    <?php echo $menu_item->post_title ?>
+                </a>
+            <?php endif; ?>
+
+            <?php if ( $parent_id == $menu_item->menu_item_parent ):
+                if ( !$submenu ): $submenu = true; ?>
+                <span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+                <ul class="displayNone">
+                <?php endif; ?>
+                <li class="item">
+                    <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
                 </li>
-                <li>
-                    <a href="">GOV.BR <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
-                </li>
-                <li>
-                   <a href="#" id="servLink">SERVIÇOS 
-                     <span>
-                             <i class="fa-solid fa-chevron-right"></i>
-                     </span> 
-                   </a>
-                </li>
-            </ul>
-         </div>
+                <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                </ul>
+                <?php $submenu = false; 
+                endif;
+            endif; ?>
+        <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+        </li>
+        <?php $submenu = false; endif; ?>
+            <?php $count++; endforeach; ?>
+        </ul>
+    </nav>
 
        </div>
        <div class="stick" style="position: sticky; top: 0;">
