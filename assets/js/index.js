@@ -3,6 +3,7 @@
 const menuWithSubmenuItems = document.querySelectorAll(".menuwithsubmenu");
 const backMenuIcon = document.querySelectorAll(".backMenuIcon");
 const menulink = document.querySelectorAll(".menulink");
+let conditionMet = false;
 
 
 console.log(menuWithSubmenuItems);
@@ -14,15 +15,50 @@ menuWithSubmenuItems.forEach((item) => {
         $(".menuUl > div").css("display", "block");
         $(".menuList > li > a").addClass("displayNone");
         $(e.target).parent().find("ul").removeClass("displayNone");
+      
+        removerLine()
     });
+  
+});
+
+     // Substitua true pela sua própria condição
+   
+// Se a condição for atendida, altere a cor de fundo do pseudo-elemento
+/**
+ * 
+ * $(".menuUl > .voltar").on("click", function (e) {
+   resetMenu();
+    
+})
+
+$("#closerDropMenu").on("click", function (e) {
+  resetMenu();  
+ }
+)
+ */
+$(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
+    resetMenu();
 });
 
 
-$(".menuUl > .voltar").on("click", function (e) {
+function resetMenu(){
     $(".menuUl > div").css("display", "none");
     $(".menuList > li > a").removeClass("displayNone");
     $(".menuwithsubmenu > ul").addClass("displayNone");
-})
+    $(".menuList").removeClass("special");
+}
+function removerLine(){
+      
+    conditionMet = true;
+
+    if (conditionMet) {
+        $("ul.menuList").addClass("special");
+    } else {
+       
+        $("ul.menuList").removeClass("special");
+    }
+    
+}
 
 
 function backToMainMenu(){
@@ -39,9 +75,9 @@ backMenuIcon.forEach((item)=>{
 })
 
 
+ // Substitua true pela sua própria condição
 
-
-
+// Se a condição for atendida, adicione a classe "special" ao elemento
 
 
 
