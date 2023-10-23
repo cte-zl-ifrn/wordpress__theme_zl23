@@ -150,6 +150,7 @@
   .stick
     position: sticky
     top: 0px
+
   .floatingMenu
     display: none
     position: absolute
@@ -159,8 +160,9 @@
     background: $quaternary-color
     width: 100vw
     border-top: 2px solid $tertiary-color
-    padding: 0px 0px
-  
+       
+    padding-bottom: 5vh
+
   #secondFloatUl,#menuList
     margin: 0px 20px 20px
     padding: 0px 30px
@@ -251,6 +253,8 @@
     z-index: 99999
     display: none
     opacity: 0   
+    cursor: pointer
+
   input#dropDownMenu:checked + label ~ #closerDropMenu 
     display: block
   
@@ -416,12 +420,70 @@
   .menuwithsubmenu.opened ul
     display: block
     
+  ul.menuList:before 
+    content: ""
+    display: block
+    width: 346px
+    position: absolute
+    height: 1px
+    background: $tertiary-color
+    top: 43.5vh
+    margin: 0px 30px
+    text-align: center
+    /* justify-content: center; */
+    margin-left: -6vw
   
 
+    
 
+  ul.menuList li:last-child
+    margin-bottom: 39px !important 
+  
+  .voltar
+    position: absolute
+    display: block
+    color: green
+    top: 8vh
+    left: 10vw
+    cursor: pointer
+    margin-top: 2.5vh
+
+  nav.menuUl
+    margin-top: 25px !important
   
 
-   
+  .voltar:after 
+    content: ""
+    position: absolute
+    display: block
+    width: 346px
+    height: 1px
+    top: 3vh
+    z-index: 999
+    background: green
+    margin: 2px auto
+    left: -5vw
+    
 
   
-   
+  .menuwithsubmenu  ul  li:first-child
+    margin-top: 6vh !important
+  
+  
+  ul.menuList.special:before 
+    display: none !important
+
+  li.menuwithsubmenu ul li:last-child:after
+    content: ""
+    display: block
+    width: 346px
+    height: 1px
+    background: green
+    margin-top: 3vh
+    position: absolute
+    left: -5vw
+  
+  .menuwithsubmenu
+    position: relative
+  
+
