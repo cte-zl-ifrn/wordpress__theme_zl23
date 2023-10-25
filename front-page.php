@@ -7,9 +7,9 @@
 <?php foreach ((array) getshotcutMenu()as $menu_item ): ?>  
     <a href='<?php echo $menu_item->url ?>'>
       <div>
-        <?php echo $menu_item->post_title ?>
+        <?php echo formatShotcutMenu($menu_item->post_title) ?>
       </div>
-    </a>;
+    </a>
 <?php endforeach ?>
 </div>
 
@@ -36,14 +36,16 @@ while(have_posts()) {
     <hr>
 <?php }} ?>
 
-<h2>Destaques</h2>
 <div id="featuredMenu">
+<h2>Destaques</h2>
+
 <?php foreach ((array) getFeaturedMenu() as $menu_item ): ?>  
-    <a href='<?php echo $menu_item->post_content ?>' target='<?php echo $menu_item->target ?>'>
+    <a href='<?php echo $menu_item->post_excerpt ?>' target='<?php echo $menu_item->target ?>'>
       <div>
-        <img src='<?php echo $menu_item->post_content ?>' title='<?php echo $menu_item->attr_title ?>' alt='<?php echo $menu_item->attr_title ?>' /><?php echo $menu_item->post_title ?>
+        <?php echo $menu_item->post_thumbnail ?>
+        <?php echo $menu_item->post_title ?>
       </div>
-    </a>;
+    </a>
 <?php endforeach ?>
 </div>
 

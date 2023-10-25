@@ -1,7 +1,6 @@
 <?php
 
 // função para importar arquivos de mídia (css, js)
-
 function importar_arquivos() {
     // CSS
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), '6.4.2', 'all');
@@ -15,6 +14,7 @@ function importar_arquivos() {
 
 function theme_setup() {
     add_theme_support('post-thumbnails');
+    //add_theme_supoort('html5', array ('search-form'));
     register_nav_menus(
         [
             'mainMenu' => 'Principal',
@@ -111,6 +111,12 @@ function getShotcutMenu() {
     //echo "<pre>";var_dump($menu_items);die();
 }
 
+function formatShotcutMenu($string) {
+    $parts = explode('|', $string);
+    $parts = array_map('trim', $parts);
+    return '<span>' . $parts[0] . '</span><span>' . $parts[1] . '</span>';
+}
+
 
 function getFeaturedMenu() {
 	$locations = get_nav_menu_locations();
@@ -120,7 +126,49 @@ function getFeaturedMenu() {
 		return false;
 	}
 
-    return wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => false, 'orderby'=>'menu_order'] );
+    $result = [];
+    foreach ((array) wp_get_nav_menu_items( $menu->term_id, ['update_post_term_cache' => true, 'orderby'=>'menu_order'] ) as $menu_item ) {
+        if ( ($menu_item->object != 'featured-menu') && (!has_post_thumbnail($menu_item->object_id)) ) {
+            continue;
+        }
+        $parts = explode('|', $menu_item->post_title);
+        $post = get_post($menu_item->object_id);
+        $post->post_thumbnail = get_the_post_thumbnail($menu_item->object_id);
+        // echo "<pre>";var_dump($post);die();
+        array_push($result, $post);
+    }
+
+    return $result;
     
     //echo "<pre>";var_dump($menu_items);die();
 }
+
+function wporg_custom_post_type() {
+	register_post_type('featured-menu',
+		array(
+			'labels'      => array(
+				'name'          => __( 'Destaques', 'textdomain' ),
+				'singular_name' => __( 'Destaque', 'textdomain' ),
+			),
+			'public'      => false,
+			'has_archive' => true,
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'show_ui' => true,
+            'supports' => [
+                'title',
+                'excerpt',
+                'thumbnail',
+                // 'editor',
+                // 'revisions',
+                // 'trackbacks',
+                // 'author',
+                // 'page-attributes',
+                // 'custom-fields', 
+                // 'post-formats'
+            ],
+			'rewrite'     => array( 'slug' => 'featured-menu' ), // my custom slug
+		)
+	);
+}
+add_action('init', 'wporg_custom_post_type');

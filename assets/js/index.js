@@ -1,14 +1,14 @@
 
 
 const menuWithSubmenuItems = document.querySelectorAll(".menuwithsubmenu");
-const backMenuIcon = document.querySelectorAll(".backMenuIcon");
+const backMenuIcon = document.querySelector(".backMenuIcon");
 const menulink = document.querySelectorAll(".menulink");
 let conditionMet = false;
 
 
-console.log(menuWithSubmenuItems);
+//console.log(menuWithSubmenuItems);
 console.log(backMenuIcon);
-console.log(menulink);
+//console.log(menulink);
 
 menuWithSubmenuItems.forEach((item) => {
     item.addEventListener("click", (e) => {
@@ -65,14 +65,9 @@ function backToMainMenu(){
     menulink.forEach((link) => {
         link.classList.remove("displayNone");
     });
-    menuWithSubmenuItems.forEach((link)=>{
-       link.style.display = "none";
-    })
 }
 
-backMenuIcon.forEach((item)=>{
-    item.addEventListener(("click"), backToMainMenu);
-})
+backMenuIcon.addEventListener(("click"), backToMainMenu);
 
 
  // Substitua true pela sua própria condição

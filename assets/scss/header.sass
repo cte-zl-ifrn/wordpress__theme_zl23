@@ -10,11 +10,12 @@
     margin: 10px 20px
     align-items: center
     position: relative
-    
+
     section
-        a
-            margin-left: 24px
-            color: $secondary-color
+      a
+        margin-left: 24px
+        color: $secondary-color
+
   .secondSession
     .container
       display: flex
@@ -24,10 +25,10 @@
       section
         a
           margin-left: 24px
-          color: $secondary-color  
+          color: $secondary-color
     nav
-        .container
-            justify-content: space-between
+      .container
+        justify-content: space-between
   
   #searchIcon,#menuMobileIcon
     font-size: 24px
@@ -93,6 +94,12 @@
   form#myForm 
     display: none
 
+  #myForm
+    position: absolute
+    top: 100px
+    left: 50%
+    z-index: 99999
+
   /* Estilos para ocultar o formulário quando o checkbox estiver marcado */
   .toggleForm:checked + label ~ #myForm 
     display: none 
@@ -129,7 +136,7 @@
     display: block    
   input#toggleSearch 
     position: absolute
-    z-index: 333
+    z-index: 999
     top: 0.5vh
     left: calc(100% - 28vw)
     right: 8vw
