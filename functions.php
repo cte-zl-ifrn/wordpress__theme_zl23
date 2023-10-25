@@ -117,6 +117,16 @@ function formatShotcutMenu($string) {
     return '<span>' . $parts[0] . '</span><span>' . $parts[1] . '</span>';
 }
 
+function getWebStories() {
+    // Consulta personalizada para recuperar histórias do Web Stories
+    $args = array(
+        'post_type' => 'web-story', // Post type do Web Stories
+        'posts_per_page' => 5, // Número de histórias para exibir
+    );
+    
+    return new WP_Query($args);
+}
+
 
 function getFeaturedMenu() {
 	$locations = get_nav_menu_locations();
@@ -150,7 +160,7 @@ function wporg_custom_post_type() {
 				'name'          => __( 'Destaques', 'textdomain' ),
 				'singular_name' => __( 'Destaque', 'textdomain' ),
 			),
-			'public'      => false,
+			'public'      => true,
 			'has_archive' => true,
             'exclude_from_search' => true,
             'publicly_queryable' => false,

@@ -36,17 +36,34 @@ while(have_posts()) {
     <hr>
 <?php }} ?>
 
+<?php  
+  $web_stories = getWebStories();
+  if ($web_stories->have_posts()) :
+    while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
+      <div>
+        <a href="<?php the_permalink() ?>">
+          <?php the_post_thumbnail() ?>
+        </a>
+      </div>
+    <?php endwhile;
+    wp_reset_postdata();
+  else :
+    echo 'Nenhuma história encontrada.';
+  endif; 
+?>
+
 <div id="featuredMenu">
 <h2>Destaques</h2>
-
-<?php foreach ((array) getFeaturedMenu() as $menu_item ): ?>  
+<div class="content">
+  <?php foreach ((array) getFeaturedMenu() as $menu_item ): ?>  
     <a href='<?php echo $menu_item->post_excerpt ?>' target='<?php echo $menu_item->target ?>'>
-      <div>
         <?php echo $menu_item->post_thumbnail ?>
-        <?php echo $menu_item->post_title ?>
-      </div>
+        <h3>
+          <?php echo $menu_item->post_title ?>
+        </h3>
     </a>
-<?php endforeach ?>
+    <?php endforeach ?>
+  </div>
 </div>
 
 <?php get_footer(); ?>
