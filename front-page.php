@@ -14,11 +14,12 @@
 </div>
 
 <!-- Notícias -->
+<h2>Notícias</h2>
 <?php
 $count = 0;
 while(have_posts()) {
   the_post(); 
-  if(has_term('noticias', 'category')) {
+  if(has_term('Notícias', 'category')) {
   ?>
     <div class="post-item">
       <a href="<?php the_permalink(); ?>">
@@ -36,6 +37,7 @@ while(have_posts()) {
     <hr>
 <?php }} ?>
 
+<h2>Web Stories</h2>
 <?php  
   $web_stories = getWebStories();
   if ($web_stories->have_posts()) :

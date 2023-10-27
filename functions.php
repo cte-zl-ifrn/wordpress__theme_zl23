@@ -114,7 +114,16 @@ function getShotcutMenu() {
 function formatShotcutMenu($string) {
     $parts = explode('|', $string);
     $parts = array_map('trim', $parts);
-    return '<span>' . $parts[0] . '</span><span>' . $parts[1] . '</span>';
+
+    $parts = explode(' ', $string);
+    $palavras = preg_split('/\s+(?=\S+$)/', $string, 2);
+    
+    if (count($palavras) >= 2) {
+        return '<span>' . $palavras[0] . '</span><span>' . strtoupper($palavras[1]) . '</span>';
+    } else {
+        return '<span>&nbsp</span><span>' . strtoupper($palavras[0]) . '</span>';
+    }
+    return false;
 }
 
 function getWebStories() {

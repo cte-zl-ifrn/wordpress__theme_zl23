@@ -66,7 +66,7 @@
                     <ul class="menuList">
                     <?php 
                     $count = 0;
-                    $sub_menu = false;
+                    $submenu = false;
                     $menuItems = getMainMenu();
 
                     foreach($menuItems as $menu_item):
@@ -93,11 +93,12 @@
                             <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
                             </ul>
                             <?php $submenu = false; 
-                            endif;
+                            endif; 
                         endif; ?>
-                    <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+                    <?php if (array_key_last($menuItems) < $count) :
+                     if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
                     </li>
-                    <?php $submenu = false; endif; ?>
+                    <?php $submenu = false; endif; endif;?>
                         <?php $count++; endforeach; ?>
                     </ul>
                     
@@ -105,7 +106,7 @@
                     <ul class="menuList">
                     <?php 
                     $count = 0;
-                    $sub_menu = false;
+                    $submenu = false;
                     $menuItems = getGovMenu();
 
                     foreach($menuItems as $menu_item):
@@ -125,14 +126,16 @@
                             <li class="item">
                                 <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
                             </li>
-                            <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                            <?php 
+                            if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
                             </ul>
                             <?php $submenu = false; 
                             endif;
                         endif; ?>
-                    <?php if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
+                    <?php if (array_key_last($menuItems) < $count):
+                    if ( $menuItems[ $count + 1 ]->menu_item_parent != $parent_id ): ?>
                     </li>
-                    <?php $submenu = false; endif; ?>
+                    <?php $submenu = false; endif; endif;?>
                         <?php $count++; endforeach; ?>
                     </ul>
                 </nav>
