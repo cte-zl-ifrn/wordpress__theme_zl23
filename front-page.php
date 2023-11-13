@@ -16,10 +16,15 @@
 <!-- Notícias -->
 <h2>Notícias</h2>
 <?php
+$args = array(
+  'category_name' => 'Notícias',
+  'posts_per_page' => 10,
+);
+$noticias = new WP_Query($args);
+
 $count = 0;
-while(have_posts()) {
-  the_post(); 
-  if(has_term('Notícias', 'category')) {
+while($noticias->have_posts()) {
+  $noticias->the_post(); 
   ?>
     <div class="post-item">
       <a href="<?php the_permalink(); ?>">
@@ -35,7 +40,9 @@ while(have_posts()) {
       </a>
     </div>  
     <hr>
-<?php }} ?>
+<?php }; 
+wp_reset_postdata();
+?>
 
 <h2>Web Stories</h2>
 <?php  

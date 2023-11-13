@@ -13,7 +13,7 @@ function importar_arquivos() {
 }
 
 function theme_setup() {
-    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag','post-thumbnails');
     //add_theme_supoort('html5', array ('search-form'));
     register_nav_menus(
         [
