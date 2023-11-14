@@ -1,64 +1,59 @@
-@media screen and (max-width: 390px)
-  header 
-    width: 100%
-    height: 70px
 
+.container
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin: 10px 20px
+  align-items: center
+  position: relative
+
+section
+  a
+    margin-left: 24px
+    color: $secondary-color
+
+@media screen and (max-width: 390px)
+
+.secondSession
   .container
     display: flex
     flex-direction: row
-    justify-content: space-between
+    justify-content: start
     margin: 10px 20px
-    align-items: center
-    position: relative
-
     section
       a
         margin-left: 24px
         color: $secondary-color
-
-  .secondSession
+  nav
     .container
-      display: flex
-      flex-direction: row
-      justify-content: start
-      margin: 10px 20px
-      section
-        a
-          margin-left: 24px
-          color: $secondary-color
-    nav
-      .container
-        justify-content: space-between
-  
-  #searchIcon,#menuMobileIcon
-    font-size: 24px
-  #secondSection
-    display: flex
-    align-items: center
+      justify-content: space-between
 
+#searchIcon,#menuMobileIcon
+  font-size: 24px
+#secondSection
+  display: flex
+  align-items: center
 
-  input
-    width: 82vw
-    position: absolute
-    left: 5vw
-    right: 19vw
-    top: 14vh
-    margin: 0px auto
-    height: 4vh
-    border-radius: 4px
-    padding: 0px 10px
-    border: 1px solid #DBDBDB
-    background: #FFFFFF 0% 0% no-repeat padding-box
-    transition: all 0.3s ease 0s
+input
+  width: 82vw
+  position: absolute
+  left: 5vw
+  right: 19vw
+  top: 14vh
+  margin: 0px auto
+  height: 4vh
+  border-radius: 4px
+  padding: 0px 10px
+  border: 1px solid #DBDBDB
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  transition: all 0.3s ease 0s
 
   #searchTopMenu::placeholder
     padding-left: 10px
-  
 
   #searchTopMenu:focus
     outline: none
- 
- 
+
   #searchTopMenu:before
     content: '2'
     display: block
@@ -68,12 +63,12 @@
     height: 20px
     z-index: 99999
     font-family: 'Font Awesome 5 Free'
-    font-weight: 900  
+    font-weight: 900
   input[type="search"]::-webkit-search-cancel-button
     -webkit-appearance: none
     appearance: none
     display: none
-  i.fa-sharp.fa-solid.fa-circle-xmark 
+  i.fa-sharp.fa-solid.fa-circle-xmark
     position: absolute
     top: 15vh
     left: 80vw
@@ -91,72 +86,64 @@
     left: 79.2vw
     z-index: 9999
     opacity: 0
-  form#myForm 
+  form#myForm
     display: none
 
-  #myForm
-    position: absolute
-    top: 100px
-    left: 50%
-    z-index: 99999
+/* Estilos para ocultar o formulário quando o checkbox estiver marcado */
+.toggleForm:checked + label ~ #myForm
+  display: none
+.toggleForm:checked
+  display: none
 
-  /* Estilos para ocultar o formulário quando o checkbox estiver marcado */
-  .toggleForm:checked + label ~ #myForm 
-    display: none 
-  .toggleForm:checked
-    display: none 
-  
-  #input#toggleSearch
-    width: 28px
-    position: absolute
-    z-index: 999
-    top: 1vh
-    left: 61vw
-    opacity: 0
-  
-  .cardMenuOpen
-    position: absolute
-    background: #F5F5F5
-    width: 100vw
-    min-height: 745px
-    border-top: 2px solid $tertiary-color
-    padding: 16px 29px
+#input#toggleSearch
+  width: 28px
+  position: absolute
+  z-index: 999
+  top: 1vh
+  left: 61vw
+  opacity: 0
 
-  input#toggleSearch    
+.cardMenuOpen
+  position: absolute
+  background: #F5F5F5
+  width: 100vw
+  min-height: 745px
+  border-top: 2px solid $tertiary-color
+  padding: 16px 29px
+
+  input#toggleSearch
     position: absolute
     z-index: 333
     top: 1vh
     left: 15vh
     opacity: 1
-    
-  input#toggleSearch ,#myForm
-    display: block 
 
-  input#toggleSearch:checked + label ~ #myForm 
-    display: block    
-  input#toggleSearch 
-    position: absolute
-    z-index: 999
-    top: 0.5vh
-    left: calc(100% - 28vw)
-    right: 8vw
-    opacity: 0
-    width: 43px
+  input#toggleSearch ,#myForm
+    display: block
+
+input#toggleSearch:checked + label ~ #myForm 
+    display: block
+input#toggleSearch
+  position: absolute
+  z-index: 333
+  top: 0.5vh
+  left: calc(100% - 28vw)
+  right: 8vw
+  opacity: 0
+  width: 43px
 
   #stickContainer
     position: sticky
     top: 0px
   .containerFlex
     margin-top: 100vh
-  
-  i.fa-solid.fa-xmark 
+
+  i.fa-solid.fa-xmark
     font-size: 33px
 
-  
-
-  .stick
-    position: sticky
-    top: 0px
+.stick
+  position: sticky
+  top: 0px
 
   .floatingMenu
     display: none
@@ -167,7 +154,7 @@
     background: $quaternary-color
     width: 100vw
     border-top: 2px solid $tertiary-color
-       
+
     padding-bottom: 5vh
 
   #secondFloatUl,#menuList
@@ -175,52 +162,39 @@
     padding: 0px 30px
     width: 87vw
     border-bottom: 1px solid #359830
-  
-  #menuList ul li 
+
+  #menuList ul li
     margin-bottom: 29px
     color: $secondary-color
-  
+
   #secondFloatUl,#menuList ul li a
     color: $secondary-color
     font-size: $menu-font
     font-weight: 600
-  
- 
-    
-  
-  
-   
-  
-  
-  ul#servSub, #ajudaSub,#noticiasSub,#pesquisaSub,ul#extSub 
+
+  ul#servSub, #ajudaSub,#noticiasSub,#pesquisaSub,ul#extSub
     margin-top: 32px
 
-  
-  
+.menulink span
+  color: $tertiary-color
 
+#secondFloatUl
+  padding: 0px 23px
+  border-block: none
 
- 
-  
-  .menulink span 
-    color: $tertiary-color
-  
-  #secondFloatUl
-    padding: 0px 23px
-    border-block: none
-  
-  #secondFloatUl li
-    margin: 29px 0px
+#secondFloatUl li
+  margin: 29px 0px
 
-  #secondFloatUl li a
-    font-size: 16px
-    font-weight: 600
-    color: $secondary-color
+#secondFloatUl li a
+  font-size: 16px
+  font-weight: 600
+  color: $secondary-color
 
   #secondFloatUl li a span
     color: $tertiary-color
     font-size: 12px
     font-weight: 800
-  
+
   input#dropDownMenu
     position: absolute
     top: 5.3vh
@@ -228,18 +202,18 @@
     opacity: 0
     z-index: 9999
     width: 10vw
-    
+
   #dropDownMenu:checked + label > show
     display: block !important
-  
+
   input#dropDownMenu:checked + label ~ .floatingMenu 
     display: block
-  
-  #dropDownMenu:checked body 
+
+  #dropDownMenu:checked body
     background: red
 
-  #menuList ul li:last-child
-    margin-bottom: 0px !important
+#menuList ul li:last-child
+  margin-bottom: 0px !important
 
   #closerDropDown
     position: absolute
@@ -247,10 +221,10 @@
     left: 51vw
     opacity: 0
     z-index: 9990
-  
-  #closerDropDown:checked + label + input ~ .floatingMenu 
+
+  #closerDropDown:checked + label + input ~ .floatingMenu
     display: block
-  
+
   #closerDropMenu
     position: absolute
     display: block
@@ -259,18 +233,18 @@
     left: 87vw
     z-index: 99999
     display: none
-    opacity: 0   
+    opacity: 0
     cursor: pointer
 
   input#dropDownMenu:checked + label ~ #closerDropMenu 
     display: block
-  
-  #closerDropMenu:checked + label ~ .floatingMenu 
+
+  #closerDropMenu:checked + label ~ .floatingMenu
     display: none !important
-  
-  #dropDownMenu:checked  #dropDownMenu 
+
+  #dropDownMenu:checked  #dropDownMenu
     display: none
-  
+
   .Institucional
     position: absolute
     width: 31vw
@@ -278,21 +252,21 @@
     left: -31vw
     z-index: 33333
     opacity: 0
-  
-  .Institucional:checked + label + .closeInstitucional + label  .menuUl 
-    display: none 
+
+  .Institucional:checked + label + .closeInstitucional + label  .menuUl
+    display: none
 
   input.Institucional:checked + label +  .closeInstitucional + label + #menuList > .menuUl 
     display: none
-  
+
   #institucionalSubMenu
     display: block
     margin-top: 32px
-  
+
   input.Institucional:checked + label +  .closeInstitucional + label + .ensino + label +  .closeEnsino + label + #menuList > #institucionalSubMenu 
     display: block
     margin-top: 32px
-    
+
   #ensinoSubMenu
     display: block
     margin-top: 32px
@@ -304,54 +278,52 @@
     top: 11vh
     left: -32vw
     opacity: 1
-    display: none   
+    display: none
 
   input.Institucional:checked  + label + .closeInstitucional
     display: block
-  
-  input.ensino 
+
+  input.ensino
     width: 25vw
     z-index: 3333
     position: absolute
     top: 30vh
     left: -32vw
-  
 
-  
-  p.backBtn
-    margin-bottom: 12px
-  
-  #horizontalRule
-    position: absolute
-    width: 89vw
-    left: 5vw
-  
-  .instListItens
-    margin-right: 20px 
-  
-  #menuList ul li 
+p.backBtn
+  margin-bottom: 12px
 
-    margin-top: 30px !important
+#horizontalRule
+  position: absolute
+  width: 89vw
+  left: 5vw
 
-  i.fa-solid.fa-universal-access 
-    font-size: 30px
-    position: absolute
-    left: 32vw
-    top: 1vh
-  
-  [vw] [vw-access-button] img
-    max-height: 50px
-    transition: all .5s ease
-    border-radius: 79px
-    opacity: 1 !important
-    visibility: hidden !important
-    z-index: 333
+.instListItens
+  margin-right: 20px
 
-  [vw] [vw-access-button] .access-button
-    width: 33px
-    height: 33px
-    z-index: 1
-    visibility: initial !important
+#menuList ul li
+
+  margin-top: 30px !important
+
+i.fa-solid.fa-universal-access
+  font-size: 30px
+  position: absolute
+  left: 32vw
+  top: 1vh
+
+[vw] [vw-access-button] img
+  max-height: 50px
+  transition: all .5s ease
+  border-radius: 79px
+  opacity: 1 !important
+  visibility: hidden !important
+  z-index: 333
+
+[vw] [vw-access-button] .access-button
+  width: 33px
+  height: 33px
+  z-index: 1
+  visibility: initial !important
 
   [vw] [vw-access-button]
     flex-direction: row-reverse
@@ -365,16 +337,16 @@
     right: 38vw !important
     bottom: 46.5vh !important
     left: auto !important
-  
-  div[vw] 
+
+  div[vw]
     z-index: 333 !important
 
     margin-top: 30px !important
 
   .displayNone
     display: none !important
-  
-  ul.menuUl 
+
+  ul.menuUl
     margin-bottom: 40px
 
   a span i
@@ -383,51 +355,50 @@
     color: green
     margin-left: 10px
     font-family: "Font Awesome 6 Free"
-   
+
   i.fa-solid.fa-arrow-up-right-from-square
     color: black
-  
+
   ul.menuList
     padding: 20px 0px 0px 0px
     display: block
     margin-left: 42px
-  
-  ul.menuList li 
+
+  ul.menuList li
     margin-bottom: 24px
     color: $secondary-color
-   
-  ul.menuList 
-      li:last-child
-        margin-bottom: 0px !important
 
-  ul.menuList li a 
+  ul.menuList
+    li:last-child
+      margin-bottom: 0px !important
+
+  ul.menuList li a
     font-size: 16px
     font-weight: 600
     color: $secondary-color
     margin-bottom: 0px !important
 
+.menuUl > div
+  display: none
 
-  .menuUl > div
-    display: none
+.menuList:before
+  content: ''
+  display: block
+  position: absolute
+  color: #000
+  width: 210px
+  height: 2px
+  z-index: 99999
+  font-weight: 900
+  top: 20px
 
-  .menuList:before
-    content: ''
-    display: block
-    position: absolute
-    color: #000
-    width: 210px
-    height: 2px
-    z-index: 99999
-    font-weight: 900
-    top: 20px
-
-  .menuwithsubmenu.opened a
-    display: none
+.menuwithsubmenu.opened a
+  display: none
 
   .menuwithsubmenu.opened ul
     display: block
-    
-  ul.menuList:before 
+
+  ul.menuList:before
     content: ""
     display: block
     width: 346px
@@ -439,13 +410,10 @@
     text-align: center
     /* justify-content: center; */
     margin-left: -6vw
-  
-
-    
 
   ul.menuList li:last-child
-    margin-bottom: 39px !important 
-  
+    margin-bottom: 39px !important
+
   .voltar
     position: absolute
     display: block
@@ -455,11 +423,11 @@
     cursor: pointer
     margin-top: 2.5vh
 
-  nav.menuUl
-    margin-top: 25px !important
-  
+nav.menuUl
+  margin-top: 25px !important
+  padding: 21px 0px
 
-  .voltar:after 
+  .voltar:after
     content: ""
     position: absolute
     display: block
@@ -470,15 +438,12 @@
     background: green
     margin: 2px auto
     left: -5vw
-    
 
-  
-  .menuwithsubmenu  ul  li:first-child
-    margin-top: 6vh !important
-  
-  
-  ul.menuList.special:before 
-    display: none !important
+.menuwithsubmenu  ul  li:first-child
+  margin-top: 6vh !important
+
+ul.menuList.special:before
+  display: none !important
 
   li.menuwithsubmenu ul li:last-child:after
     content: ""
@@ -489,8 +454,6 @@
     margin-top: 3vh
     position: absolute
     left: -5vw
-  
+
   .menuwithsubmenu
     position: relative
-  
-

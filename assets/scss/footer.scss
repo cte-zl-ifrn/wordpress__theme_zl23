@@ -1,0 +1,46 @@
+#mainFooter {
+   min-height: 220px;
+   background: #44484B;
+   position: relative;
+   top: 58vh;
+ }
+ 
+ #contactArea {
+   text-align: center;
+   color: $primary-color;
+   font: $menu-font;
+   font-size: 16px;
+   font-weight: 400;
+   padding: 24px 33px;
+   
+   span {
+     font-size: 16px;
+     font-weight: 800;
+     color: $tertiary-color;
+   }
+ 
+   #addressFooter {
+     margin-top: 32px;
+ 
+     font-size: 14px;
+     font-weight: 400;
+     color: $primary-color;
+     line-height: 1.5em;
+   }
+ }
+ 
+ #footerIcons {
+   text-align: center;
+ 
+   a i {
+     font-family: "Font Awesome 6 Brands";
+     font-size: 24px;
+     color: $primary-color;
+     margin-left: 32px;
+   }
+ 
+   section#footerIcons {
+     padding-bottom: 31px !important;
+   }
+ }
+ 

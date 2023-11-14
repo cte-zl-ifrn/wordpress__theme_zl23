@@ -6,10 +6,6 @@ const menulink = document.querySelectorAll(".menulink");
 let conditionMet = false;
 
 
-//console.log(menuWithSubmenuItems);
-console.log(backMenuIcon);
-//console.log(menulink);
-
 menuWithSubmenuItems.forEach((item) => {
     item.addEventListener("click", (e) => {
         $(".menuUl > div").css("display", "block");
@@ -17,14 +13,32 @@ menuWithSubmenuItems.forEach((item) => {
         $(e.target).parent().find("ul").removeClass("displayNone");
       
         removerLine()
+      
     });
   
 });
+
 
      // Substitua true pela sua própria condição
    
 // Se a condição for atendida, altere a cor de fundo do pseudo-elemento
 /**
+ * 
+ * function hideLi(){
+    $(document).ready(function() {
+        // Usando each para percorrer cada elemento <li> dentro da lista
+        $("ul.menuList li").each(function() {
+          // Verifica se o elemento não possui a classe "menuwithsubmenu" e não possui a classe "willNotBeHide"
+          if (!$(this).hasClass("menuwithsubmenu") && !$(this).hasClass("willNotBeHide")) {
+            // Adiciona a classe "hide"
+            $(this).addClass("hide");
+          }
+        });
+      });
+    
+}
+ * 
+ * 
  * 
  * $(".menuUl > .voltar").on("click", function (e) {
    resetMenu();
@@ -68,6 +82,7 @@ function backToMainMenu(){
 }
 
 backMenuIcon.addEventListener(("click"), backToMainMenu);
+
 
 
  // Substitua true pela sua própria condição

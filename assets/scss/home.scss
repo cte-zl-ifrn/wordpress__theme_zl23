@@ -1,0 +1,74 @@
+.carousel-item{
+  height: 168px;
+}
+.carousel-indicators button[type="button"] {
+  height: 5px;
+  border-radius: 50%;
+  width: 5px;
+}
+
+.carousel-indicators button.active {
+  background-color: green !important;
+}
+
+#carouselExampleIndicators {
+  height: 87px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.carousel-secondClass{
+  height: 87px;
+  text-align: center;
+}
+.carousel-item span{
+   color: $secondary-color;
+   font-weight: bold;
+}
+.secondCarousel:before{
+    content: "|";
+    color: $secondary-color;
+    font-weight: 100;
+    font-size: 22px;
+    opacity: 0.5;
+ 
+
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.carousel-item span {
+  color: $secondary-color;
+  font-weight: 100;
+  line-height: 4vh;
+}
+
+.carousel-item h6 {
+  color: $secondary-color;
+  font-weight: bold;
+  line-height: 4vh; 
+}
+
+.carousel-indicators {
+ 
+
+  margin-bottom: -0.5rem !important;
+ 
+}
+
+.carousel-indicators.carrouselSubMenu {
+  /* margin-top: 1px; */
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
