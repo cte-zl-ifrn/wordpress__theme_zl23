@@ -1,18 +1,18 @@
 
 
-const menuWithSubmenuItems = document.querySelectorAll(".menuwithsubmenu");
-const backMenuIcon = document.querySelector(".backMenuIcon");
-const menulink = document.querySelectorAll(".menulink");
+const menuWithSubmenuItems = document.querySelectorAll(".menu-item-has-children");
+const backMenuIcon = document.querySelectorAll(".backMenuIcon");
+const menulink = document.querySelectorAll(".menu a");
 let conditionMet = false;
 
 
 menuWithSubmenuItems.forEach((item) => {
     item.addEventListener("click", (e) => {
-        $(".menuUl > div").css("display", "block");
-        $(".menuList > li > a").addClass("displayNone");
-        $(e.target).parent().find("ul").removeClass("displayNone");
+        $(".menuUl > .voltar").css("display", "block");
+        $(".menu > li > a").addClass("sub-menu");
+        $(e.target).parent().find("ul").removeClass("sub-menu");
       
-        removerLine()
+        //  removerLine()
       
     });
   
@@ -56,20 +56,20 @@ $(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
 
 
 function resetMenu(){
-    $(".menuUl > div").css("display", "none");
-    $(".menuList > li > a").removeClass("displayNone");
-    $(".menuwithsubmenu > ul").addClass("displayNone");
-    $(".menuList").removeClass("special");
+    $(".menuUl > .voltar").css("display", "none");
+    $(".menu > li > a").removeClass("sub-menu");
+    $(".menu-item-has-children > ul").addClass("sub-menu");
+    $(".menu").removeClass("special");
 }
 function removerLine(){
       
     conditionMet = true;
 
     if (conditionMet) {
-        $("ul.menuList").addClass("special");
+        $("ul.menu").addClass("special");
     } else {
        
-        $("ul.menuList").removeClass("special");
+        $("ul.menu").removeClass("special");
     }
     
 }
@@ -77,18 +77,22 @@ function removerLine(){
 
 function backToMainMenu(){
     menulink.forEach((link) => {
-        link.classList.remove("displayNone");
+        link.classList.remove("sub-menu");
     });
+    menuWithSubmenuItems.forEach((link)=>{
+       link.style.display = "none";
+    })
 }
 
-backMenuIcon.addEventListener(("click"), backToMainMenu);
+backMenuIcon.forEach((item)=>{
+    item.addEventListener(("click"), backToMainMenu);
+})
 
 
 
  // Substitua true pela sua própria condição
 
 // Se a condição for atendida, adicione a classe "special" ao elemento
-
 
 
 

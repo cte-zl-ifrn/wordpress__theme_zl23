@@ -22,7 +22,7 @@
     </footer>
     
     <!-- User Way -->
-    <script>
+    <!-- <script>
     (function(d){
         var s = d.createElement("script");
         /* uncomment the following line to override default position*/
@@ -46,12 +46,12 @@
         (d.body || d.head).appendChild(s);
     })(document)
     </script>
-    <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+    <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript> -->
 
-    <!-- VLibras -->
-    <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+
+    <!-- <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script> -->
 
     <?php wp_footer(); ?>
 </body>

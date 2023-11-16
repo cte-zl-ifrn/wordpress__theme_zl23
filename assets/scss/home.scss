@@ -1,6 +1,7 @@
-.carousel-item{
+.carousel-item {
   height: 168px;
 }
+
 .carousel-indicators button[type="button"] {
   height: 5px;
   border-radius: 50%;
@@ -20,25 +21,28 @@
   margin-top: 14px;
 }
 
-.carousel-secondClass{
+.carousel-secondClass {
   height: 87px;
   text-align: center;
 }
-.carousel-item span{
-   color: $secondary-color;
-   font-weight: bold;
+
+.carousel-item span {
+  color: $secondary-color;
+  font-weight: bold;
 }
-.secondCarousel:before{
-    content: "|";
-    color: $secondary-color;
-    font-weight: 100;
-    font-size: 22px;
-    opacity: 0.5;
- 
+
+.secondCarousel:before {
+  content: "|";
+  color: $secondary-color;
+  font-weight: 100;
+  font-size: 22px;
+  opacity: 0.5;
+
 
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
   position: absolute;
 
   z-index: 1;
@@ -58,17 +62,14 @@
 .carousel-item h6 {
   color: $secondary-color;
   font-weight: bold;
-  line-height: 4vh; 
+  line-height: 4vh;
 }
 
 .carousel-indicators {
- 
-
   margin-bottom: -0.5rem !important;
- 
 }
 
 .carousel-indicators.carrouselSubMenu {
   /* margin-top: 1px; */
-  border-top: 1px solid rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
