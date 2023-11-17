@@ -1,5 +1,23 @@
 .carousel-item {
   height: 168px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: brightness(0.7);
+  padding: 10px 20px;
+  a {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(50px);
+    padding: 12px 8px;
+    margin: 8px 15%;
+  }
+  p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1875rem;
+    text-shadow: 0px 3px 6px #00000029;
+  }
 }
 
 .carousel-indicators button[type="button"] {
@@ -44,13 +62,12 @@
 .carousel-control-next,
 .carousel-control-prev {
   position: absolute;
-
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .carousel-item span {

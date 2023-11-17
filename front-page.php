@@ -4,10 +4,9 @@
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 <?php foreach((array) getSlideMenu() as $menu_item): ?>
-      <div class="carousel-item active bg-black" data-bs-interval="10000">
+      <div class="carousel-item active" data-bs-interval="10000" style="background-image: url('<?php echo get_the_post_thumbnail_url($menu_item->ID, 'full'); ?>')">
         <a href="<?php echo $menu_item->post_excerpt ?>">
           <p><?php echo $menu_item->post_title ?></p>
-          <img src="<?php echo get_the_post_thumbnail_url($menu_item->ID, 'full'); ?>" class="d-block w-100" alt="...">
         </a>
       </div>
 <?php endforeach ?>
