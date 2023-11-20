@@ -35,6 +35,7 @@
 <!-- Notícias -->
 <section id = "noticias">
 <h2>Notícias</h2>
+<a href="<?php echo site_url('/categoria/noticias') ?>">Mais Notícias</a>
 <div class = "noticias-grid">
   <?php
   $args = array(

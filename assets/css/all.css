@@ -543,37 +543,27 @@ li.menu-item-has-children > a:after {
 
 #mainFooter {
   min-height: 220px;
-  background: #44484B;
   position: relative;
-  top: 58vh; }
+  color: #2B2B2B; }
 
 #contactArea {
-  text-align: center;
-  color: #fff;
   font: norma, 600, 16px/22px, Open Sans;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 24px 33px; }
-  #contactArea span {
-    font-size: 16px;
-    font-weight: 800;
-    color: #359830; }
+  font-size: 14px;
+  font-weight: 600;
+  padding: 24px 33px;
+  display: grid;
+  gap: 16px; }
   #contactArea #addressFooter {
-    margin-top: 32px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
     line-height: 1.5em; }
 
 #footerIcons {
-  text-align: center; }
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding-bottom: 31px; }
   #footerIcons a i {
     font-family: "Font Awesome 6 Brands";
-    font-size: 24px;
-    color: #fff;
-    margin-left: 32px; }
-  #footerIcons section#footerIcons {
-    padding-bottom: 31px !important; }
+    font-size: 24px; }
 
 .carousel-item {
   height: 168px;
@@ -583,7 +573,7 @@ li.menu-item-has-children > a:after {
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(50px);
     padding: 12px 8px;
     margin: 8px 17%;
     height: 92%; }
@@ -654,7 +644,7 @@ li.menu-item-has-children > a:after {
 #noticias {
   margin-top: 40px; }
   #noticias h2 {
-    font: 700 36px/49px Open Sans; }
+    font: normal normal bold 2.25rem/49px Open Sans; }
 
 .noticias-grid {
   margin: 12px 28px;

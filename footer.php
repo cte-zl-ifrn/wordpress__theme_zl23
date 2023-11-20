@@ -1,23 +1,21 @@
 <footer id="mainFooter">
         <div id="contactArea">
-            <p>
-                <span>Contatos</span> - (84) 3092-8900 | (84) 30928902
-            </p>
-            <p id="addressFooter">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte ©2011.
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/TAG-E-mec.png' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/svg/Logo-IFRN-ZL.svg' ?>" alt="">
+            <p id="addressFooter">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte ©2011. 
                 Todos os direitos reservados. Av. Senador Salgado Filho, 1559 - Natal / RN CEP: 59015-000</p>
+            <p>Contatos - (84) 3092-8900 | (84) 30928902</p>
         </div>
-        <div class="secondColun">
-            <section id="footerIcons">
-                <a href="https://www.facebook.com/ifrnzonaleste">
-                    <i class="fa-brands fa-square-facebook" alt="incone facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/ifrnzonaleste/">
-                    <i class="fa-brands fa-instagram" alt="icone facebook ifrn-zl"></i>
-                </a>
-                <a href="https://www.youtube.com/c/ifrncampusead">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </section>
+        <div id="footerIcons">
+            <a href="https://www.facebook.com/ifrnzonaleste">
+                <i class="fa-brands fa-square-facebook" alt="Acessar Facebook "></i>
+            </a>
+            <a href="https://www.instagram.com/ifrnzonaleste/">
+                <i class="fa-brands fa-instagram" alt="Acessar Instragram"></i>
+            </a>
+            <a href="https://www.youtube.com/c/ifrncampusead">
+                <i class="fa-brands fa-youtube" alt="Acessar Youtube"></i>
+            </a>
         </div>
     </footer>
     
