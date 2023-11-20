@@ -33,35 +33,39 @@
 </div>
 
 <!-- Notícias -->
+<section id = "noticias">
 <h2>Notícias</h2>
-<?php
-$args = array(
-  'category_name' => 'Notícias',
-  'posts_per_page' => 10,
-);
-$noticias = new WP_Query($args);
+<div class = "noticias-grid">
+  <?php
+  $args = array(
+    'category_name' => 'Notícias',
+    'posts_per_page' => 10,
+  );
+  $noticias = new WP_Query($args);
 
-$count = 0;
-while($noticias->have_posts()) {
-  $noticias->the_post(); 
-  ?>
-    <div class="post-item">
-      <a href="<?php the_permalink(); ?>">
-        <?php if (has_post_thumbnail() && $count < 2) { ?>
-          <div>
-            <?php the_post_thumbnail('thumbnail'); ?>
+  $count = 0;
+  while($noticias->have_posts()) {
+    $noticias->the_post(); 
+    ?>
+      <div class="card">
+        <a href="<?php the_permalink(); ?>">
+          <?php if (has_post_thumbnail() && $count < 2) { 
+            $thumbnail_alt = esc_attr(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true));?>
+            <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" class="card-img-top" alt="<?php echo $thumbnail_alt; ?>">
+          <?php }
+          $count++;
+          ?>
+          <div class="card-body">
+            <span><?php the_time('d \d\e F \d\e Y'); ?></span>
+            <p class="card-text"><?php the_title(); ?></p>
           </div>
-        <?php }
-        $count++;
-        ?>
-        <p><?php the_time('d \d\e F \d\e Y'); ?></p>
-        <h2><?php the_title(); ?></h2>
-      </a>
-    </div>  
-    <hr>
-<?php }; 
-wp_reset_postdata();
-?>
+        </a>
+      </div>  
+  <?php }; 
+  wp_reset_postdata();
+  ?>
+</div>
+</section>
 
 <h2>Web Stories</h2>
 <?php  
