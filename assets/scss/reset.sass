@@ -1,6 +1,5 @@
 *, *:before, *:after
   box-sizing: border-box
- 
 
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
   margin: 0
@@ -23,6 +22,8 @@ body
 
 ol, ul
   list-style: none
+  padding: 0
+  margin: 0
 
 blockquote, q
   quotes: none
@@ -35,16 +36,17 @@ table
   border-collapse: collapse
   border-spacing: 0
 
-
+span
+  display: inline-block !important
 
 a
-    text-decoration: none
+  text-decoration: none !important
 hr
-    margin: 0
-    padding: 0
-    line-height: 0
-    color: $secondary-color
-    border-color: 'green'
-    border-style: solid
+  margin: 0
+  padding: 0
+  line-height: 0
+  color: $secondary-color
+  border-color: 'green'
+  border-style: solid
 i
   color: $secondary-color

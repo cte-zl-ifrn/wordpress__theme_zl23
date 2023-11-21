@@ -1,112 +1,100 @@
 
-let institucional = document.querySelector('#institucional');
-let SubMenuInstitucional = document.querySelector('#institucionalSubMenu');
-let ensinoSubMenu = document.querySelector('#ensinoSubMenu');
-const preventDefault = (event) => event.preventDefault();
-let menu = document.querySelector('.menuUl');
-let backBtn = document.querySelectorAll('.backBtn');
-let ensinoLink = document.querySelector('#ensinoLink');
-let pesquisaSub = document.querySelector('#pesquisaSub');
-let pesquisaLink = document.querySelector('#pesquisaLink');
-let extSub = document.querySelector('#extSub');
-let extLink = document.querySelector('#extLink');
-let noticiasSub = document.querySelector('#noticiasSub');
-let noticiasLink = document.querySelector('#noticiasLink');
-let ajudaLink = document.querySelector('#ajudaLink');
-let ajudaSub = document.querySelector('#ajudaSub');
-let servLink = document.querySelector('#servLink');
-let servSub = document.querySelector('#servSub');
-let body =  document.querySelector('body');
-const dropDownMenu = document.querySelector('#dropDownMenu');
+
+const menuWithSubmenuItems = document.querySelectorAll(".menu-item-has-children");
+const backMenuIcon = document.querySelectorAll(".backMenuIcon");
+const menulink = document.querySelectorAll(".menu a");
+let conditionMet = false;
 
 
-
-
-
-
-
-//eventos do menu 
-institucional.addEventListener('click',function(){
-    preventDefault(event);
-    SubMenuInstitucional.classList.remove('displayNone');
-    menu.classList.add('displayNone');
-        
-})
-
-
-ensinoLink.addEventListener('click',function(){
-    preventDefault(event);
-    ensinoSubMenu.classList.remove('displayNone');
-    SubMenuInstitucional.classList.add('displayNone');
-    menu.classList.add('displayNone');
-   
-})
-
-pesquisaLink.addEventListener('click',function(){
-    preventDefault(event);
-    pesquisaSub.classList.remove('displayNone');
-    
-    menu.classList.add('displayNone');
-   
-})
-
-extLink.addEventListener('click',function(){
-    preventDefault(event);
-    extSub.classList.remove('displayNone');
-    
-    menu.classList.add('displayNone');
-   
-})
-
-noticiasLink.addEventListener('click',function(){
-    preventDefault(event);
-    noticiasSub.classList.remove('displayNone');
-    
-    menu.classList.add('displayNone');
-   
-})
-
-ajudaLink.addEventListener('click',function(){
-    preventDefault(event);
-    ajudaSub.classList.remove('displayNone');
-    
-    menu.classList.add('displayNone');
-   
-})
-
-servLink.addEventListener('click',function(){
-    preventDefault(event);
-    servSub.classList.remove('displayNone');
-    
-    menu.classList.add('displayNone');
-    servLink.classList.add('displayNone');
-   
-}
-)
-
-
-backBtn.forEach(element => {
-    element.addEventListener('click',function(){
-        preventDefault(event);
-        ensinoSubMenu.classList.add('displayNone');
-        SubMenuInstitucional.classList.add('displayNone');
-        pesquisaSub.classList.add('displayNone');
-        extSub.classList.add('displayNone');
-        menu.classList.remove('displayNone');
-        noticiasSub.classList.add('displayNone');
-        ajudaSub.classList.add('displayNone');
-        servSub.classList.add('displayNone');   
-       servLink.classList.remove('displayNone');
-    })
+menuWithSubmenuItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        $(".menuUl > .voltar").css("display", "block");
+        $(".menu > li > a").addClass("sub-menu");
+        $(e.target).parent().find("ul").removeClass("sub-menu");
+      
+        //  removerLine()
+      
+    });
+  
 });
 
 
-
-dropDownMenu.addEventListener('click',function(){
-  
+     // Substitua true pela sua própria condição
    
+// Se a condição for atendida, altere a cor de fundo do pseudo-elemento
+/**
+ * 
+ * function hideLi(){
+    $(document).ready(function() {
+        // Usando each para percorrer cada elemento <li> dentro da lista
+        $("ul.menuList li").each(function() {
+          // Verifica se o elemento não possui a classe "menuwithsubmenu" e não possui a classe "willNotBeHide"
+          if (!$(this).hasClass("menuwithsubmenu") && !$(this).hasClass("willNotBeHide")) {
+            // Adiciona a classe "hide"
+            $(this).addClass("hide");
+          }
+        });
+      });
+    
+}
+ * 
+ * 
+ * 
+ * $(".menuUl > .voltar").on("click", function (e) {
+   resetMenu();
+    
 })
-//evento de retorno do menu
+
+$("#closerDropMenu").on("click", function (e) {
+  resetMenu();  
+ }
+)
+ */
+$(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
+    resetMenu();
+});
+
+
+function resetMenu(){
+    $(".menuUl > .voltar").css("display", "none");
+    $(".menu > li > a").removeClass("sub-menu");
+    $(".menu-item-has-children > ul").addClass("sub-menu");
+    $(".menu").removeClass("special");
+}
+function removerLine(){
+      
+    conditionMet = true;
+
+    if (conditionMet) {
+        $("ul.menu").addClass("special");
+    } else {
+       
+        $("ul.menu").removeClass("special");
+    }
+    
+}
+
+
+function backToMainMenu(){
+    menulink.forEach((link) => {
+        link.classList.remove("sub-menu");
+    });
+    menuWithSubmenuItems.forEach((link)=>{
+       link.style.display = "none";
+    })
+}
+
+backMenuIcon.forEach((item)=>{
+    item.addEventListener(("click"), backToMainMenu);
+})
+
+
+
+ // Substitua true pela sua própria condição
+
+// Se a condição for atendida, adicione a classe "special" ao elemento
+
+
 
 
 

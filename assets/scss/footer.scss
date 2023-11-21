@@ -1,0 +1,32 @@
+#mainFooter {
+   min-height: 220px;
+   position: relative;
+   color: #2B2B2B;
+ }
+ 
+ #contactArea {
+   font: $menu-font;
+   font-size: 14px;
+   font-weight: 600;
+   padding: 24px 33px;
+   display: grid;
+   gap: 16px;
+
+   #addressFooter {
+     line-height: 1.5em;
+   }
+ }
+ 
+ #footerIcons {
+   display: flex;
+   justify-content: center;
+   gap: 32px;
+   a i {
+     font-family: "Font Awesome 6 Brands";
+     font-size: 24px;
+   }
+
+  padding-bottom: 31px;
+
+ }
+ 
