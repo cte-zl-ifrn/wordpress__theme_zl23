@@ -54,6 +54,30 @@ hr {
 i {
   color: #44484B; }
 
+body {
+  color: #2B2B2B; }
+
+strong,
+b {
+  font-weight: bold; }
+
+a {
+  color: #359830;
+  text-decoration: underline; }
+
+.first-title {
+  font: 700 36px/49px Open Sans; }
+
+.second-title {
+  font: normal normal bold 24px/33px Open Sans; }
+
+.third-title {
+  font: normal normal bold 20px/27px Open Sans; }
+
+.text {
+  font: normal normal normal 16px/24px Open Sans;
+  margin-bottom: .5rem; }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -464,10 +488,10 @@ ul.menu li a {
 .menu-item-has-children.opened ul {
   display: block; }
 
-ul#menu-mainmenu:after {
+ul#menu-barra-governo:after, ul#menu-mainmenu:after {
   content: "";
   display: block;
-  width: 90%;
+  width: 90vw;
   height: 1px;
   background: #359830;
   text-align: center;
@@ -519,6 +543,17 @@ li.menu-item-has-children > a:after {
   color: green;
   font-size: 10px;
   margin-left: 5px; }
+
+#menu-barra-governo li:not(.menu-item-has-children) > a:after {
+  content: "\f08e";
+  font-family: "Font Awesome 6 Free";
+  width: 5px;
+  height: 5px;
+  font-size: 10px;
+  margin-left: 5px; }
+
+#menu-barra-governo li.menu-item-has-children > a:after {
+  color: #2E2E2E; }
 
 .voltar:before {
   content: "\f053";
@@ -641,13 +676,22 @@ li.menu-item-has-children > a:after {
   /* margin-top: 1px; */
   border-top: 1px solid rgba(0, 0, 0, 0.2); }
 
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px; }
+  .header-section a {
+    color: #359830;
+    text-transform: uppercase;
+    font: normal normal 600 14px/19px Open Sans; }
+
 #noticias {
-  margin-top: 40px; }
+  margin: 40px 28px; }
   #noticias h2 {
-    font: normal normal bold 2.25rem/49px Open Sans; }
+    font: 700 36px/49px Open Sans; }
 
 .noticias-grid {
-  margin: 12px 28px;
   display: grid;
   gap: 1rem; }
   .noticias-grid .card {
@@ -688,3 +732,66 @@ li.menu-item-has-children > a:after {
       #featuredMenu .content a img {
         max-width: 100%;
         height: auto; }
+
+.post-title {
+  font: normal normal bold 24px/33px Open Sans;
+  color: #2B2B2B; }
+
+#post {
+  color: #2B2B2B;
+  margin: 40px 28px; }
+  #post p {
+    font: normal normal normal 16px/24px Open Sans;
+    margin-bottom: .5rem; }
+  #post figure {
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  #post span {
+    font: normal normal 600 14px/19px Open Sans;
+    color: #AAA; }
+  #post sub {
+    font: normal normal 600 12px/17px Open Sans;
+    color: #AAA; }
+  #post h2 {
+    font: normal normal bold 20px/27px Open Sans;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem; }
+  #post .share-post {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2rem; }
+    #post .share-post span {
+      color: #44484B; }
+    #post .share-post .share-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: .5rem; }
+      #post .share-post .share-grid div {
+        border: 1px solid #DBDBDB;
+        border-radius: 4px;
+        padding: .5rem; }
+
+#page {
+  margin: 40px 28px; }
+  #page h1 {
+    margin-bottom: 1rem; }
+  #page h2 {
+    font: normal normal bold 24px/33px Open Sans;
+    margin-top: 2rem;
+    margin-bottom: .5rem; }
+  #page h3 {
+    font: normal normal bold 20px/27px Open Sans;
+    margin-top: 1rem;
+    margin-bottom: .5rem; }
+
+#archive {
+  margin: 40px 28px; }
+  #archive .archive-card {
+    margin-top: 2rem;
+    padding-bottom: 2rem; }
+  #archive .archive-card::after {
+    height: 1px;
+    width: 30%;
+    margin: 0 auto;
+    background: #DBDBDB; }
