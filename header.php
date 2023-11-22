@@ -15,7 +15,9 @@
         <div class="containerSeparator">
             <div class="container">
                 <div class="firstColun">
-                    <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Gov.br_logo.svg" alt="gov.br">
+                    <a href="https://www.gov.br/pt-br">
+                        <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Gov.br_logo.svg" alt="gov.br">
+                    </a>
                 </div>
                 <div class="secondColun">
                     <section>
@@ -44,7 +46,7 @@
         <div class="floatingMenu">
             <div class="container">
                 <div class="firstColun">
-                    <a href="https://www.gov.br/pt-br">
+                    <a href="<?php echo site_url(); ?>">
                         <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png"
                             alt="gov.br">
                     </a>
@@ -85,7 +87,9 @@
     <div class="stick" style="position: sticky; top: 0;">
         <div id="stickContainer" class="container">
             <div class="firstColun">
-                <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png" alt="gov.br">
+                <a href="<?php echo site_url(); ?>">
+                    <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png" alt="gov.br">
+                </a>
             </div>
             <div class="secondColun" id="secondSection">
                 <section>

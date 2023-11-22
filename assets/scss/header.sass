@@ -410,10 +410,10 @@ ul.menu li a
 .menu-item-has-children.opened ul
   display: block
 
-ul#menu-mainmenu:after
+ul#menu-barra-governo:after, ul#menu-mainmenu:after
   content: ""
   display: block
-  width: 90%
+  width: 90vw
   // position: absolute
   height: 1px
   background: $tertiary-color
@@ -478,6 +478,17 @@ li.menu-item-has-children > a:after
   color: green
   font-size: 10px
   margin-left: 5px
+
+#menu-barra-governo
+  li:not(.menu-item-has-children) > a:after
+    content: "\f08e"
+    font-family: "Font Awesome 6 Free"
+    width: 5px
+    height: 5px
+    font-size: 10px
+    margin-left: 5px
+  li.menu-item-has-children > a:after
+    color: #2E2E2E
 
 .voltar:before
   content: "\f053"
