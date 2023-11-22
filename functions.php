@@ -6,7 +6,6 @@ function importar_arquivos() {
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2', 'all');
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), '6.4.2', 'all');
     wp_enqueue_style('open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@100;500;700&display=swap', array(), null);
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/caminho-para-seu-arquivo.css');
     wp_enqueue_style('estilos', get_template_directory_uri() . '/assets/css/all.css', array(), null, 'all');
 
     //JS

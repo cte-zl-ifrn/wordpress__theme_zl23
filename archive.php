@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-  <h1>
+<section id="archive">
+  <h1 class="first-title">
     <?php if(is_category()) {
       single_cat_title();
     } elseif (is_tag()) {
@@ -21,14 +22,16 @@
   <?php  
   while(have_posts()) {
     the_post(); ?>
-    <h3><?php the_title(); ?></h3>
-    <span><?php the_time('d \d\e F \d\e Y'); ?></span>
-    <p><?php echo wp_trim_words(get_the_content(), 25); ?></p>
-    <a href="<?php the_permalink(); ?>">Leia Mais >></a>
-    <hr>
+    <div class="archive-card">
+      <h2 class="third-title"><?php the_title(); ?></h3>
+      <span><?php the_time('d \d\e F \d\e Y'); ?></span>
+      <p class="text"><?php echo wp_trim_words(get_the_content(), 25); ?></p>
+      <a href="<?php the_permalink(); ?>">Leia Mais >></a>
+    </div>
   <?php } 
     // Paginação
     the_posts_pagination();
   ?>
+</section>
 
 <?php get_footer(); ?>
