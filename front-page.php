@@ -34,13 +34,15 @@
 
 <!-- Notícias -->
 <section id = "noticias">
-<h2>Notícias</h2>
-<a href="<?php echo site_url('/categoria/noticias') ?>">Mais Notícias</a>
+<div class="header-section">
+  <h2>Notícias</h2>
+  <a href="<?php echo site_url('/categoria/noticias') ?>">Mais Notícias ></a>
+</div>
 <div class = "noticias-grid">
   <?php
   $args = array(
     'category_name' => 'Notícias',
-    'posts_per_page' => 10,
+    'posts_per_page' => 5,
   );
   $noticias = new WP_Query($args);
 

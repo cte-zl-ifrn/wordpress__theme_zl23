@@ -94,8 +94,21 @@
 
 // Notícias
 
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+
+  a {
+    color: $tertiary-color;
+    text-transform: uppercase;
+    font: $date-or-link;
+  }
+}
+
 #noticias {
-  margin-top: 40px;
+  margin: 40px 28px;
 
   h2 {
     font: $first-title;
@@ -103,7 +116,6 @@
 }
 
 .noticias-grid {
-  margin: 12px 28px;
   display: grid;
   gap: 1rem;
 
