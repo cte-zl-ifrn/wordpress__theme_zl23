@@ -1,0 +1,58 @@
+.post-title {
+  font: $second-title;
+  color: $text-color;
+}
+
+#post {
+  color: $text-color;
+  margin: 40px 28px;
+
+  p {
+    font: $text;
+    margin-bottom: .5rem;
+  }
+
+  figure {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    font: $date-or-link;
+    color: $text-gray;
+  }
+
+  sub {
+    font: $date-prev;
+    color: $text-gray;
+  }
+
+  h2 {
+    font: $third-title;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
+  .share-post {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2rem;
+
+    span {
+      color: $secondary-color;
+    }
+
+    .share-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: .5rem;
+
+      div {
+        border: 1px solid #DBDBDB;
+        border-radius: 4px;
+        padding: .5rem;
+      }
+    }
+  }
+}
