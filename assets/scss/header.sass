@@ -13,34 +13,15 @@
       margin-left: 24px
       color: $secondary-color
 
-// @media screen and (max-width: 390px)
-
-.secondSession
-  .container
-    display: flex
-    flex-direction: row
-    justify-content: start
-    margin: 10px 20px
-    section
-      a
-        margin-left: 24px
-        color: $secondary-color
-  nav
-    .container
-      justify-content: space-between
-
 #searchIcon,#menuMobileIcon
   font-size: 24px
-#secondSection
-  display: flex
-  align-items: center
 
 input#toggleSearch, input#toggleForm, input#searchTopMenu
   width: 82vw
   position: absolute
   left: 5vw
   right: 19vw
-  top: 14vh
+  top: 52px
   margin: 0px auto
   height: 4vh
   border-radius: 4px
@@ -49,30 +30,18 @@ input#toggleSearch, input#toggleForm, input#searchTopMenu
   background: #FFFFFF 0% 0% no-repeat padding-box
   transition: all 0.3s ease 0s
 
-#searchTopMenu::placeholder
-  padding-left: 10px
+#myForm i, #searchTopMenu
+  display: none
 
-#searchTopMenu:focus
-  outline: none
-
-#searchTopMenu:before
-  content: '2'
-  display: block
-  position: absolute
-  color: #000
-  width: 20px
-  height: 20px
-  z-index: 99999
-  font-family: 'Font Awesome 5 Free'
-  font-weight: 900
 input[type="search"]::-webkit-search-cancel-button
   -webkit-appearance: none
   appearance: none
   display: none
 i.fa-sharp.fa-solid.fa-circle-xmark
   position: absolute
-  top: 15vh
+  top: 59px
   left: 80vw
+
 .toggleForm
   -webkit-appearance: none
   -moz-appearance: none
@@ -87,12 +56,9 @@ i.fa-sharp.fa-solid.fa-circle-xmark
   left: 79.2vw
   z-index: 9999
   opacity: 0
-form#myForm
-  display: none
 
 /* Estilos para ocultar o formulário quando o checkbox estiver marcado */
-.toggleForm:checked + label ~ #myForm
-  display: none
+
 .toggleForm:checked
   display: none
 
@@ -104,27 +70,8 @@ form#myForm
   left: 61vw
   opacity: 0
 
-.cardMenuOpen
-  position: absolute
-  background: #F5F5F5
-  width: 100vw
-  min-height: 745px
-  border-top: 2px solid $tertiary-color
-  padding: 16px 29px
-
 input#toggleSearch
-  position: absolute
-  z-index: 333
-  top: 1vh
-  left: 15vh
-  opacity: 1
-
-input#toggleSearch ,#myForm
   display: block
-
-input#toggleSearch:checked + label ~ #myForm 
-  display: block
-input#toggleSearch
   position: absolute
   z-index: 333
   top: 0.5vh
@@ -137,6 +84,10 @@ input#toggleSearch
   position: -webkit-sticky
   position: sticky
   top: 0px
+  .secondColun
+    display: flex
+    gap: 20px
+
 .containerFlex
   margin-top: 100vh
 
@@ -165,156 +116,6 @@ i.fa-solid.fa-xmark
     top: 103px
   #closerDropMenu
     top: 64px
-
-#secondFloatUl,#menuList
-  margin: 0px 20px 20px
-  padding: 0px 30px
-  width: 87vw
-  border-bottom: 1px solid #359830
-
-#menuList ul li
-  margin-bottom: 29px
-  color: $secondary-color
-
-#secondFloatUl,#menuList ul li a
-  color: $secondary-color
-  font-size: $menu-font
-  font-weight: 600
-
-ul#servSub, #ajudaSub,#noticiasSub,#pesquisaSub,ul#extSub
-  margin-top: 32px
-
-.menulink span
-  color: $tertiary-color
-
-#secondFloatUl
-  padding: 0px 23px
-  border-block: none
-
-#secondFloatUl li
-  margin: 29px 0px
-
-#secondFloatUl li a
-  font-size: 16px
-  font-weight: 600
-  color: $secondary-color
-
-#secondFloatUl li a span
-  color: $tertiary-color
-  font-size: 12px
-  font-weight: 800
-
-input#dropDownMenu
-  position: absolute
-  top: 59px
-  right: 15px
-  opacity: 0
-  z-index: 9999
-  width: 30px
-  height: 26px
-
-#dropDownMenu:checked + label > show
-  display: block !important
-
-input#dropDownMenu:checked + label ~ .floatingMenu 
-  display: block
-
-#dropDownMenu:checked body
-  background: red
-
-#menuList ul li:last-child
-  margin-bottom: 0px !important
-
-#closerDropDown
-  position: absolute
-  top: 5.3vh
-  left: 51vw
-  opacity: 0
-  z-index: 9990
-
-#closerDropDown:checked + label + input ~ .floatingMenu
-  display: block
-
-#closerDropMenu
-  position: absolute
-  display: block
-  width: 36px
-  height: 30px
-  top: 1.3vh
-  right: 0px
-  z-index: 99999
-  display: none
-  opacity: 0
-  cursor: pointer
-
-input#dropDownMenu:checked + label ~ #closerDropMenu 
-  display: block
-
-#closerDropMenu:checked + label ~ .floatingMenu
-  display: none !important
-
-#dropDownMenu:checked  #dropDownMenu
-  display: none
-
-.Institucional
-  position: absolute
-  width: 31vw
-  top: 18vh
-  left: -31vw
-  z-index: 33333
-  opacity: 0
-
-.Institucional:checked + label + .closeInstitucional + label  .menuUl
-  display: none
-
-input.Institucional:checked + label +  .closeInstitucional + label + #menuList > .menuUl 
-  display: none
-
-#institucionalSubMenu
-  display: block
-  margin-top: 32px
-
-input.Institucional:checked + label +  .closeInstitucional + label + .ensino + label +  .closeEnsino + label + #menuList > #institucionalSubMenu 
-  display: block
-  margin-top: 32px
-
-#ensinoSubMenu
-  display: block
-  margin-top: 32px
-
-.closeInstitucional
-  width: 20vw
-  position: absolute
-  z-index: 6666
-  top: 11vh
-  left: -32vw
-  opacity: 1
-  display: none
-
-input.Institucional:checked  + label + .closeInstitucional
-  display: block
-
-input.ensino
-  width: 25vw
-  z-index: 3333
-  position: absolute
-  top: 30vh
-  left: -32vw
-
-p.backBtn
-  margin-bottom: 12px
-
-#horizontalRule
-  position: absolute
-  width: 89vw
-  left: 5vw
-
-.instListItens
-  margin-right: 20px
-
-#menuList ul li
-
-  margin-top: 30px !important
 
 i.fa-solid.fa-universal-access
   font-size: 30px
@@ -507,6 +308,7 @@ li.menu-item-has-children > a:after
   color: gray
   box-shadow: 0px -1px #80808038
   padding: 1px
+  z-index: 999
 
 .menu-barra-governo-container
   margin-top: 16px

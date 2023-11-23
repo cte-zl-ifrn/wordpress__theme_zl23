@@ -1,9 +1,18 @@
-
-
 const menuWithSubmenuItems = document.querySelectorAll(".menu-item-has-children");
 const backMenuIcon = document.querySelectorAll(".backMenuIcon");
 const menulink = document.querySelectorAll(".menu a");
+const menuIcon = document.querySelector('#menuMobileIcon');
+const closeMenu = document.querySelector('#closeMainMenu');
 let conditionMet = false;
+
+
+menuIcon.addEventListener('click', () => {
+    $(".floatingMenu").css("display", "block");
+})
+
+closeMenu.addEventListener('click', () => {
+    $(".floatingMenu").css("display", "none");
+})
 
 
 menuWithSubmenuItems.forEach((item) => {
@@ -19,37 +28,7 @@ menuWithSubmenuItems.forEach((item) => {
 });
 
 
-     // Substitua true pela sua própria condição
-   
-// Se a condição for atendida, altere a cor de fundo do pseudo-elemento
-/**
- * 
- * function hideLi(){
-    $(document).ready(function() {
-        // Usando each para percorrer cada elemento <li> dentro da lista
-        $("ul.menuList li").each(function() {
-          // Verifica se o elemento não possui a classe "menuwithsubmenu" e não possui a classe "willNotBeHide"
-          if (!$(this).hasClass("menuwithsubmenu") && !$(this).hasClass("willNotBeHide")) {
-            // Adiciona a classe "hide"
-            $(this).addClass("hide");
-          }
-        });
-      });
-    
-}
- * 
- * 
- * 
- * $(".menuUl > .voltar").on("click", function (e) {
-   resetMenu();
-    
-})
 
-$("#closerDropMenu").on("click", function (e) {
-  resetMenu();  
- }
-)
- */
 $(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
     resetMenu();
 });
@@ -93,6 +72,21 @@ backMenuIcon.forEach((item)=>{
  // Substitua true pela sua própria condição
 
 // Se a condição for atendida, adicione a classe "special" ao elemento
+
+
+// Abrir pesquisa
+const toggleSearch = document.querySelector('#searchIcon');
+const closeSearch = document.querySelector('#myForm i');
+
+
+toggleSearch.addEventListener('click', () => {
+    $("#myForm i, #searchTopMenu").css("display", "block");
+    $("#searchTopMenu").focus();
+})
+
+closeSearch.addEventListener('click', () => {
+    $("#myForm i, #searchTopMenu").css("display", "none");
+})
 
 
 

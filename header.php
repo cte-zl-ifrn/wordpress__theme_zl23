@@ -38,10 +38,6 @@
 
     <header>
     <div class="section">
-        <input type="radio" id="dropDownMenu" name="i">
-        <label for="dropDownMenu"></label>
-        <input type="radio" id="closerDropMenu" name="i">
-        <label for="closerDropMenu"></label>
 
         <div class="floatingMenu">
             <div class="container">
@@ -53,7 +49,7 @@
                 </div>
                 <div class="secondColun">
                     <section>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i id="closeMainMenu" class="fa-solid fa-xmark"></i>
                     </section>
                 </div>
             </div>
@@ -92,22 +88,13 @@
                 </a>
             </div>
             <div class="secondColun" id="secondSection">
-                <section>
-                    <input type="radio" id="toggleSearch" name="i">
-                    <label for="toggleSearch"></label>
-                    <input type="radio" name="i" class="toggleForm">
-                    <label for="toggleSearch"></label>
-                    <?php get_search_form(); ?>
-                    <a href="#" id="searchIcon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                    <a href="#" id="menuMobileIcon">
-                        <i class="fa-solid fa-bars iconBackToMainPage custom-icon"></i>
-                    </a>
-
-                </section>
+                <?php get_search_form(); ?>
+                    <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+                <a href="#" id="menuMobileIcon">
+                    <i class="fa-solid fa-bars iconBackToMainPage custom-icon"></i>
+                </a>
             </div>
         </div>
-    </div>
+    </div> 
 
     </header>
