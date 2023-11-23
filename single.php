@@ -10,19 +10,27 @@ while(have_posts()) {
             <span>Compartilhe</span>
             <div class="share-grid">
                 <div>
-                    <i class="fa-brands fa-whatsapp" alt="Whatsapp "></i>
+                    <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo esc_url(the_permalink()); ?>">
+                        <i class="fa-brands fa-whatsapp" alt="Whatsapp "></i>
+                    </a>
                 </div>
                 <div>
-                    <i class="fa-brands fa-instagram" alt="Instagram"></i>
+                    <a target="_blank" href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(the_permalink()); ?>">
+                        <i class="fa-brands fa-linkedin" alt="Linkedin"></i>
+                    </a>
                 </div>
                 <div>
-                    <i class="fa-brands fa-facebook" alt="Facebook "></i>
+                    <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo esc_url(the_permalink()); ?>">
+                        <i class="fa-brands fa-facebook" alt="Facebook "></i>
+                    </a>
                 </div>
                 <div>
-                    <i class="fa-brands fa-twitter" alt="Twitter"></i>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo esc_url(the_permalink()) ?>&text=<?php echo esc_html(the_title()); ?>">
+                        <i class="fa-brands fa-x-twitter" alt="Twitter"></i>
+                    </a>
                 </div>
+
             </div>
-        </div>
     </section>
 <?php } ?>
 
