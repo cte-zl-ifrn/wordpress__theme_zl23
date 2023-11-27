@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 <section id="archive">
+  <ul>
+      <li>
+          <a href="<?php echo site_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </li>
+      <?php echo getBreadcrumbs(); ?>
+  </ul>
   <h1 class="first-title">
     <?php if(is_category()) {
       single_cat_title();

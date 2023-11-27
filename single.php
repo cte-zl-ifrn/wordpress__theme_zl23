@@ -2,6 +2,12 @@
 
 while(have_posts()) {
     the_post(); ?>
+    <ul>
+        <li>
+            <a href="<?php echo site_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <?php echo getBreadcrumbs(); ?>
+    </ul>
     <section id = "post">
         <h1 class="post-title"><?php the_title(); ?></h1>
         <span><?php the_time('d \d\e F \d\e Y'); ?></span>

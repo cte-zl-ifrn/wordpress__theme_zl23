@@ -33,6 +33,40 @@ function theme_setup() {
 add_action('wp_enqueue_scripts', 'importar_arquivos');
 add_action('after_setup_theme', 'theme_setup');
 
+function getBreadcrumbs() {
+    $crumbs = '';
+    $current_page_id = get_the_ID();
+    $theParent = wp_get_post_parent_id($current_page_id);
+    $count = 0;
+
+    if(is_singular('post')) {
+        $categories = get_the_category();
+        if (isset($categories)) {
+            $category = $categories[0];
+            $category_permalink = get_category_link($category->term_id);
+            $crumbs = '<li><a href="' . esc_url($category_permalink) . '">' . esc_html($category->name) . '</a></li>' . $crumbs;
+        }
+    }
+      
+    if(!$theParent) {
+        if(is_category()) {
+            //return '<li>teste</li>';
+            return '<li>' . single_cat_title('', false) . '</li>';
+        }
+        if(is_search()) {
+            return '<li>Você pesquisou por "'. esc_html(get_search_query()) .'"</li>';
+        }
+    }
+
+    while($theParent) {
+      $count ++;
+      $crumbs = '<li><a href="' . get_permalink($theParent) . '">' . get_the_title($theParent) .  '</a> </li>' . $crumbs;
+      $theParent = wp_get_post_parent_id($theParent);
+    }
+    return $crumbs . '<li>' . get_the_title( $current_page_id ) . '</li>';
+}
+
+
 function getMainMenu() {
 	$locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ "mainMenu" ] );

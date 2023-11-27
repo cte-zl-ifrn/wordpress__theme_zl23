@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<ul>
+    <li>
+        <a href="<?php echo site_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+    </li>
+    <?php echo getBreadcrumbs(); ?>
+</ul>
+
 <p>Pesquisa por '<span><?php echo esc_html(get_search_query()); ?></span>' </p>
 <?php while(have_posts()) {
     the_post(); ?>
