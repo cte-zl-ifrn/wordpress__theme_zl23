@@ -108,6 +108,7 @@ i.fa-solid.fa-xmark
   width: 100vw
   border-top: 2px solid $tertiary-color
   padding-bottom: 0vh
+  box-shadow: 0px 2px 6px #00000029;
 
 .admin-bar
   .floatingMenu
@@ -158,9 +159,6 @@ div[vw]
 .sub-menu
   display: none !important
 
-ul.menuUl
-  margin-bottom: 40px
-
 a span i
   font-size: 12px
   font-weight: 800
@@ -172,18 +170,12 @@ i.fa-solid.fa-arrow-up-right-from-square
   color: black
 
 ul.menu
-  padding-bottom: 12px
   display: block
   margin-left: 32px
 
 ul.menu li
-  // margin-top: 24px
   margin-bottom: 24px
   color: $secondary-color
-
-ul.menu
-  li:last-child
-    margin-bottom: 0px !important
 
 ul.menu li a
   font-size: 16px
@@ -211,21 +203,14 @@ ul.menu li a
 .menu-item-has-children.opened ul
   display: block
 
-ul#menu-barra-governo:after, ul#menu-mainmenu:after
+ul#menu-mainmenu:after
   content: ""
   display: block
   width: 90vw
-  // position: absolute
   height: 1px
   background: $tertiary-color
-  // top: 92%
-  // margin: 0px auto
   text-align: center
-  /* justify-content: center; */
   margin-left: -16px
-
-ul.menu li:last-child
-  margin-bottom: 39px !important
 
 .voltar
   position: absolute
@@ -238,7 +223,7 @@ ul.menu li:last-child
 
 nav.menuUl
   margin-top: 25px !important
-  padding: 21px 0px
+  padding-top: 21px
 
 .voltar:after
   content: ""
@@ -251,11 +236,11 @@ nav.menuUl
   background: green
   margin: 8px 0px 0px -24px
 
-.menu-item-has-children  ul  li:first-child
+ul .menu-item-has-children li:first-child
   padding-top: 40px
 
-ul.menu.special:before
-  display: none !important
+ul#menu-mainmenu.special:after
+  display: none
 
 // li.menu-item-has-children ul li:last-child:after
 //   content: ""
@@ -311,4 +296,4 @@ li.menu-item-has-children > a:after
   z-index: 999
 
 .menu-barra-governo-container
-  margin-top: 16px
+  margin-top: 24px
