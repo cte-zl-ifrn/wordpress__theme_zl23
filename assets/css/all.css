@@ -389,11 +389,11 @@ li.menu-item-has-children > a:after {
     font-family: "Font Awesome 6 Brands";
     font-size: 24px; }
 
-.carousel-item {
+#slideCarousel .carousel-item {
   height: 168px;
   background-repeat: no-repeat;
   background-size: cover; }
-  .carousel-item a {
+  #slideCarousel .carousel-item a {
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.15);
@@ -401,7 +401,7 @@ li.menu-item-has-children > a:after {
     padding: 12px 8px;
     margin: 8px 17%;
     height: 92%; }
-  .carousel-item p {
+  #slideCarousel .carousel-item p {
     color: white;
     font-weight: bold;
     font-size: 1.1875rem;
@@ -414,14 +414,6 @@ li.menu-item-has-children > a:after {
 
 .carousel-indicators button.active {
   background-color: green !important; }
-
-#carouselExampleIndicators {
-  height: 87px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 14px; }
 
 .carousel-secondClass {
   height: 87px;
@@ -464,6 +456,17 @@ li.menu-item-has-children > a:after {
 .carousel-indicators.carrouselSubMenu {
   /* margin-top: 1px; */
   border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
+#atalhosCarousel {
+  height: 100px; }
+  #atalhosCarousel .carousel-caption {
+    position: inherit;
+    display: grid; }
+    #atalhosCarousel .carousel-caption span:nth-child(2) {
+      font-size: 1.375rem;
+      line-height: 30px;
+      color: #44484B;
+      font-weight: 900; }
 
 .header-section {
   display: flex;
