@@ -283,11 +283,11 @@ div#webstory-carousel-container {
 }
 #webstory-prev{
 left: 280px;
-top: 530px;
+top: 590px;
 }
 #webstory-next{
   left: 320px;
-  top: 530px;
+  top: 590px;
   }
 
 .webstory-item {
@@ -324,4 +324,13 @@ div#webStoriesTittle {
     opacity: 0.2;
     margin-bottom: auto;
   }
+}
+div#webstory-carousel-container {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0px 22px;
+  margin-bottom: 70px;
+}
+.tag{
+  text-align: center;
 }
