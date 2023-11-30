@@ -24,7 +24,7 @@
 </div>
 
 <!-- Atalhos -->
-<div id="atalhosCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="atalhosCarousel" class="carousel carousel-dark slide" data-bs-ride="true">
   <div class="carousel-indicators">
   <?php $count = 0;
   $firstslide = true;
@@ -48,13 +48,21 @@
 <?php $firstslide = false;
   endforeach ?>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#atalhosCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#atalhosCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 
 <!-- Notícias -->
 <section id = "noticias">
 <div class="header-section">
-  <h2>Notícias</h2>
+  <h1>Notícias</h1>
   <a href="<?php echo site_url('/categoria/noticias') ?>">Mais Notícias ></a>
 </div>
 <div class = "noticias-grid">
@@ -89,6 +97,8 @@
 </div>
 </section>
 
+
+<!-- Web Stories -->
 <h2>Web Stories</h2>
 <?php  
   $web_stories = getWebStories();

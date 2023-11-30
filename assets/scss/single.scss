@@ -8,7 +8,7 @@
   margin: 40px 28px;
 
   p {
-    font: $text;
+    font: $text-font;
     margin-bottom: .5rem;
   }
 
@@ -18,12 +18,12 @@
   }
 
   span {
-    font: $date-or-link;
+    font: $subtitle;
     color: $text-gray;
   }
 
   sub {
-    font: $date-prev;
+    font: $subtitle;
     color: $text-gray;
   }
 

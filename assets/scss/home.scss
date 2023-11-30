@@ -74,10 +74,6 @@
   line-height: 4vh;
 }
 
-.carousel-indicators {
-  margin-bottom: -0.5rem !important;
-}
-
 .carousel-indicators.carrouselSubMenu {
   /* margin-top: 1px; */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -85,16 +81,37 @@
 
 //Atalhos carousel
 #atalhosCarousel {
-  height: 100px;
+  .carousel-inner{
+    box-shadow: 0px 3px 6px #00000029;
+  }
   .carousel-caption {
     position: inherit;
     display: grid;
+    margin: 8px 50px;
+    border-right: 1px solid #EEE;
+    border-left: 1px solid #EEE;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    span {
+      font: $subtitle;
+      font-weight: 400;
+      line-height: 12px;
+    }
     span:nth-child(2) {
       font-size: 1.375rem;
-      line-height: 30px;
+      line-height: 22px;
       color: #44484B;
-      font-weight: 900;
+      font-weight: 800;
     }
+  }
+  .carousel-indicators {
+    margin-bottom: -1.3rem;
+    button {
+      background-color: #DDD;
+    }
+  }
+  .carousel-control-next, .carousel-control-prev {
+    background: none;
   }
 }
 
@@ -109,14 +126,14 @@
   a {
     color: $tertiary-color;
     text-transform: uppercase;
-    font: $date-or-link;
+    font: $subtitle;
   }
 }
 
 #noticias {
   margin: 40px 28px;
 
-  h2 {
+  h1 {
     font: $first-title;
   }
 }
