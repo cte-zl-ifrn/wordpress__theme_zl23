@@ -1,0 +1,15 @@
+#archive {
+  margin: 40px 28px;
+
+  .archive-card {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .archive-card::after {
+    height: 1px;
+    width: 30%;
+    margin: 0 auto;
+    background: #DBDBDB;
+  }
+}

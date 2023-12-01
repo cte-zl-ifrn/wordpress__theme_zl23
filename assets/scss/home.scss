@@ -1,23 +1,25 @@
-.carousel-item {
-  height: 168px;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  a {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(50px);
-    padding: 12px 8px;
-    margin: 8px 17%;
-    height: 92%;
-  }
-
-  p {
-    color: white;
-    font-weight: bold;
-    font-size: 1.1875rem;
-    text-shadow: 0px 3px 6px #00000029;
+//Slide carousel
+#slideCarousel {
+  .carousel-item {
+    height: 168px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    a {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(50px);
+      padding: 12px 8px;
+      margin: 8px 17%;
+      height: 92%;
+    }
+  
+    p {
+      color: white;
+      font-weight: bold;
+      font-size: 1.1875rem;
+      text-shadow: 0px 3px 6px #00000029;
+    }
   }
 }
 
@@ -29,15 +31,6 @@
 
 .carousel-indicators button.active {
   background-color: green !important;
-}
-
-#carouselExampleIndicators {
-  height: 87px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 14px;
 }
 
 .carousel-secondClass {
@@ -56,8 +49,6 @@
   font-weight: 100;
   font-size: 22px;
   opacity: 0.5;
-
-
 }
 
 .carousel-control-next,
@@ -92,10 +83,38 @@
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+//Atalhos carousel
+#atalhosCarousel {
+  height: 100px;
+  .carousel-caption {
+    position: inherit;
+    display: grid;
+    span:nth-child(2) {
+      font-size: 1.375rem;
+      line-height: 30px;
+      color: #44484B;
+      font-weight: 900;
+    }
+  }
+}
+
 // Notícias
 
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+
+  a {
+    color: $tertiary-color;
+    text-transform: uppercase;
+    font: $date-or-link;
+  }
+}
+
 #noticias {
-  margin-top: 40px;
+  margin: 40px 28px;
 
   h2 {
     font: $first-title;
@@ -103,7 +122,6 @@
 }
 
 .noticias-grid {
-  margin: 12px 28px;
   display: grid;
   gap: 1rem;
 

@@ -1,9 +1,17 @@
-
-
 const menuWithSubmenuItems = document.querySelectorAll(".menu-item-has-children");
 const backMenuIcon = document.querySelectorAll(".backMenuIcon");
 const menulink = document.querySelectorAll(".menu a");
-let conditionMet = false;
+const menuIcon = document.querySelector('#menuMobileIcon');
+const closeMenu = document.querySelector('#closeMainMenu');
+
+
+menuIcon.addEventListener('click', () => {
+    $(".floatingMenu").css("display", "block");
+})
+
+closeMenu.addEventListener('click', () => {
+    $(".floatingMenu").css("display", "none");
+})
 
 
 menuWithSubmenuItems.forEach((item) => {
@@ -12,44 +20,14 @@ menuWithSubmenuItems.forEach((item) => {
         $(".menu > li > a").addClass("sub-menu");
         $(e.target).parent().find("ul").removeClass("sub-menu");
       
-        //  removerLine()
+        $("ul#menu-mainmenu").addClass("special");
       
     });
   
 });
 
 
-     // Substitua true pela sua própria condição
-   
-// Se a condição for atendida, altere a cor de fundo do pseudo-elemento
-/**
- * 
- * function hideLi(){
-    $(document).ready(function() {
-        // Usando each para percorrer cada elemento <li> dentro da lista
-        $("ul.menuList li").each(function() {
-          // Verifica se o elemento não possui a classe "menuwithsubmenu" e não possui a classe "willNotBeHide"
-          if (!$(this).hasClass("menuwithsubmenu") && !$(this).hasClass("willNotBeHide")) {
-            // Adiciona a classe "hide"
-            $(this).addClass("hide");
-          }
-        });
-      });
-    
-}
- * 
- * 
- * 
- * $(".menuUl > .voltar").on("click", function (e) {
-   resetMenu();
-    
-})
 
-$("#closerDropMenu").on("click", function (e) {
-  resetMenu();  
- }
-)
- */
 $(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
     resetMenu();
 });
@@ -59,19 +37,7 @@ function resetMenu(){
     $(".menuUl > .voltar").css("display", "none");
     $(".menu > li > a").removeClass("sub-menu");
     $(".menu-item-has-children > ul").addClass("sub-menu");
-    $(".menu").removeClass("special");
-}
-function removerLine(){
-      
-    conditionMet = true;
-
-    if (conditionMet) {
-        $("ul.menu").addClass("special");
-    } else {
-       
-        $("ul.menu").removeClass("special");
-    }
-    
+    $("ul#menu-mainmenu").removeClass("special");
 }
 
 
@@ -90,9 +56,19 @@ backMenuIcon.forEach((item)=>{
 
 
 
- // Substitua true pela sua própria condição
+// Abrir pesquisa
+const toggleSearch = document.querySelector('#searchIcon');
+const closeSearch = document.querySelector('#myForm i');
 
-// Se a condição for atendida, adicione a classe "special" ao elemento
+
+toggleSearch.addEventListener('click', () => {
+    $("#myForm i, #searchTopMenu").css("display", "block");
+    $("#searchTopMenu").focus();
+})
+
+closeSearch.addEventListener('click', () => {
+    $("#myForm i, #searchTopMenu").css("display", "none");
+})
 
 
 

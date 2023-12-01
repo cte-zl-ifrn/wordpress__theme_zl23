@@ -1,0 +1,30 @@
+body {
+  color: $text-color;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+a {
+  color: $green;
+  text-decoration: underline;
+}
+
+.first-title {
+  font: $first-title;
+}
+
+.second-title {
+  font: $second-title;
+}
+
+.third-title {
+  font: $third-title;
+}
+
+.text {
+  font: $text;
+  margin-bottom: .5rem;
+}
