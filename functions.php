@@ -50,7 +50,6 @@ function getBreadcrumbs() {
       
     if(!$theParent) {
         if(is_category()) {
-            //return '<li>teste</li>';
             return '<li>' . single_cat_title('', false) . '</li>';
         }
         if(is_search()) {
@@ -143,11 +142,18 @@ function formatShotcutMenu($string) {
     return false;
 }
 
-function getWebStories() {
+function getWebStories($story_per_page, $slug = false) {
     // Consulta personalizada para recuperar histórias do Web Stories
     $args = array(
         'post_type' => 'web-story', // Post type do Web Stories
-        'posts_per_page' => 5, // Número de histórias para exibir
+        'posts_per_page' => $story_per_page, // Número de histórias para exibir
+        'tax_query' => $slug ? array(
+            array(
+                'taxonomy' => 'web_story_category',
+                'field' => 'slug',
+                'terms' => $slug,
+            ),
+        ) : false,
     );
     
     return new WP_Query($args);

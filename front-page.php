@@ -63,7 +63,7 @@
 <section id = "noticias">
 <div class="header-section">
   <h1>Notícias</h1>
-  <a href="<?php echo site_url('/categoria/noticias') ?>">Mais Notícias ></a>
+  <a href="<?php echo site_url('/categoria/noticias') ?>">Ver todas ></a>
 </div>
 <div class = "noticias-grid">
   <?php
@@ -99,35 +99,27 @@
 
 
 <!-- Web Stories -->
-<h2>Web Stories</h2>
-<?php  
-  $web_stories = getWebStories();
-  if ($web_stories->have_posts()) :
-    while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
-      <div>
-        <a href="<?php the_permalink() ?>">
-          <?php the_post_thumbnail() ?>
-        </a>
-      </div>
-    <?php endwhile;
-    wp_reset_postdata();
-  else :
-    echo 'Nenhuma história encontrada.';
-  endif; 
-?>
-
-<div id="featuredMenu">
-<h2>Destaques</h2>
-<div class="content">
-  <?php foreach ((array) getFeaturedMenu() as $menu_item ): ?>  
-    <a href='<?php echo $menu_item->post_excerpt ?>' target='<?php echo $menu_item->target ?>'>
-        <?php echo $menu_item->post_thumbnail ?>
-        <h3>
-          <?php echo $menu_item->post_title ?>
-        </h3>
-    </a>
-    <?php endforeach ?>
+<section class="section-web-stories">
+  <div class="header-section">
+    <h1>Web Stories</h1>
+    <a href="<?php echo site_url('/web-stories') ?>">Ver todas ></a>
   </div>
-</div>
+
+  <?php  
+    $web_stories = getWebStories(5);
+    if ($web_stories->have_posts()) :
+      while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
+        <div>
+          <a href="<?php the_permalink() ?>">
+            <?php the_post_thumbnail() ?>
+          </a>
+        </div>
+      <?php endwhile;
+      wp_reset_postdata();
+    else :
+      echo 'Nenhuma story encontrada.';
+    endif; 
+  ?>
+</section>
 
 <?php get_footer(); ?>

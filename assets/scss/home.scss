@@ -123,6 +123,10 @@
   align-items: baseline;
   margin-bottom: 12px;
 
+  h1 {
+    font: $first-title;
+  }
+
   a {
     color: $tertiary-color;
     text-transform: uppercase;
@@ -131,11 +135,7 @@
 }
 
 #noticias {
-  margin: 40px 28px;
-
-  h1 {
-    font: $first-title;
-  }
+  margin: 40px 20px;
 }
 
 .noticias-grid {
@@ -169,4 +169,8 @@
     font-weight: 700;
     color: #292C2E;
   }
+}
+
+.section-web-stories {
+  margin: 40px 20px;
 }
