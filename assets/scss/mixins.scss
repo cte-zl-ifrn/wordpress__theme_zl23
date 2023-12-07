@@ -1,0 +1,21 @@
+
+@mixin mainFooter{
+    min-height: 220px;
+    background: #44484B;
+    position: relative;
+    top: 58vh;
+}
+
+@mixin contactArea{
+    text-align: left;
+    color: $primary-color;
+    font: $menu-font;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 24px 33px;
+    span {
+     font-size: 16px;
+     font-weight: 800;
+     color: $tertiary-color;
+   }
+}
