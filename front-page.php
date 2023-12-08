@@ -41,7 +41,9 @@
     <div class="carousel-item <?php echo $firstslide ? "active" : "" ?>">
       <a href="<?php echo $menu_item->url ?>">
         <div class="carousel-caption">
-          <?php echo formatShotcutMenu($menu_item->post_title) ?>
+          <div class="cardCaption">
+            <?php echo formatShotcutMenu($menu_item->post_title) ?>
+          </div>
         </div>
       </a>
     </div>
@@ -69,7 +71,7 @@
   <?php
   $args = array(
     'category_name' => 'Notícias',
-    'posts_per_page' => 5,
+    'posts_per_page' => 6,
   );
   $noticias = new WP_Query($args);
 
@@ -79,7 +81,7 @@
     ?>
       <div class="card">
         <a href="<?php the_permalink(); ?>">
-          <?php if (has_post_thumbnail() && $count < 2) { 
+          <?php if (has_post_thumbnail() && $count < 3) { 
             $thumbnail_alt = esc_attr(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true));?>
             <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" class="card-img-top" alt="<?php echo $thumbnail_alt; ?>">
           <?php }
