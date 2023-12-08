@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
     <div id="barraGov">
         <div class="containerSeparator">
-            <div class="container">
+            <div class="containerMenu">
                 <div class="firstColun">
                     <a href="https://www.gov.br/pt-br">
                         <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Gov.br_logo.svg" alt="gov.br">
@@ -40,7 +40,7 @@
     <div class="section">
 
         <div class="floatingMenu">
-            <div class="container">
+            <div class="containerMenu">
                 <div class="firstColun">
                     <a href="<?php echo site_url(); ?>">
                         <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png"
@@ -81,15 +81,22 @@
     </div>
 
     <div class="stick" style="position: sticky; top: 0;">
-        <div id="stickContainer" class="container">
+        <div id="stickContainer" class="containerMenu">
             <div class="firstColun">
                 <a href="<?php echo site_url(); ?>">
                     <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png" alt="gov.br">
                 </a>
             </div>
             <div class="secondColun" id="secondSection">
+                <?php 
+                wp_nav_menu( 
+                array( 
+                    'theme_location' => 'mainMenu'
+                ) 
+                );
+                ?>
                 <?php get_search_form(); ?>
-                    <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+                <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
                 <a href="#" id="menuMobileIcon">
                     <i class="fa-solid fa-bars iconBackToMainPage custom-icon"></i>
                 </a>
