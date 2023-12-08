@@ -10,7 +10,7 @@ while(have_posts()) {
         <?php echo getBreadcrumbs(); ?>
     </ul>
 
-    <section id="page">
+    <section id="page" class="pageTemplate">
         <h1 class="first-title"><?php the_title(); ?></h1>
         <p class="text"><?php the_content(); ?></p>
     </section>
