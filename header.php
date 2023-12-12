@@ -88,13 +88,45 @@
                 </a>
             </div>
             <div class="secondColun" id="secondSection">
-                <?php 
-                wp_nav_menu( 
-                array( 
-                    'theme_location' => 'mainMenu'
-                ) 
-                );
+            <nav class="menu-mainmenu-container">           
+            <ul id="menu-mainmenu" class="menu">
+            <?php 
+            $count = 0;
+            $submenu = false;
+            $menuItems = getMainMenu();
+
+            foreach($menuItems as $menu_item):
+                if ( !$menu_item->menu_item_parent ):
+
+                $parent_id = $menu_item->ID; 
                 ?>
+                <li class="menu-item">
+                    <a href="<?php echo $menu_item->url; ?>" class="menuItem">
+                        <?php echo $menu_item->post_title ?>
+                    </a>
+                <?php endif; ?>
+
+                <?php if ( $parent_id == $menu_item->menu_item_parent ): ?>
+                    <?php if ( !$submenu ): $submenu = true; ?>
+                    <span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    <ul class="sub-menu">
+                    <?php endif; ?>
+                    <li class="item">
+                        <a href="<?php echo $menu_item->url; ?>" class="title"><?php echo $menu_item->post_title; ?></a>
+                    </li>
+                    <?php if (isset($menuItems[ $count + 1 ]->menu_item_parent) != $parent_id && $submenu ): ?>
+                    </ul>
+                    <?php $submenu = false; endif; ?>
+                <?php endif; ?>
+            <?php if ( isset($menuItems[ $count + 1 ]->menu_item_parent) != $parent_id ): ?>
+            </li>
+            <?php $submenu = false; endif; ?>
+                <?php $count++; endforeach; ?>
+            </ul>
+        </nav>
+                
                 <?php get_search_form(); ?>
                 <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
                 <a href="#" id="menuMobileIcon">
