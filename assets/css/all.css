@@ -153,11 +153,6 @@ p {
     margin-right: .5rem;
     font-size: 1.5rem; }
 
-header {
-  position: sticky;
-  top: 0px;
-  z-index: 9; }
-
 .containerMenu {
   display: flex;
   flex-direction: row;
@@ -170,319 +165,291 @@ header {
     margin-left: 24px;
     color: #44484B; }
 
-#searchIcon, #menuMobileIcon {
-  font-size: 24px; }
-
-input#toggleSearch, input#toggleForm, input#searchTopMenu {
-  width: 82vw;
-  position: absolute;
-  left: 5vw;
-  right: 19vw;
-  top: 52px;
-  margin: 0px auto;
-  height: 4vh;
-  border-radius: 4px;
-  padding: 0px 10px;
-  border: 1px solid #DBDBDB;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  transition: all 0.3s ease 0s; }
-
-#myForm i, #searchTopMenu {
-  display: none; }
-
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  appearance: none;
-  display: none; }
-
-i.fa-sharp.fa-solid.fa-circle-xmark {
-  position: absolute;
-  top: 60px;
-  left: 80vw; }
-
-.toggleForm {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  width: 16px;
-  height: 3.5vh;
-  position: absolute;
-  top: 14.3vh;
-  left: 79.2vw;
-  z-index: 9999;
-  opacity: 0; }
-
-/* Estilos para ocultar o formulário quando o checkbox estiver marcado */
-.toggleForm:checked {
-  display: none; }
-
-#input#toggleSearch {
-  width: 28px;
-  position: absolute;
-  z-index: 999;
-  top: 1vh;
-  left: 61vw;
-  opacity: 0; }
-
-input#toggleSearch {
-  display: block;
-  position: absolute;
-  z-index: 333;
-  top: 0.5vh;
-  left: calc(100% - 28vw);
-  right: 8vw;
-  opacity: 0;
-  width: 43px; }
-
-#stickContainer {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px; }
-  #stickContainer .secondColun {
-    display: flex;
-    gap: 20px; }
-    #stickContainer .secondColun .menu-mainmenu-container {
-      display: none; }
-
-.containerFlex {
-  margin-top: 100vh; }
-
-i.fa-solid.fa-xmark {
-  font-size: 33px; }
-
-.stick {
+header {
   position: sticky;
   top: 0px;
-  background: #FFF; }
-
-.floatingMenu {
-  display: none;
-  position: absolute;
-  height: auto;
-  top: 0px;
-  z-index: 10000;
-  background: #F5F5F5;
-  width: 100vw;
-  border-top: 2px solid #359830;
-  padding-bottom: 0vh;
-  box-shadow: 0px 2px 6px #00000029; }
-
-.admin-bar input#dropDownMenu {
-  top: 103px; }
-
-.admin-bar #closerDropMenu {
-  top: 64px; }
-
-i.fa-solid.fa-universal-access {
-  font-size: 30px;
-  position: absolute;
-  left: 32vw;
-  top: 1vh; }
-
-[vw] [vw-access-button] img {
-  max-height: 50px;
-  transition: all .5s ease;
-  border-radius: 79px;
-  opacity: 1 !important;
-  visibility: hidden !important;
-  z-index: 333; }
-
-[vw] [vw-access-button] .access-button {
-  width: 33px;
-  height: 33px;
-  z-index: 1;
-  visibility: initial !important; }
-
-[vw] [vw-access-button] {
-  flex-direction: row-reverse;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  overflow: hidden;
-  position: absolute !important;
-  border-radius: 8px !important;
-  transition: all .5s ease;
-  right: 38vw !important;
-  bottom: 46.5vh !important;
-  left: auto !important; }
-
-div[vw] {
-  z-index: 333 !important;
-  margin-top: 30px !important; }
-
-.sub-item {
-  display: none; }
-
-a span i {
-  font-size: 12px;
-  font-weight: 800;
-  color: green;
-  margin-left: 10px;
-  font-family: "Font Awesome 6 Free"; }
-
-i.fa-solid.fa-arrow-up-right-from-square {
-  color: black; }
-
-ul.menu {
-  display: block;
-  margin-left: 32px; }
-
-ul.menu li {
-  margin-bottom: 24px;
-  color: #44484B; }
-
-ul.menu li a {
-  font-size: 16px;
-  font-weight: 600;
-  color: #44484B;
-  margin-bottom: 0px !important; }
-
-.menuUl > .voltar {
-  display: none; }
-
-.menu:before {
-  content: '';
-  display: block;
-  position: absolute;
-  color: #000;
-  width: 210px;
-  height: 2px;
-  z-index: 99999;
-  font-weight: 900;
-  top: 20px; }
-
-.menu-item-has-children.opened a {
-  display: none; }
-
-.menu-item-has-children.opened ul {
-  display: block; }
-
-ul#menu-mainmenu:after {
-  content: "";
-  display: block;
-  width: 90vw;
-  height: 1px;
-  background: #359830;
-  text-align: center;
-  margin-left: -16px; }
-
-.voltar {
-  position: absolute;
-  display: block;
-  color: green;
-  top: 10vh;
-  left: 40px;
-  cursor: pointer;
-  margin-top: 2vh;
-  z-index: 10; }
-
-nav.menuUl {
-  margin-top: 25px !important;
-  padding-top: 21px; }
-
-.voltar:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 90vw;
-  height: 1px;
-  top: 3vh;
-  z-index: 999;
-  background: green;
-  margin: 8px 0px 0px -24px; }
-
-ul .menu-item-has-children li:first-child {
-  padding-top: 40px; }
-
-ul#menu-mainmenu.special:after {
-  display: none; }
-
-.menu-item-has-children {
-  position: relative; }
-
-li.menu-item-has-children > a:after {
-  content: "\f054";
-  font-family: "Font Awesome 6 Free";
-  width: 5px;
-  height: 5px;
-  font-weight: 900;
-  color: green;
-  font-size: 10px;
-  margin-left: 5px; }
-
-#menu-barra-governo li:not(.menu-item-has-children) > a:after {
-  content: "\f08e";
-  font-family: "Font Awesome 6 Free";
-  width: 5px;
-  height: 5px;
-  font-size: 10px;
-  margin-left: 5px; }
-
-#menu-barra-governo li.menu-item-has-children > a:after {
-  color: #2E2E2E; }
-
-.voltar:before {
-  content: "\f053";
-  font-family: "Font Awesome 6 Free";
-  width: 5px;
-  height: 5px;
-  font-weight: 900;
-  color: green;
-  font-size: 10px;
-  margin-right: 10px;
-  margin-left: -10px;
-  position: absolute;
-  top: 4px; }
-
-.stick {
-  color: gray;
-  box-shadow: 0px -1px #80808038;
-  padding: 1px;
-  z-index: 999; }
-
-.menu-barra-governo-container {
-  margin-top: 24px; }
+  z-index: 9;
+  /* Estilos para ocultar o formulário quando o checkbox estiver marcado */ }
+  header #searchIcon, header #menuMobileIcon {
+    font-size: 24px; }
+  header #myForm {
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 60px;
+    left: -50%;
+    right: -50%;
+    height: 4vh;
+    margin: 0px auto;
+    border-radius: 4px;
+    padding: 0px 10px;
+    transition: all 0.3s ease 0s;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    align-items: center;
+    justify-content: space-around; }
+    header #myForm i {
+      cursor: pointer; }
+  header input#searchTopMenu {
+    width: 95%;
+    height: 100%;
+    border: none;
+    padding: 0px 10px; }
+  header input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none; }
+  header .toggleForm {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    width: 16px;
+    height: 3.5vh;
+    position: absolute;
+    top: 14.3vh;
+    left: 79.2vw;
+    z-index: 9999;
+    opacity: 0; }
+  header .toggleForm:checked {
+    display: none; }
+  header #input#toggleSearch {
+    width: 28px;
+    position: absolute;
+    z-index: 999;
+    top: 1vh;
+    left: 61vw;
+    opacity: 0; }
+  header input#toggleSearch {
+    display: block;
+    position: absolute;
+    z-index: 333;
+    top: 0.5vh;
+    left: calc(100% - 28vw);
+    right: 8vw;
+    opacity: 0;
+    width: 43px; }
+  header #stickContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px; }
+    header #stickContainer .secondColun {
+      display: flex;
+      gap: 20px; }
+      header #stickContainer .secondColun .menu-mainmenu-container {
+        display: none; }
+  header .containerFlex {
+    margin-top: 100vh; }
+  header i.fa-solid.fa-xmark {
+    font-size: 33px; }
+  header .stick {
+    position: sticky;
+    top: 0px;
+    background: #FFF; }
+  header .floatingMenu {
+    display: none;
+    position: absolute;
+    height: auto;
+    top: 0px;
+    z-index: 10000;
+    background: #F5F5F5;
+    width: 100vw;
+    border-top: 2px solid #359830;
+    padding-bottom: 0vh;
+    box-shadow: 0px 2px 6px #00000029; }
+  header .admin-bar input#dropDownMenu {
+    top: 103px; }
+  header .admin-bar #closerDropMenu {
+    top: 64px; }
+  header i.fa-solid.fa-universal-access {
+    font-size: 30px;
+    position: absolute;
+    left: 32vw;
+    top: 1vh; }
+  header [vw] [vw-access-button] img {
+    max-height: 50px;
+    transition: all .5s ease;
+    border-radius: 79px;
+    opacity: 1 !important;
+    visibility: hidden !important;
+    z-index: 333; }
+  header [vw] [vw-access-button] .access-button {
+    width: 33px;
+    height: 33px;
+    z-index: 1;
+    visibility: initial !important; }
+  header [vw] [vw-access-button] {
+    flex-direction: row-reverse;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute !important;
+    border-radius: 8px !important;
+    transition: all .5s ease;
+    right: 38vw !important;
+    bottom: 46.5vh !important;
+    left: auto !important; }
+  header div[vw] {
+    z-index: 333 !important;
+    margin-top: 30px !important; }
+  header .sub-menu {
+    display: none; }
+  header a span i {
+    font-size: 12px;
+    font-weight: 800;
+    color: green;
+    margin-left: 10px;
+    font-family: "Font Awesome 6 Free"; }
+  header i.fa-solid.fa-arrow-up-right-from-square {
+    color: black; }
+  header ul.menu {
+    display: block;
+    margin-left: 32px; }
+  header ul.menu li {
+    margin-bottom: 24px;
+    color: #44484B; }
+  header ul.menu li a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #44484B;
+    margin-bottom: 0px !important; }
+  header .menuUl > .voltar {
+    display: none; }
+  header .menu:before {
+    content: '';
+    display: block;
+    position: absolute;
+    color: #000;
+    width: 210px;
+    height: 2px;
+    z-index: 99999;
+    font-weight: 900;
+    top: 20px; }
+  header .menu-item-has-children.opened a {
+    display: none; }
+  header .menu-item-has-children.opened ul {
+    display: block; }
+  header ul#menu-mainmenu:after {
+    content: "";
+    display: block;
+    width: 90vw;
+    height: 1px;
+    background: #359830;
+    text-align: center;
+    margin-left: -16px; }
+  header .voltar {
+    position: absolute;
+    display: block;
+    color: green;
+    top: 10vh;
+    left: 40px;
+    cursor: pointer;
+    margin-top: 2vh;
+    z-index: 10; }
+  header nav.menuUl {
+    margin-top: 25px !important;
+    padding-top: 21px; }
+  header .voltar:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 90vw;
+    height: 1px;
+    top: 3vh;
+    z-index: 999;
+    background: green;
+    margin: 8px 0px 0px -24px; }
+  header ul .menu-item-has-children li:first-child {
+    padding-top: 40px; }
+  header ul#menu-mainmenu.special:after {
+    display: none; }
+  header .menu-item-has-children {
+    position: relative; }
+  header li.menu-item-has-children > a:after {
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    width: 5px;
+    height: 5px;
+    font-weight: 900;
+    color: green;
+    font-size: 10px;
+    margin-left: 5px; }
+  header #menu-barra-governo li:not(.menu-item-has-children) > a:after {
+    content: "\f08e";
+    font-family: "Font Awesome 6 Free";
+    width: 5px;
+    height: 5px;
+    font-size: 10px;
+    margin-left: 5px; }
+  header #menu-barra-governo li.menu-item-has-children > a:after {
+    color: #2E2E2E; }
+  header .voltar:before {
+    content: "\f053";
+    font-family: "Font Awesome 6 Free";
+    width: 5px;
+    height: 5px;
+    font-weight: 900;
+    color: green;
+    font-size: 10px;
+    margin-right: 10px;
+    margin-left: -10px;
+    position: absolute;
+    top: 4px; }
+  header .stick {
+    color: gray;
+    box-shadow: 0px -1px #80808038;
+    padding: 1px;
+    z-index: 999; }
+  header .menu-barra-governo-container {
+    margin-top: 24px; }
 
 @media (min-width: 1240px) {
-  header, #barraGov {
+  header {
+    width: 100%;
+    background: #FFF; }
+    header #menuMobileIcon {
+      display: none; }
+  .stick, .containerSeparator {
     max-width: 1240px;
     margin: 0 auto; }
-    header #stickContainer .secondColun .menu-mainmenu-container, #barraGov #stickContainer .secondColun .menu-mainmenu-container {
+    .stick #stickContainer .secondColun .menu-mainmenu-container, .containerSeparator #stickContainer .secondColun .menu-mainmenu-container {
       display: block; }
-  ul.menu {
-    display: flex;
-    gap: 2rem; }
-    ul.menu li {
-      margin-bottom: 0px;
-      position: relative; }
-      ul.menu li .showDesktop {
-        display: block; }
-      ul.menu li .sub-item {
-        display: block; }
-    ul.menu li.menu-item-has-children > a:after {
-      content: "\f078";
-      color: #2B2B2B; }
-    ul.menu ul {
-      display: none;
-      position: absolute;
-      top: 10px;
-      left: 0px;
-      background: #FFF;
-      box-shadow: 0px 3px 6px #00000029; } }
+    .stick ul.menu, .containerSeparator ul.menu {
+      display: flex;
+      gap: 2rem; }
+      .stick ul.menu li, .containerSeparator ul.menu li {
+        margin-bottom: 0px;
+        position: relative; }
+        .stick ul.menu li .showDesktop, .containerSeparator ul.menu li .showDesktop {
+          display: block; }
+      .stick ul.menu li.menu-item-has-children > a:after, .containerSeparator ul.menu li.menu-item-has-children > a:after {
+        content: "\f078";
+        color: #2B2B2B; }
+      .stick ul.menu ul, .containerSeparator ul.menu ul {
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        background: #FFF;
+        box-shadow: 0px 3px 6px #00000029; } }
 
 #mainFooter {
+  margin: 0 20px;
   min-height: 220px;
   position: relative;
-  color: #2B2B2B; }
+  color: #2B2B2B;
+  display: grid;
+  gap: 1rem; }
+  #mainFooter .logoIfrnVertical {
+    display: none; }
 
 #contactArea {
   font: 600 16px/22px Open Sans;
   font-size: 14px;
   font-weight: 600;
-  padding: 24px 33px;
   display: grid;
   gap: 16px; }
   #contactArea #addressFooter {
@@ -492,10 +459,81 @@ li.menu-item-has-children > a:after {
   display: flex;
   justify-content: center;
   gap: 32px;
-  padding-bottom: 31px; }
+  padding-bottom: 32px; }
   #footerIcons a i {
     font-family: "Font Awesome 6 Brands";
     font-size: 24px; }
+
+#siteMap {
+  display: none; }
+
+@media (min-width: 768px) {
+  #mainFooter {
+    grid-template-columns: minmax(auto, 90px) 1fr 1fr;
+    align-items: center;
+    justify-content: space-between; }
+    #mainFooter .logoIfrnVertical {
+      display: block;
+      width: 90px; }
+    #mainFooter .logoIfrnHorizontal {
+      display: none; }
+    #mainFooter .e-mec {
+      display: flex;
+      justify-content: center; }
+    #mainFooter #contactArea {
+      font: 600 12px / 17px Open Sans;
+      gap: 0px; }
+      #mainFooter #contactArea #footerIcons {
+        margin-top: 1rem;
+        padding-bottom: 0px;
+        justify-content: left; }
+  #siteMap {
+    display: block;
+    background-color: #F5F5F5;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    #siteMap h3 {
+      font: bold 1.25rem / 27px Open Sans;
+      text-align: center;
+      margin-bottom: 2.5rem; }
+    #siteMap .siteMap-container {
+      margin: 0 20px; }
+      #siteMap .siteMap-container .menu {
+        column-gap: 2rem;
+        column-count: 4; }
+        #siteMap .siteMap-container .menu > li {
+          width: 100%; }
+        #siteMap .siteMap-container .menu li:first-child {
+          display: none; }
+        #siteMap .siteMap-container .menu > li:not(.menu-item-has-children) {
+          margin-bottom: 1.5rem; }
+          #siteMap .siteMap-container .menu > li:not(.menu-item-has-children) a {
+            margin-bottom: 0px; }
+        #siteMap .siteMap-container .menu .menu-item-has-children {
+          margin-bottom: 1.5rem; }
+        #siteMap .siteMap-container .menu > .menu-item > a {
+          display: inline-block;
+          font: 400 1rem / 22px Open Sans;
+          font-weight: bold;
+          color: #2B2B2B;
+          margin-bottom: .5rem; }
+      #siteMap .siteMap-container .sub-menu {
+        display: grid;
+        gap: .5rem; }
+        #siteMap .siteMap-container .sub-menu a {
+          font: 600 14px / 19px Open Sans;
+          font-weight: 400;
+          color: inherit; } }
+
+@media (min-width: 1240px) {
+  #mainFooter {
+    max-width: 1240px;
+    margin: 0 auto; }
+  #siteMap .siteMap-container {
+    max-width: 1240px;
+    margin: 0 auto; }
+    #siteMap .siteMap-container .menu > li {
+      break-inside: avoid; } }
 
 #slideCarousel {
   max-width: 1240px;

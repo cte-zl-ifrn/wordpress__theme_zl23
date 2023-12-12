@@ -1,9 +1,3 @@
-header
-  position: sticky
-  top: 0px
-  z-index: 9
-
-
 .containerMenu
   display: flex
   flex-direction: row
@@ -18,321 +12,323 @@ header
       margin-left: 24px
       color: $secondary-color
 
-#searchIcon,#menuMobileIcon
-  font-size: 24px
-
-input#toggleSearch, input#toggleForm, input#searchTopMenu
-  width: 82vw
-  position: absolute
-  left: 5vw
-  right: 19vw
-  top: 52px
-  margin: 0px auto
-  height: 4vh
-  border-radius: 4px
-  padding: 0px 10px
-  border: 1px solid #DBDBDB
-  background: #FFFFFF 0% 0% no-repeat padding-box
-  transition: all 0.3s ease 0s
-
-#myForm i, #searchTopMenu
-  display: none
-
-input[type="search"]::-webkit-search-cancel-button
-  -webkit-appearance: none
-  appearance: none
-  display: none
-
-i.fa-sharp.fa-solid.fa-circle-xmark
-  position: absolute
-  top: 60px
-  left: 80vw
-
-.toggleForm
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
-  outline: none
-  background: none
-  cursor: pointer
-  width: 16px
-  height: 3.5vh
-  position: absolute
-  top: 14.3vh
-  left: 79.2vw
-  z-index: 9999
-  opacity: 0
-
-/* Estilos para ocultar o formulário quando o checkbox estiver marcado */
-
-.toggleForm:checked
-  display: none
-
-#input#toggleSearch
-  width: 28px
-  position: absolute
-  z-index: 999
-  top: 1vh
-  left: 61vw
-  opacity: 0
-
-input#toggleSearch
-  display: block
-  position: absolute
-  z-index: 333
-  top: 0.5vh
-  left: calc(100% - 28vw)
-  right: 8vw
-  opacity: 0
-  width: 43px
-
-#stickContainer
-  position: -webkit-sticky
+header
   position: sticky
   top: 0px
-  .secondColun
-    display: flex
-    gap: 20px
-    .menu-mainmenu-container
-      display: none
+  z-index: 9
 
-.containerFlex
-  margin-top: 100vh
+  #searchIcon,#menuMobileIcon
+    font-size: 24px
 
-i.fa-solid.fa-xmark
-  font-size: 33px
+  #myForm
+    display: none
+    width: 90%
+    position: absolute
+    top: 60px
+    left: -50%;
+    right: -50%;
+    height: 4vh
+    margin: 0px auto
+    border-radius: 4px
+    padding: 0px 10px
+    transition: all 0.3s ease 0s
+    background: #FFFFFF 0% 0% no-repeat padding-box
+    border: 1px solid #DBDBDB
+    align-items: center
+    justify-content: space-around
+    i
+      cursor: pointer
 
-.stick
-  position: sticky
-  top: 0px
-  background: #FFF
+  input#searchTopMenu
+    width: 95%
+    height: 100%
+    border: none
+    padding: 0px 10px
 
-.floatingMenu
-  display: none
-  position: absolute
-  height: auto
-  top: 0px
-  z-index: 10000
-  background: #F5F5F5
-  width: 100vw
-  border-top: 2px solid $tertiary-color
-  padding-bottom: 0vh
-  box-shadow: 0px 2px 6px #00000029;
+  input[type="search"]::-webkit-search-cancel-button
+    -webkit-appearance: none
+    appearance: none
+    display: none
 
-.admin-bar
-  input#dropDownMenu
-    top: 103px
-  #closerDropMenu
-    top: 64px
+  .toggleForm
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    outline: none
+    background: none
+    cursor: pointer
+    width: 16px
+    height: 3.5vh
+    position: absolute
+    top: 14.3vh
+    left: 79.2vw
+    z-index: 9999
+    opacity: 0
 
-i.fa-solid.fa-universal-access
-  font-size: 30px
-  position: absolute
-  left: 32vw
-  top: 1vh
+  /* Estilos para ocultar o formulário quando o checkbox estiver marcado */
 
-[vw] [vw-access-button] img
-  max-height: 50px
-  transition: all .5s ease
-  border-radius: 79px
-  opacity: 1 !important
-  visibility: hidden !important
-  z-index: 333
+  .toggleForm:checked
+    display: none
 
-[vw] [vw-access-button] .access-button
-  width: 33px
-  height: 33px
-  z-index: 1
-  visibility: initial !important
+  #input#toggleSearch
+    width: 28px
+    position: absolute
+    z-index: 999
+    top: 1vh
+    left: 61vw
+    opacity: 0
 
-[vw] [vw-access-button]
-  flex-direction: row-reverse
-  width: 40px
-  height: 40px
-  cursor: pointer
-  overflow: hidden
-  position: absolute !important
-  border-radius: 8px !important
-  transition: all .5s ease
-  right: 38vw !important
-  bottom: 46.5vh !important
-  left: auto !important
+  input#toggleSearch
+    display: block
+    position: absolute
+    z-index: 333
+    top: 0.5vh
+    left: calc(100% - 28vw)
+    right: 8vw
+    opacity: 0
+    width: 43px
 
-div[vw]
-  z-index: 333 !important
+  #stickContainer
+    position: -webkit-sticky
+    position: sticky
+    top: 0px
+    .secondColun
+      display: flex
+      gap: 20px
+      .menu-mainmenu-container
+        display: none
 
-  margin-top: 30px !important
+  .containerFlex
+    margin-top: 100vh
 
-.sub-item
-  display: none
+  i.fa-solid.fa-xmark
+    font-size: 33px
 
-a span i
-  font-size: 12px
-  font-weight: 800
-  color: green
-  margin-left: 10px
-  font-family: "Font Awesome 6 Free"
+  .stick
+    position: sticky
+    top: 0px
+    background: #FFF
 
-i.fa-solid.fa-arrow-up-right-from-square
-  color: black
+  .floatingMenu
+    display: none
+    position: absolute
+    height: auto
+    top: 0px
+    z-index: 10000
+    background: #F5F5F5
+    width: 100vw
+    border-top: 2px solid $tertiary-color
+    padding-bottom: 0vh
+    box-shadow: 0px 2px 6px #00000029;
 
-ul.menu
-  display: block
-  margin-left: 32px
+  .admin-bar
+    input#dropDownMenu
+      top: 103px
+    #closerDropMenu
+      top: 64px
 
-ul.menu li
-  margin-bottom: 24px
-  color: $secondary-color
+  i.fa-solid.fa-universal-access
+    font-size: 30px
+    position: absolute
+    left: 32vw
+    top: 1vh
 
-ul.menu li a
-  font-size: 16px
-  font-weight: 600
-  color: $secondary-color
-  margin-bottom: 0px !important
+  [vw] [vw-access-button] img
+    max-height: 50px
+    transition: all .5s ease
+    border-radius: 79px
+    opacity: 1 !important
+    visibility: hidden !important
+    z-index: 333
 
-.menuUl > .voltar
-  display: none
+  [vw] [vw-access-button] .access-button
+    width: 33px
+    height: 33px
+    z-index: 1
+    visibility: initial !important
 
-.menu:before
-  content: ''
-  display: block
-  position: absolute
-  color: #000
-  width: 210px
-  height: 2px
-  z-index: 99999
-  font-weight: 900
-  top: 20px
+  [vw] [vw-access-button]
+    flex-direction: row-reverse
+    width: 40px
+    height: 40px
+    cursor: pointer
+    overflow: hidden
+    position: absolute !important
+    border-radius: 8px !important
+    transition: all .5s ease
+    right: 38vw !important
+    bottom: 46.5vh !important
+    left: auto !important
 
-.menu-item-has-children.opened a
-  display: none
+  div[vw]
+    z-index: 333 !important
 
-.menu-item-has-children.opened ul
-  display: block
+    margin-top: 30px !important
 
-ul#menu-mainmenu:after
-  content: ""
-  display: block
-  width: 90vw
-  height: 1px
-  background: $tertiary-color
-  text-align: center
-  margin-left: -16px
+  .sub-menu
+    display: none
 
-.voltar
-  position: absolute
-  display: block
-  color: green
-  top: 10vh
-  left: 40px
-  cursor: pointer
-  margin-top: 2vh
-  z-index: 10
+  a span i
+    font-size: 12px
+    font-weight: 800
+    color: green
+    margin-left: 10px
+    font-family: "Font Awesome 6 Free"
 
-nav.menuUl
-  margin-top: 25px !important
-  padding-top: 21px
+  i.fa-solid.fa-arrow-up-right-from-square
+    color: black
 
-.voltar:after
-  content: ""
-  position: absolute
-  display: block
-  width: 90vw
-  height: 1px
-  top: 3vh
-  z-index: 999
-  background: green
-  margin: 8px 0px 0px -24px
+  ul.menu
+    display: block
+    margin-left: 32px
 
-ul .menu-item-has-children li:first-child
-  padding-top: 40px
+  ul.menu li
+    margin-bottom: 24px
+    color: $secondary-color
 
-ul#menu-mainmenu.special:after
-  display: none
+  ul.menu li a
+    font-size: 16px
+    font-weight: 600
+    color: $secondary-color
+    margin-bottom: 0px !important
 
-// li.menu-item-has-children ul li:last-child:after
-//   content: ""
-//   display: block
-//   width: 99%
-//   height: 1px
-//   background: green
-//   margin-top: 3vh
-//   position: absolute
-//   left: -5vw
+  .menuUl > .voltar
+    display: none
 
-.menu-item-has-children
-  position: relative
+  .menu:before
+    content: ''
+    display: block
+    position: absolute
+    color: #000
+    width: 210px
+    height: 2px
+    z-index: 99999
+    font-weight: 900
+    top: 20px
 
-li.menu-item-has-children > a:after 
-  content: "\f054"
-  font-family: "Font Awesome 6 Free"
-  width: 5px
-  height: 5px
-  font-weight: 900
-  color: green
-  font-size: 10px
-  margin-left: 5px
+  .menu-item-has-children.opened a
+    display: none
 
-#menu-barra-governo
-  li:not(.menu-item-has-children) > a:after
-    content: "\f08e"
+  .menu-item-has-children.opened ul
+    display: block
+
+  ul#menu-mainmenu:after
+    content: ""
+    display: block
+    width: 90vw
+    height: 1px
+    background: $tertiary-color
+    text-align: center
+    margin-left: -16px
+
+  .voltar
+    position: absolute
+    display: block
+    color: green
+    top: 10vh
+    left: 40px
+    cursor: pointer
+    margin-top: 2vh
+    z-index: 10
+
+  nav.menuUl
+    margin-top: 25px !important
+    padding-top: 21px
+
+  .voltar:after
+    content: ""
+    position: absolute
+    display: block
+    width: 90vw
+    height: 1px
+    top: 3vh
+    z-index: 999
+    background: green
+    margin: 8px 0px 0px -24px
+
+  ul .menu-item-has-children li:first-child
+    padding-top: 40px
+
+  ul#menu-mainmenu.special:after
+    display: none
+
+  .menu-item-has-children
+    position: relative
+
+  li.menu-item-has-children > a:after 
+    content: "\f054"
     font-family: "Font Awesome 6 Free"
     width: 5px
     height: 5px
+    font-weight: 900
+    color: green
     font-size: 10px
     margin-left: 5px
-  li.menu-item-has-children > a:after
-    color: #2E2E2E
 
-.voltar:before
-  content: "\f053"
-  font-family: "Font Awesome 6 Free"
-  width: 5px
-  height: 5px
-  font-weight: 900
-  color: green
-  font-size: 10px
-  margin-right: 10px
-  margin-left: -10px
-  position: absolute
-  top: 4px
+  #menu-barra-governo
+    li:not(.menu-item-has-children) > a:after
+      content: "\f08e"
+      font-family: "Font Awesome 6 Free"
+      width: 5px
+      height: 5px
+      font-size: 10px
+      margin-left: 5px
+    li.menu-item-has-children > a:after
+      color: #2E2E2E
 
-.stick
-  color: gray
-  box-shadow: 0px -1px #80808038
-  padding: 1px
-  z-index: 999
+  .voltar:before
+    content: "\f053"
+    font-family: "Font Awesome 6 Free"
+    width: 5px
+    height: 5px
+    font-weight: 900
+    color: green
+    font-size: 10px
+    margin-right: 10px
+    margin-left: -10px
+    position: absolute
+    top: 4px
 
-.menu-barra-governo-container
-  margin-top: 24px
+  .stick
+    color: gray
+    box-shadow: 0px -1px #80808038
+    padding: 1px
+    z-index: 999
+
+  .menu-barra-governo-container
+    margin-top: 24px
 
 @media (min-width: 1240px)
-  header, #barraGov
+  header
+    width: 100%
+    background: #FFF
+    #menuMobileIcon
+      display: none
+
+  .stick, .containerSeparator
     max-width: 1240px
     margin: 0 auto
 
     #stickContainer .secondColun .menu-mainmenu-container
       display: block
 
-  ul.menu
-    display: flex
-    gap: 2rem
-    li
-      margin-bottom: 0px
-      position: relative
-      .showDesktop
-        display: block
-      .sub-item
-        display: block
+    ul.menu
+      display: flex
+      gap: 2rem
+      li
+        margin-bottom: 0px
+        position: relative
+        .showDesktop
+          display: block
 
-    li.menu-item-has-children > a:after 
-      content: "\f078" 
-      color: #2B2B2B
+      li.menu-item-has-children > a:after 
+        content: "\f078" 
+        color: #2B2B2B
 
-    ul
-      display: none
-      position: absolute
-      top: 10px
-      left: 0px
-      background: #FFF
-      box-shadow: 0px 3px 6px #00000029;
+      ul
+        display: none
+        position: absolute
+        top: 10px
+        left: 0px
+        background: #FFF
+        box-shadow: 0px 3px 6px #00000029;
