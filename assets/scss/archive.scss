@@ -1,15 +1,28 @@
 #archive {
-  margin: 40px 28px;
+  margin: 40px 20px;
 
   .archive-card {
     margin-top: 2rem;
-    padding-bottom: 2rem;
+    h2 {
+      margin-bottom: .5rem;
+    }
+    span {
+      font: $subtitle;
+      margin-bottom: 1rem;
+      color: #7E8488;
+    }
+    a {
+      font: $subtitle;
+    }
   }
 
   .archive-card::after {
+    content: '';
+    display: block;
     height: 1px;
     width: 30%;
     margin: 0 auto;
+    margin-top: 2rem;
     background: #DBDBDB;
   }
 }

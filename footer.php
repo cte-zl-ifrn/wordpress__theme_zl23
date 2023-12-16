@@ -1,25 +1,41 @@
-<footer id="mainFooter">
+<footer>
+    <div id="siteMap">
+        <h3>Mapa do site</h3>
+    <div class="siteMap-container">
+        <?php 
+        wp_nav_menu( 
+            array( 
+                'theme_location' => 'mainMenu'
+                ) 
+        );?>
+    </div>
+    </div>
+    <div id="mainFooter">
+        <img class="logoIfrnHorizontal" src="<?php echo get_template_directory_uri() . '/assets/svg/Logo-IFRN-ZL.svg' ?>" alt="">
+        <img class="logoIfrnVertical" src="<?php echo get_template_directory_uri() . '/assets/svg/Logo-IFRN-ZL-vertical.svg' ?>" alt="">
+        <a class="e-mec" target="_blank" href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MTA4Mg==">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/TAG-E-mec.png' ?>" alt="Consulte aqui o cadeastro da instituição no Sistema e-MEC">
+        </a>
+
         <div id="contactArea">
-            <a target="_blank" href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MTA4Mg==">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/TAG-E-mec.png' ?>" alt="">
-            </a>
-            <img src="<?php echo get_template_directory_uri() . '/assets/svg/Logo-IFRN-ZL.svg' ?>" alt="">
             <p id="addressFooter">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte ©2011. 
                 Todos os direitos reservados. Av. Senador Salgado Filho, 1559 - Natal / RN CEP: 59015-000</p>
             <p>Contatos - (84) 3092-8900 | (84) 30928902</p>
+            
+            <div id="footerIcons">
+                <a href="https://www.facebook.com/ifrnzonaleste">
+                    <i class="fa-brands fa-square-facebook" alt="Acessar Facebook "></i>
+                </a>
+                <a href="https://www.instagram.com/ifrnzonaleste/">
+                    <i class="fa-brands fa-instagram" alt="Acessar Instragram"></i>
+                </a>
+                <a href="https://www.youtube.com/c/ifrncampusead">
+                    <i class="fa-brands fa-youtube" alt="Acessar Youtube"></i>
+                </a>
+            </div>
         </div>
-        <div id="footerIcons">
-            <a href="https://www.facebook.com/ifrnzonaleste">
-                <i class="fa-brands fa-square-facebook" alt="Acessar Facebook "></i>
-            </a>
-            <a href="https://www.instagram.com/ifrnzonaleste/">
-                <i class="fa-brands fa-instagram" alt="Acessar Instragram"></i>
-            </a>
-            <a href="https://www.youtube.com/c/ifrncampusead">
-                <i class="fa-brands fa-youtube" alt="Acessar Youtube"></i>
-            </a>
-        </div>
-    </footer>
+    </div>
+</footer>
     
     <!-- User Way -->
     <!-- <script>

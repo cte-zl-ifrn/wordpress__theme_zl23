@@ -1,14 +1,20 @@
 #mainFooter {
-   min-height: 220px;
-   position: relative;
-   color: #2B2B2B;
+  margin: 0 20px;
+  min-height: 220px;
+  position: relative;
+  color: #2B2B2B;
+  display: grid;
+  gap: 1rem;
+
+  .logoIfrnVertical {
+  display: none;
+  }
  }
  
  #contactArea {
    font: $menu-font;
    font-size: 14px;
    font-weight: 600;
-   padding: 24px 33px;
    display: grid;
    gap: 16px;
 
@@ -21,12 +27,112 @@
    display: flex;
    justify-content: center;
    gap: 32px;
+   padding-bottom: 32px;
    a i {
      font-family: "Font Awesome 6 Brands";
      font-size: 24px;
    }
+ }
 
-  padding-bottom: 31px;
+ #siteMap {
+  display: none;
+ }
 
+
+ @media (min-width: 768px) {
+  #mainFooter {
+    grid-template-columns: minmax(auto, 90px) 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    .logoIfrnVertical {
+      display: block;
+      width: 90px;
+     
+    }
+    .logoIfrnHorizontal {
+      display: none;
+    }
+    .e-mec {
+      display: flex;
+      justify-content: center;
+    }
+    #contactArea {
+      font: $subtitle;
+      gap: 0px;
+      #footerIcons {
+        margin-top: 1rem;
+        padding-bottom: 0px;
+        justify-content: left;
+      }
+    }
+  }
+
+  #siteMap {
+    display: block;
+    background-color: #F5F5F5;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    h3 {
+      font: $third-title;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .siteMap-container {
+      margin: 0 20px;
+      .menu {
+        column-gap: 2rem;
+        column-count: 4;
+        > li {
+          //break-inside: avoid;
+          width: 100%;
+        }
+        li:first-child {
+          display: none;
+        }
+        > li:not(.menu-item-has-children) {
+          margin-bottom: 1.5rem;
+          a {
+            margin-bottom: 0px;
+          }
+        }
+        .menu-item-has-children {
+          margin-bottom: 1.5rem;
+        }
+        > .menu-item > a {
+          display: inline-block;
+          font: $text-font;
+          font-weight: bold;
+          color: $text-color;
+          margin-bottom: .5rem;
+        }
+      }
+  
+      .sub-menu {
+        display: grid;
+        gap: .5rem;
+  
+        a {
+          font: $fifth-title;
+          font-weight: 400;
+          color: inherit;
+        }
+      }
+    }
+   }
+  
+ }
+
+ @media (min-width: 1240px) {
+  #mainFooter {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  #siteMap .siteMap-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    .menu > li {
+      break-inside: avoid;
+    }
+  }
  }
  

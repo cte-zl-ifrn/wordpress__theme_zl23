@@ -5,7 +5,7 @@ function importar_arquivos() {
     // CSS
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2', 'all');
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), '6.4.2', 'all');
-    wp_enqueue_style('open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@100;500;700&display=swap', array(), null);
+    wp_enqueue_style('open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap', array(), null);
     wp_enqueue_style('estilos', get_template_directory_uri() . '/assets/css/all.css', array(), null, 'all');
 
     //JS
@@ -50,7 +50,6 @@ function getBreadcrumbs() {
       
     if(!$theParent) {
         if(is_category()) {
-            //return '<li>teste</li>';
             return '<li>' . single_cat_title('', false) . '</li>';
         }
         if(is_search()) {
@@ -66,6 +65,23 @@ function getBreadcrumbs() {
     return $crumbs . '<li>' . get_the_title( $current_page_id ) . '</li>';
 }
 
+if ( !class_exists('My_Nav_Menu_Walker') ) {
+    class My_Nav_Menu_Walker extends Walker_Nav_Menu {
+        // Adiciona um span antes do início do submenu
+        public function start_lvl(&$output, $depth = 0, $args = null) {
+            $indent = str_repeat("\t", $depth);
+            $title = isset($args->title) ? $args->title : '';
+            $output .= "\n$indent<span class='submenu-span'>" . $title . "</span><ul class='sub-menu'>\n";
+        }
+
+        // Fecha o span após o final do submenu
+        public function end_lvl(&$output, $depth = 0, $args = null) {
+            $indent = str_repeat("\t", $depth);
+            $output .= "$indent</ul>\n";
+        }
+
+    }
+}
 
 function getMainMenu() {
 	$locations = get_nav_menu_locations();
@@ -143,11 +159,18 @@ function formatShotcutMenu($string) {
     return false;
 }
 
-function getWebStories() {
+function getWebStories($story_per_page, $slug = false) {
     // Consulta personalizada para recuperar histórias do Web Stories
     $args = array(
         'post_type' => 'web-story', // Post type do Web Stories
-        'posts_per_page' => 5, // Número de histórias para exibir
+        'posts_per_page' => $story_per_page, // Número de histórias para exibir
+        'tax_query' => $slug ? array(
+            array(
+                'taxonomy' => 'web_story_category',
+                'field' => 'slug',
+                'terms' => $slug,
+            ),
+        ) : false,
     );
     
     return new WP_Query($args);

@@ -3,6 +3,8 @@ const backMenuIcon = document.querySelectorAll(".backMenuIcon");
 const menulink = document.querySelectorAll(".menu a");
 const menuIcon = document.querySelector('#menuMobileIcon');
 const closeMenu = document.querySelector('#closeMainMenu');
+const submenus = document.querySelectorAll('#stickContainer ul.menu .sub-menu');
+
 
 
 menuIcon.addEventListener('click', () => {
@@ -19,6 +21,12 @@ menuWithSubmenuItems.forEach((item) => {
         $(".menuUl > .voltar").css("display", "block");
         $(".menu > li > a").addClass("sub-menu");
         $(e.target).parent().find("ul").removeClass("sub-menu");
+        submenus.forEach((item) => {
+            if(item.classList.contains("showDesktop")) {
+               item.classList.toggle("showDesktop");
+            }
+        })
+        $(e.target).parent().find("ul").addClass("showDesktop");
       
         $("ul#menu-mainmenu").addClass("special");
       
@@ -62,12 +70,12 @@ const closeSearch = document.querySelector('#myForm i');
 
 
 toggleSearch.addEventListener('click', () => {
-    $("#myForm i, #searchTopMenu").css("display", "block");
+    $("#myForm i, #myForm").css("display", "flex");
     $("#searchTopMenu").focus();
 })
 
 closeSearch.addEventListener('click', () => {
-    $("#myForm i, #searchTopMenu").css("display", "none");
+    $("#myForm").css("display", "none");
 })
 
 
