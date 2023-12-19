@@ -65,24 +65,6 @@ function getBreadcrumbs() {
     return $crumbs . '<li>' . get_the_title( $current_page_id ) . '</li>';
 }
 
-if ( !class_exists('My_Nav_Menu_Walker') ) {
-    class My_Nav_Menu_Walker extends Walker_Nav_Menu {
-        // Adiciona um span antes do início do submenu
-        public function start_lvl(&$output, $depth = 0, $args = null) {
-            $indent = str_repeat("\t", $depth);
-            $title = isset($args->title) ? $args->title : '';
-            $output .= "\n$indent<span class='submenu-span'>" . $title . "</span><ul class='sub-menu'>\n";
-        }
-
-        // Fecha o span após o final do submenu
-        public function end_lvl(&$output, $depth = 0, $args = null) {
-            $indent = str_repeat("\t", $depth);
-            $output .= "$indent</ul>\n";
-        }
-
-    }
-}
-
 function getMainMenu() {
 	$locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ "mainMenu" ] );
@@ -231,12 +213,17 @@ function wporg_custom_post_type() {
 	);
     register_post_type('courses',
         array(
-            'labels'      => array(
-                'name'          => __( 'Cursos', 'textdomain' ),
-                'singular_name' => __( 'Curso', 'textdomain' ),
+            'labels' => array(
+                'name' => 'Cursos',
+                'add_new_item' => 'Novo curso',
+                'edit_item' => 'Editar curso',
+                'all_items' => 'Todos os cursos',
+                'singular_name' => 'Curso'
             ),
-            'public'      => true,
+            'public' => true,
             'has_archive' => true,
+            'show_in_rest' => true,
+            'menu_icon' => 'dashicons-welcome-learn-more',
             'exclude_from_search' => true,
             'publicly_queryable' => false,
             'show_ui' => true,
@@ -244,7 +231,7 @@ function wporg_custom_post_type() {
                 'title',
                 'excerpt',
                 'thumbnail',
-                // 'editor',
+                'editor',
                 // 'revisions',
                 // 'trackbacks',
                 // 'author',
