@@ -78,6 +78,18 @@ closeSearch.addEventListener('click', () => {
     $("#myForm").css("display", "none");
 })
 
+//Slide stories
+var splide = new Splide( '.splide', {
+    perPage: 1,
+    perMove: 1,
+    padding: '2rem',
+    gap: '1rem',
+    rewind : true,
+    pagination: false,
+  } );
+  
+  splide.mount();
+
 
 
 

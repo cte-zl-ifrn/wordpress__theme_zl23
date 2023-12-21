@@ -107,115 +107,46 @@
     <a href="<?php echo site_url('/web-stories') ?>">Ver todas ></a>
   </div>
 
-  <div id="webstory-carousel-container">
-    <div class="webstory-carousel" id="webstory-carousel">
-
+  <div >
+    <div >
+      <ul>
       <?php  
         $web_stories = getWebStories(4);
         if ($web_stories->have_posts()) :
           while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
-            <div class="webstory-item">
-              <?php the_post_thumbnail() ?>
+            <li style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'">
               <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-            </div>
+          </li>
           <?php endwhile;
           wp_reset_postdata();
         else :
           echo 'Nenhuma story encontrada.';
         endif; 
       ?>
+      </ul>
     </div>
-    <button id="webstory-prev" onclick="webstoryPrevSlide()">❮</button>
-    <button id="webstory-next" onclick="webstoryNextSlide()">❯</button>
   </div>
 
 </section>
 
-<div id="webstory-carousel-container">
-  <div id="webStoriesTittle">
-    <h1>Web Stories</h1>
-    <span>VER TODAS</span>
+<section class="splide" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+		<ul class="splide__list">
+    <?php  
+      $web_stories = getWebStories(4);
+      if ($web_stories->have_posts()) :
+        while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
+          <li class="splide__slide" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'">
+            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+          </li>
+        <?php endwhile;
+      else :
+        echo 'Nenhuma story encontrada.';
+      endif; 
+      wp_reset_postdata();
+      ?> 
+		</ul>
   </div>
-  <div class="webstory-carousel" id="webstory-carousel">
-
-    <div class="webstory-item">
-        <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/12/cropped-huma-h-yardim-5LvC-QX0OOc-unsplash-scaled-1.jpg" alt="">
-        <a href="">
-          O que é o Decreto 9.057/2017 e por que ele é importante para a educação a distância?
-        </a>
-    </div>
-
-    <div class="webstory-item">
-      <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/11/cropped-image-31.png" alt="">
-      <a href="">
-        O que é o Decreto 9.057/2017 e por que ele é importante para a educação a distância?
-      </a>
-    </div>
-
-    <div class="webstory-item">
-      <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/11/cropped-image-28.png" alt="">
-      <a href="">
-        O quse é o Decreto 9.057/2017 e por que ele é importante para a educação a distância?
-      </a>
-    </div>
-
-    <div class="webstory-item">
-      <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/10/cropped-seyi-ariyo-UG5NpfjQevY-unsplash-scaled-1.jpg" alt="">
-      <a href="">
-        O que é o Decreto 9.057/2017 e por que ele é importante para a educação a distância?
-      </a>
-    </div>
-
-  </div>    
-  <button id="webstory-prev" onclick="webstoryPrevSlide()">❮</button>
-  <button id="webstory-next" onclick="webstoryNextSlide()">❯</button>
-</div>
-
-<script>
-  let webstoryCurrentIndex = 0;
-  let webstoryStartX;
-
-  const webstoryTotalItems = document.querySelectorAll('.webstory-item').length;
-  const webstoryCarousel = document.getElementById('webstory-carousel');
-
-  function updateWebstoryCarousel() {
-    const newPosition = -webstoryCurrentIndex * 70 + '%';
-    webstoryCarousel.style.transform = 'translateX(' + newPosition + ')';
-  }
-
-  function webstoryNextSlide() {
-    if (webstoryCurrentIndex < webstoryTotalItems - 1) {
-      webstoryCurrentIndex++;
-    } else {
-      webstoryCurrentIndex = 0;
-    }
-    updateWebstoryCarousel();
-  }
-
-  function webstoryPrevSlide() {
-    if (webstoryCurrentIndex > 0) {
-      webstoryCurrentIndex--;
-    } else {
-      webstoryCurrentIndex = webstoryTotalItems - 1;
-    }
-    updateWebstoryCarousel();
-  }
-
-  webstoryCarousel.addEventListener('touchstart', webstoryTouchStart);
-  webstoryCarousel.addEventListener('touchmove', webstoryTouchMove);
-
-  function webstoryTouchStart(e) {
-    webstoryStartX = e.touches[0].clientX;
-  }
-
-  function webstoryTouchMove(e) {
-    const diffX = webstoryStartX - e.touches[0].clientX;
-    if (diffX > 30) {
-      webstoryNextSlide();
-    } else if (diffX < -30) {
-      webstoryPrevSlide();
-    }
-  }
-</script>
+</section>
 
 <?php get_footer(); ?>
