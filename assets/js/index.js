@@ -82,10 +82,18 @@ closeSearch.addEventListener('click', () => {
 var splide = new Splide( '.splide', {
     perPage: 1,
     perMove: 1,
-    padding: '2rem',
-    gap: '1rem',
-    rewind : true,
+    padding: { right: '3rem' },
+    gap: '1.5rem',
+    omitEnd : true,
     pagination: false,
+    mediaQuery: 'min',
+    breakpoints: {
+        1240: {
+		    arrows: false,
+            drag: false,
+            gap: '40px',
+		},
+    }
   } );
   
   splide.mount();

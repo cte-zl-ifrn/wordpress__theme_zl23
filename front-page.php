@@ -28,27 +28,31 @@
   <div class="carousel-indicators">
   <?php $count = 0;
   $firstslide = true;
-  foreach (getshotcutMenu() as $menu_item):  ?>
-    <button type="button" data-bs-target="#atalhosCarousel" data-bs-slide-to="<?php echo $count ?>" class="<?php echo $firstslide ? "active" : "" ?>" aria-current="true" aria-label="Slide 1"></button>
-  <?php $count ++;
-  $firstslide = false; 
-  endforeach ?>
+  if(getshotcutMenu()):
+    foreach (getshotcutMenu() as $menu_item):  ?>
+      <button type="button" data-bs-target="#atalhosCarousel" data-bs-slide-to="<?php echo $count ?>" class="<?php echo $firstslide ? "active" : "" ?>" aria-current="true" aria-label="Slide 1"></button>
+    <?php $count ++;
+    $firstslide = false; 
+    endforeach;
+  endif ?>
   </div>
 
   <div class="carousel-inner">
 <?php $firstslide = true;
-  foreach((array) getshotcutMenu() as $menu_item): ?>
-    <div class="carousel-item <?php echo $firstslide ? "active" : "" ?>">
-      <a href="<?php echo $menu_item->url ?>">
-        <div class="carousel-caption">
-          <div class="cardCaption">
-            <?php echo formatShotcutMenu($menu_item->post_title) ?>
+  if(getshotcutMenu()):
+    foreach((array) getshotcutMenu() as $menu_item): ?>
+      <div class="carousel-item <?php echo $firstslide ? "active" : "" ?>">
+        <a href="<?php echo $menu_item->url ?>">
+          <div class="carousel-caption">
+            <div class="cardCaption">
+              <?php echo formatShotcutMenu($menu_item->post_title) ?>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-<?php $firstslide = false;
-  endforeach ?>
+        </a>
+      </div>
+      <?php $firstslide = false;
+    endforeach;
+  endif ?>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#atalhosCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,35 +105,11 @@
 
 
 <!-- Web Stories -->
-<section class="section-web-stories">
-  <div class="header-section">
+<section class="splide section-web-stories" aria-label="Splide Basic HTML Example">
+<div class="header-section">
     <h1>Web Stories</h1>
     <a href="<?php echo site_url('/web-stories') ?>">Ver todas ></a>
   </div>
-
-  <div >
-    <div >
-      <ul>
-      <?php  
-        $web_stories = getWebStories(4);
-        if ($web_stories->have_posts()) :
-          while ($web_stories->have_posts()) : $web_stories->the_post(); ?>
-            <li style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'">
-              <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-          </li>
-          <?php endwhile;
-          wp_reset_postdata();
-        else :
-          echo 'Nenhuma story encontrada.';
-        endif; 
-      ?>
-      </ul>
-    </div>
-  </div>
-
-</section>
-
-<section class="splide" aria-label="Splide Basic HTML Example">
   <div class="splide__track">
 		<ul class="splide__list">
     <?php  
@@ -146,6 +126,14 @@
       wp_reset_postdata();
       ?> 
 		</ul>
+  </div>
+  <div class="splide__arrows">
+    <button class="splide__arrow splide__arrow--prev">
+      <i class="fa-solid fa-chevron-left"></i>
+		</button>
+		<button class="splide__arrow splide__arrow--next">
+      <i class="fa-solid fa-chevron-right"></i>
+		</button>
   </div>
 </section>
 
