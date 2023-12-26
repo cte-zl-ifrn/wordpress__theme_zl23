@@ -223,11 +223,12 @@ function wporg_custom_post_type() {
                 'singular_name' => 'Curso'
             ),
             'public' => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-welcome-learn-more',
-            'exclude_from_search' => true,
-            'publicly_queryable' => false,
+            'hierarchical' => true,
+            //'exclude_from_search' => true,
+            //'publicly_queryable' => false,
             'show_ui' => true,
             'supports' => [
                 'title',
@@ -241,7 +242,7 @@ function wporg_custom_post_type() {
                 // 'custom-fields', 
                 // 'post-formats'
             ],
-            'rewrite'     => array( 'slug' => 'courses' ), // my custom slug
+            'rewrite'     => array( 'slug' => 'cursos' ), // my custom slug
         )
     );
 }
