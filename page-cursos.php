@@ -17,23 +17,63 @@
   class="form-control"
   value="<?php echo isset($_GET['search-cursos']) ? $_GET['search-cursos'] : '' ?>"
   >
+
+  <fieldset>      
+    <legend>Categoria</legend>      
+    <input type="checkbox" id="fic" name="categoria[]" value="fic" <?php echo isset($_GET['categoria']) && in_array('fic', $_GET['categoria']) ? 'checked' : ''; ?>>
+    <label for="fic">FIC</label><br>    
+    <input type="checkbox" name="categoria[]" value="curso-aberto" <?php echo isset($_GET['categoria']) && in_array('curso-aberto', $_GET['categoria']) ? 'checked' : ''; ?>>
+    <label for="curso-aberto">Curso Aberto</label><br>     
+    <input type="checkbox" name="categoria[]" value="vermelho" <?php echo isset($_GET['categoria']) && in_array('vermelho', $_GET['categoria']) ? 'checked' : ''; ?>>  
+    <label for="vermelho">Vermelho</label><br>  
+    <br>      
+    <input type="submit" value="Submit now" />      
+  </fieldset>
+
+  <fieldset>
+    <legend>Modalidade</legend>
+    <input type="radio" name="modalidade" value="presencial" <?php echo isset($_GET['modalidade']) && $_GET['modalidade'] == 'presencial' ? 'checked' : '' ?>>
+    <label for="presencial">Presencial</label>
+    <input type="radio" name="modalidade" value="ead" <?php echo isset($_GET['modalidade']) && $_GET['modalidade'] == 'ead' ? 'checked' : '' ?>>
+    <label for="ead">EaD</label>
+  </fieldset>
+
   <button type="submit">Pesquisar</button>
 </form>
 
 <?php
 
-$courses = new WP_Query(
-  $args = array(
-    'post_type' => 'courses',
-    'posts_per_page' => 9,
-    'orderby' => 'title',
-    'order' => 'ASC',
-    'meta-query' => [
-      'relation' => 'AND',
-    ],
-    's' => isset($_GET['search-cursos']) ? sanitize_text_field($_GET['search-cursos']) : false,
+$args = array(
+  'post_type' => 'courses',
+  'posts_per_page' => 9,
+  'orderby' => 'title',
+  'order' => 'ASC',
+  'meta_query' => array(
+    'relation' => 'AND',
   )
 );
+
+if (isset($_GET['search-cursos']) && !empty($_GET['search-cursos']) ) {
+  $args['s'] = sanitize_text_field( $_GET['search-cursos'] );
+}
+
+if (isset($_GET['categoria'])) {
+  $args['meta_query'][] = array(
+    'key' => isset($_GET['categoria']) ? 'categoria' : '',
+    'value' => isset($_GET['categoria']) ? $_GET['categoria'] : '',
+  );
+}
+
+if (isset($_GET['modalidade'])) {
+  $args['meta_query'][] = array(
+    'key' => isset($_GET['modalidade']) ? 'modalidade' : '',
+    'value' => isset($_GET['modalidade']) ? $_GET['modalidade'] : '',
+  );
+}
+
+$courses = new WP_Query($args);
+
+
 if ($courses->have_posts()) :
   while ($courses->have_posts()) : $courses->the_post(); ?>
   <div>
