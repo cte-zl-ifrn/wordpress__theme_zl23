@@ -1,6 +1,6 @@
 const menuWithSubmenuItems = document.querySelectorAll(".menu-item-has-children");
 const backMenuIcon = document.querySelectorAll(".backMenuIcon");
-const menulink = document.querySelectorAll(".menu a");
+const menulink = document.querySelectorAll(".floatingMenu .menu a");
 const menuIcon = document.querySelector('#menuMobileIcon');
 const closeMenu = document.querySelector('#closeMainMenu');
 const submenus = document.querySelectorAll('#stickContainer ul.menu .sub-menu');
@@ -19,7 +19,7 @@ closeMenu.addEventListener('click', () => {
 menuWithSubmenuItems.forEach((item) => {
     item.addEventListener("click", (e) => {
         $(".menuUl > .voltar").css("display", "block");
-        $(".menu > li > a").addClass("sub-menu");
+        $(".floatingMenu .menu > li > a").addClass("sub-menu");
         $(e.target).parent().find("ul").removeClass("sub-menu");
         submenus.forEach((item) => {
             if(item.classList.contains("showDesktop")) {
@@ -28,7 +28,7 @@ menuWithSubmenuItems.forEach((item) => {
         })
         $(e.target).parent().find("ul").addClass("showDesktop");
       
-        $("ul#menu-mainmenu").addClass("special");
+        $(".floatingMenu ul#menu-mainmenu").addClass("special");
       
     });
   
@@ -36,16 +36,16 @@ menuWithSubmenuItems.forEach((item) => {
 
 
 
-$(".menuUl > .voltar, #closerDropMenu").on("click", function (e) {
+$(".menuUl > .voltar, #closeMainMenu").on("click", function (e) {
     resetMenu();
 });
 
 
 function resetMenu(){
     $(".menuUl > .voltar").css("display", "none");
-    $(".menu > li > a").removeClass("sub-menu");
-    $(".menu-item-has-children > ul").addClass("sub-menu");
-    $("ul#menu-mainmenu").removeClass("special");
+    $(".floatingMenu .menu > li > a").removeClass("sub-menu");
+    $(".floatingMenu .menu-item-has-children > ul").addClass("sub-menu");
+    $(".floatingMenu ul#menu-mainmenu").removeClass("special");
 }
 
 

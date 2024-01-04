@@ -13,6 +13,12 @@
   }
 }
 
+.admin-bar {
+  header {
+    top: 32px;
+  }
+}
+
 
 header {
   position: sticky;
@@ -354,14 +360,10 @@ header {
   display: none;
 }
 
-#govMenuDrop {
-  display: none;
-}
-
 
 @media (min-width: 1240px) {
   #mainMenuDesktop {
-    display: grid;
+    display: block;
 
     ul.menu li:hover .drop-menu {
       display: grid;
@@ -370,7 +372,7 @@ header {
     .drop-menu {
       padding-left: 125px;
       display: none;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 1fr;
     }
 
     .mainSub {
@@ -414,7 +416,6 @@ header {
   }
 
   #govMenuDrop {
-    display: block;
     background: #F5F5F5;
     padding: 40px;
     padding-right: 80px;
@@ -430,7 +431,7 @@ header {
 
       >a {
         display: inline-block;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         color: #44484B;
       }
 
@@ -439,22 +440,23 @@ header {
       }
     }
 
-    .menu::before {
-      content: "Acesso rápido:";
-      position: static;
-      height: auto;
-      color: #44484B;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      font-family: 'Open Sans', sans-serif;
-    }
-
     .menu {
       display: grid;
       margin-left: 0px;
-      gap: 0px;
+      gap: 1rem;
+      max-width: 85px;
+
+      &::before {
+        content: "Acesso rápido:";
+        position: static;
+        height: auto;
+        color: #44484B;
+        font-weight: 600;
+        font-family: 'Open Sans', sans-serif;
+      }
 
       .sub-menu {
+        margin-top: 0;
         position: static;
         background: none;
         box-shadow: none;
@@ -482,8 +484,7 @@ header {
     }
   }
 
-  .stick,
-  .containerSeparator {
+  .stick, .containerSeparator {
     max-width: 1240px;
     margin: 0 auto;
 
@@ -491,11 +492,16 @@ header {
       display: block;
     }
 
+    .containerMenu {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     ul.menu {
       display: flex;
       gap: 2rem;
 
-      >li {
+      >li a {
         padding-top: .5rem;
         padding-bottom: .5rem;
       }

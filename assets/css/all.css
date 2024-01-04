@@ -1,9 +1,60 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box; }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,7 +65,11 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none; }
 
-footer, header, nav, section, main {
+footer,
+header,
+nav,
+section,
+main {
   display: block; }
 
 body {
@@ -27,10 +82,14 @@ ul {
   padding: 0;
   margin: 0; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none; }
 
@@ -170,7 +229,8 @@ header {
   top: 0px;
   z-index: 9;
   /* Estilos para ocultar o formulário quando o checkbox estiver marcado */ }
-  header #searchIcon, header #menuMobileIcon {
+  header #searchIcon,
+  header #menuMobileIcon {
     font-size: 24px; }
   header #myForm {
     display: none;
@@ -419,31 +479,31 @@ header {
       padding-left: 125px;
       display: none;
       grid-template-columns: 2fr 1fr; }
-      #mainMenuDesktop .drop-menu .mainSub {
-        padding-top: 2rem;
-        min-height: 312px; }
-        #mainMenuDesktop .drop-menu .mainSub > ul {
-          display: grid;
-          gap: 1.5rem;
-          padding-bottom: 40px;
-          grid-template-columns: 1fr 1fr; }
-        #mainMenuDesktop .drop-menu .mainSub .menuTituloDrop {
-          margin-bottom: 1.5rem;
-          font: 800 2.25rem / 49px Open Sans;
-          display: block; }
-        #mainMenuDesktop .drop-menu .mainSub .menuTituloDrop::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 2px;
-          background: #F5F5F5;
-          margin-top: 1.5rem; }
-        #mainMenuDesktop .drop-menu .mainSub ul.menu li > ul {
-          margin-top: 1.5rem;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.5rem;
-          width: 700px; }
+    #mainMenuDesktop .mainSub {
+      padding-top: 2rem;
+      min-height: 312px; }
+      #mainMenuDesktop .mainSub > ul {
+        display: grid;
+        gap: 1.5rem;
+        padding-bottom: 40px;
+        grid-template-columns: 1fr 1fr; }
+      #mainMenuDesktop .mainSub .menuTituloDrop {
+        margin-bottom: 1.5rem;
+        font: 800 2.25rem / 49px Open Sans;
+        display: block; }
+      #mainMenuDesktop .mainSub .menuTituloDrop::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #F5F5F5;
+        margin-top: 1.5rem; }
+    #mainMenuDesktop ul.menu li > ul {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      width: 700px; }
     #mainMenuDesktop .menu-item-has-children li:first-child {
       padding-top: 0px; }
   #govMenuDrop {
@@ -492,25 +552,33 @@ header {
     background: #FFF; }
     header #menuMobileIcon {
       display: none; }
-  .stick, .containerSeparator {
+  .stick,
+  .containerSeparator {
     max-width: 1240px;
     margin: 0 auto; }
-    .stick #stickContainer .secondColun .menu-mainmenu-container, .containerSeparator #stickContainer .secondColun .menu-mainmenu-container {
+    .stick #stickContainer .secondColun .menu-mainmenu-container,
+    .containerSeparator #stickContainer .secondColun .menu-mainmenu-container {
       display: block; }
-    .stick ul.menu, .containerSeparator ul.menu {
+    .stick ul.menu,
+    .containerSeparator ul.menu {
       display: flex;
       gap: 2rem; }
-      .stick ul.menu > li, .containerSeparator ul.menu > li {
+      .stick ul.menu > li,
+      .containerSeparator ul.menu > li {
         padding-top: .5rem;
         padding-bottom: .5rem; }
-      .stick ul.menu li, .containerSeparator ul.menu li {
+      .stick ul.menu li,
+      .containerSeparator ul.menu li {
         margin-bottom: 0px; }
-        .stick ul.menu li .showDesktop, .containerSeparator ul.menu li .showDesktop {
+        .stick ul.menu li .showDesktop,
+        .containerSeparator ul.menu li .showDesktop {
           display: block; }
-      .stick ul.menu li.menu-item-has-children > a:after, .containerSeparator ul.menu li.menu-item-has-children > a:after {
+      .stick ul.menu li.menu-item-has-children > a:after,
+      .containerSeparator ul.menu li.menu-item-has-children > a:after {
         content: "\f078";
         color: #2B2B2B; }
-      .stick ul.menu .drop-menu, .containerSeparator ul.menu .drop-menu {
+      .stick ul.menu .drop-menu,
+      .containerSeparator ul.menu .drop-menu {
         position: absolute;
         top: 32px;
         width: 100%;
@@ -877,24 +945,6 @@ header {
     .section-web-stories .splide__track {
       margin-left: 0px; } }
 
-#featuredMenu {
-  margin: 0 20px; }
-  #featuredMenu .content {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    text-align: center;
-    max-width: 100%; }
-    #featuredMenu .content a {
-      display: grid;
-      padding: 10px;
-      max-width: 100%;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
-      #featuredMenu .content a img {
-        max-width: 100%;
-        height: auto; }
-
 .post-title {
   font: bold 1.5rem/33px Open Sans;
   color: #2B2B2B; }
@@ -961,6 +1011,12 @@ header {
     font: bold 1.25rem/27px Open Sans;
     margin-top: 1rem;
     margin-bottom: .5rem; }
+
+#page-cursos p {
+  max-width: 816px; }
+
+#page-cursos p {
+  max-width: 816px; }
 
 #archive {
   margin: 40px 20px; }

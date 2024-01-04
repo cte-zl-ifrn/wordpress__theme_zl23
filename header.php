@@ -80,13 +80,14 @@
         </div>
     </div>
 
-    <div class="stick" style="position: sticky; top: 0;">
+    <div class="stick">
         <div id="stickContainer" class="containerMenu">         
             <div class="firstColun">
                 <a href="<?php echo site_url(); ?>">
                     <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2023/09/Logo-IFRN-ZL.png" alt="gov.br">
                 </a>
             </div>
+            
             <div class="secondColun" id="secondSection">              
                 <?php
                 $menuitems = getMainMenu();
