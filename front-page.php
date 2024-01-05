@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<section id="processos-seletivos">
+  <div class="header-section">
+    <h1>Processos Seletivos</h1>
+    <a href="<?php echo site_url('/categoria/processos-seletivos') ?>">Ver todos ></a>
+  </div>
+
+  <?php echo do_shortcode('[editais_sumario dias recentes=21]') ?>
+</section>
+
 <!-- Slides -->
 <div id="slideCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
