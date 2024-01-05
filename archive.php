@@ -28,11 +28,19 @@
   <?php  
   while(have_posts()) {
     the_post(); ?>
-    <div class="archive-card">
-      <h2 class="third-title"><?php the_title(); ?></h3>
-      <span><?php the_time('d \d\e F \d\e Y'); ?></span>
-      <p class="text"><?php echo wp_trim_words(get_the_content(), 25); ?></p>
-      <a href="<?php the_permalink(); ?>">Leia Mais >></a>
+    <div class="card-item">
+      <?php if(has_post_thumbnail()): ?>
+        <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+      <?php else: echo "";
+      endif;
+      ?>
+
+      <div class="card-text">
+        <h2 class="third-title"><?php the_title(); ?></h3>
+        <span><?php the_time('d \d\e F \d\e Y'); ?></span>
+        <p class="text"><?php echo wp_trim_words(get_the_content(), 25); ?></p>
+        <a href="<?php the_permalink(); ?>">Leia Mais >></a>
+      </div>
     </div>
   <?php } 
     // Paginação
