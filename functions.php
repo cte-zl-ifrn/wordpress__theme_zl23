@@ -160,6 +160,16 @@ function getWebStories($story_per_page, $slug = false) {
     return new WP_Query($args);
 }
 
+function getCategoriesWebStories() {
+    $args = array(
+        'taxonomy' => 'web_story_category',
+        'orderby' => 'name',
+        'order'   => 'ASC'
+    );
+
+    return $args;
+}
+
 
 function getFeaturedMenu() {
 	$locations = get_nav_menu_locations();
