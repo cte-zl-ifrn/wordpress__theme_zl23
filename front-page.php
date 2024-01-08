@@ -114,7 +114,7 @@
 
 
 <!-- Web Stories -->
-<section class="splide section-web-stories" aria-label="Splide Basic HTML Example">
+<section class="splide section-web-stories" id="webStories-slide" aria-label="Splide Basic HTML Example">
 <div class="header-section">
     <h1>Web Stories</h1>
     <a href="<?php echo site_url('/web-stories') ?>">Ver todas ></a>

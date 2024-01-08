@@ -17,3 +17,10 @@
     margin-bottom: .5rem;
   }
 }
+
+@media (min-width: 1240px) {
+  #page {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+}

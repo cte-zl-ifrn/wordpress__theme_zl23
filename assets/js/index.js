@@ -78,27 +78,47 @@ closeSearch.addEventListener('click', () => {
     $("#myForm").css("display", "none");
 })
 
-//Slide stories
-var splide = new Splide( '.splide', {
-    perPage: 1,
-    perMove: 1,
-    padding: { right: '3rem' },
-    gap: '1.5rem',
-    omitEnd : true,
-    pagination: false,
-    mediaQuery: 'min',
-    breakpoints: {
-        1240: {
-		    arrows: false,
-            drag: false,
-            gap: '40px',
-		},
-    }
-  } );
-  
-  splide.mount();
 
-
-
-
+if(document.querySelector('.splide')) {
+    //Slide shortcode
+    var splide = new Splide( '.splide', {
+        perPage: 1,
+        perMove: 1,
+        gap: '1.5rem',
+        omitEnd : true,
+        pagination: true,
+        mediaQuery: 'min',
+        breakpoints: {
+            768: {
+                perPage: 3,
+                perMove: 3,
+            },
+            1240: {
+                //gap: '40px',
+            },
+        }
+      } );
+      
+      splide.mount();
+    
+    //Slide stories
+    var splide = new Splide( '#webStories-slide', {
+        perPage: 1,
+        perMove: 1,
+        padding: { right: '3rem' },
+        gap: '1.5rem',
+        omitEnd : true,
+        pagination: false,
+        mediaQuery: 'min',
+        breakpoints: {
+            1240: {
+                arrows: false,
+                drag: false,
+                gap: '40px',
+            },
+        }
+      } );
+      
+      splide.mount();
+}
 

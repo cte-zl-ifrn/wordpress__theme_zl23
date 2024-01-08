@@ -258,3 +258,14 @@ function wporg_custom_post_type() {
     );
 }
 add_action('init', 'wporg_custom_post_type');
+
+function playlistCarousel($atts, $content = null, $tag = '') {
+
+    ob_start();
+
+    set_query_var('attributes', $atts);
+    get_template_part('includes/playlist-carousel');
+    return ob_get_clean();
+}
+
+add_shortcode('playlist_youtube', 'playlistCarousel');
